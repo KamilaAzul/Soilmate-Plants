@@ -1,4 +1,31 @@
-{% extends "base.html" %} {% load static %} {% block content %}
+{% extends "base.html" %}
+{% load static %}
+
+{% block page_header %}
+<div class="container header-container" >
+    <div class="row">
+        <div class="col"></div>
+    </div>
+</div>
+{% endblock %}
+
+{% block content %}
+<div class="container h-100">
+    <div class="row h-100">
+        <div class="col-7 col-md-6 my-auto">
+            <h1 class="display-4 logo-font text-black">
+                The new collections are here
+            </h1>
+            <div class="my-5">
+                <h4>
+                    <a href="" class="shop-now-button btn btn-lg rounded-0 text-uppercase py-3">Shop Now</a>
+                </h4>
+            </div>
+        </div>
+    </div>
+</div>
+
+
 <!-- Masthead-->
 <header class="masthead">
     <div class="container position-relative">
@@ -7,48 +34,6 @@
                 <div class="text-center text-white">
                     <!-- Page heading-->
                     <h1 class="mb-5">Generate more leads with a professional landing page!</h1>
-                    <!-- Signup form-->
-                    <!-- * * * * * * * * * * * * * * *-->
-                    <!-- * * SB Forms Contact Form * *-->
-                    <!-- * * * * * * * * * * * * * * *-->
-                    <!-- This form is pre-integrated with SB Forms.-->
-                    <!-- To make this form functional, sign up at-->
-                    <!-- https://startbootstrap.com/solution/contact-forms-->
-                    <!-- to get an API token!-->
-                    <form class="form-subscribe" id="contactForm" data-sb-form-api-token="API_TOKEN">
-                        <!-- Email address input-->
-                        <div class="row">
-                            <div class="col">
-                                <input class="form-control form-control-lg" id="emailAddress" type="email"
-                                    placeholder="Email Address" data-sb-validations="required,email" />
-                                <div class="invalid-feedback text-white" data-sb-feedback="emailAddress:required">Email
-                                    Address is required.</div>
-                                <div class="invalid-feedback text-white" data-sb-feedback="emailAddress:email">Email
-                                    Address Email is not valid.</div>
-                            </div>
-                            <div class="col-auto"><button class="btn btn-primary btn-lg disabled" id="submitButton"
-                                    type="submit">Submit</button></div>
-                        </div>
-                        <!-- Submit success message-->
-                        <!---->
-                        <!-- This is what your users will see when the form-->
-                        <!-- has successfully submitted-->
-                        <div class="d-none" id="submitSuccessMessage">
-                            <div class="text-center mb-3">
-                                <div class="fw-bolder">Form submission successful!</div>
-                                <p>To activate this form, sign up at</p>
-                                <a class="text-white"
-                                    href="https://startbootstrap.com/solution/contact-forms">https://startbootstrap.com/solution/contact-forms</a>
-                            </div>
-                        </div>
-                        <!-- Submit error message-->
-                        <!---->
-                        <!-- This is what your users will see when there is-->
-                        <!-- an error submitting the form-->
-                        <div class="d-none" id="submitErrorMessage">
-                            <div class="text-center text-danger mb-3">Error sending message!</div>
-                        </div>
-                    </form>
                 </div>
             </div>
         </div>
@@ -87,7 +72,7 @@
     <div class="container-fluid p-0">
         <div class="row g-0">
             <div class="col-lg-6 order-lg-2 text-white showcase-img"
-                style="background-image: url('assets/img/bg-showcase-1.jpg')"></div>
+                style="background-image: url('media/pexels-antoni-shkraba-7342610.jpg')"></div>
             <div class="col-lg-6 order-lg-1 my-auto showcase-text">
                 <h2>Fully Responsive Design</h2>
                 <p class="lead mb-0">When you use a theme created by Start Bootstrap, you know that the theme will look
@@ -95,7 +80,7 @@
             </div>
         </div>
         <div class="row g-0">
-            <div class="col-lg-6 text-white showcase-img" style="background-image: url('assets/img/bg-showcase-2.jpg')">
+            <div class="col-lg-6 text-white showcase-img" style="background-image: url('media/2.jpg')">
             </div>
             <div class="col-lg-6 my-auto showcase-text">
                 <h2>Updated For Bootstrap 5</h2>
@@ -106,7 +91,7 @@
         </div>
         <div class="row g-0">
             <div class="col-lg-6 order-lg-2 text-white showcase-img"
-                style="background-image: url('assets/img/bg-showcase-3.jpg')"></div>
+                style="background-image: url('media/1.jpg')"></div>
             <div class="col-lg-6 order-lg-1 my-auto showcase-text">
                 <h2>Easy to Use & Customize</h2>
                 <p class="lead mb-0">Landing Page is just HTML and CSS with a splash of SCSS for users who demand some
