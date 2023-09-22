@@ -3,7 +3,7 @@ html {
 }
 
 body {
-    background: url('media/pexels-carolina-gusmund-3826054.jpg') no-repeat center center fixed;
+    background: url('../media/pexels-carolina-gusmund-3826054.jpg') no-repeat center center fixed;
     background-size: cover;
     height: calc(100vh - 164px);
     color: #555;
@@ -79,3 +79,29 @@ body {
         padding-top: 164px;
     }
 }
+
+.showcase text {
+        padding: 3rem;
+    }
+
+    .showcase-img {
+        min-height: 30rem;
+        background-size: cover;
+    }
+
+    @media (min-width: 768px) {
+        .showcase-text {
+            padding: 7rem;
+        }
+    }
+.testimonials {
+    padding-top: 7rem;
+    padding-bottom: 7rem;}
+
+.testimonial-item {
+    max-width: 18rem;}
+
+.testimonials img {
+     max-width: 12rem;
+    box-shadow: 0px 5px 5px 0px $gray-500;}
+
