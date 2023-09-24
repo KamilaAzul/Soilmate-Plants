@@ -3,7 +3,7 @@ html {
 }
 
 body {
-    background: url('../media/pexels-carolina-gusmund-3826054.jpg') no-repeat center center fixed;
+    background-image: url('media/1.jpg') no-repeat center center fixed;
     background-size: cover;
     height: calc(100vh - 164px);
     color: #555;
@@ -94,53 +94,62 @@ body {
             padding: 7rem;
         }
     }
+
+/*Our services*/
+
+.features-icons img{
+
+    width: 30rem;
+    height: 15rem;
+}
+/*..........................................Our services*/
+
+#services{
+
+    padding-top: 40px;
+}
+.icons_services{
+margin-bottom: 1rem;
+text-align: center;
+
+
+}
+.icons_services img {
+    width: 19rem;
+    height: 19rem;
+    object-fit: cover;
+}
+
+.icons_services h4,
+.icons_services .h4 {
+    margin-top: -35px;
+    margin-bottom: 0;
+}
+
 /*..........................................Team members section*/
 
-/*from: https://snippets.wrappixel.com/bootstrap-team-section/*/
-.team3 {
-  
-    font-weight: 300;
+#team{
+    padding-top: 40px;
+    padding-bottom: 30px;
+}
+.team-member {
+    margin-bottom: 3rem;
+    text-align: center;
+    
 }
 
-#team-member {
-    border: 20px solid rgba(0, 0, 0, 0.1);
-    background-color: rgba(255, 255, 255, 0.90);
-    opacity: 0;
-    -webkit-transition: all 0.3s;
-    transition: all 0.3s
-}
-#hey{
-    background-color: aqua;
-}
-.team3 .font-weight-medium {
-    font-weight: 500;
+.team-member img {
+    width: 20rem;
+    height: 30rem;
+    border: 0.5rem solid rgba(0, 0, 0, 0.1);
 }
 
-.team3 .bg-light {
-    background-color: #f4f8fa !important;
+.team-member h4,
+.team-member .h4 {
+    margin-top: 1.5rem;
+    margin-bottom: 0;
 }
 
-.team3 .subtitle {
-    color: #8d97ad;
-    line-height: 24px;
-    font-size: 13px;
+.img-brand {
+    height: 2.75rem;
 }
-
-.team3 ul {
-    margin-top: 30px;
-}
-
-.team3 h5 {
-    line-height: 22px;
-    font-size: 18px;
-}
-
-.team3 .title {
-    margin: 30px 0 0 0;
-}
-
-.team3 .subtitle {
-    margin: 0 0 20px 0;
-    font-size: 13px;
-}
-
