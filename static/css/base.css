@@ -23,9 +23,13 @@ body {
 .logo-font {
     text-transform: uppercase;
 }
-
-.main-logo-link {
-    width: fit-content;
+.nav-link img{
+    width: 400px;
+    height: 200px;
+    display: block;
+    padding-bottom: -30px;
+    margin-top: -30px;
+    background-color: #8DB74E;
 }
 
 .shop-now-button {
