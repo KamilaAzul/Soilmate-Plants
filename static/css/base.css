@@ -11,7 +11,19 @@ body {
 }
 /*header*/
 
-/* from Bulma */
+#masthead {
+    padding-top: 10.5rem;
+    padding-bottom: 6rem;
+    text-align: center;
+    color: rgb(152, 87, 87);
+    background-image: url("../assets/img/header-bg.jpg");
+    background-repeat: no-repeat;
+    background-attachment: scroll;
+    background-position: center center;
+    background-size: cover;
+}
+
+/* .....................................from Bulma */
 .icon {
     align-items: center;
     display: inline-flex;
@@ -107,7 +119,7 @@ body {
     width: 30rem;
     height: 15rem;
 }
-/*..........................................Our services*/
+/*..........................................Icons Grid*/
 
 #services{
 
@@ -130,6 +142,9 @@ text-align: center;
     margin-top: -35px;
     margin-bottom: 0;
 }
+/*..........................................Our services*/
+
+.showcase{}
 
 /*..........................................Team members section*/
 
