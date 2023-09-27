@@ -9,6 +9,41 @@ body {
     color: #555;
     font-family: 'Lato';
 }
+/*Navbar*/
+
+.dropdown-menu li {
+    position: relative;
+}
+
+.dropdown-menu .dropdown-submenu {
+    display: none;
+    position: absolute;
+    left: 100%;
+    top: -7px;
+    width: 30px;
+        background-color: #b9d393;
+}
+
+.dropdown-menu .dropdown-submenu-left {
+    right: 100%;
+    left: auto;
+    width: 30px;
+    background-color: #8DB74E;
+}
+
+.dropdown-menu>li:hover>.dropdown-submenu {
+    display: block;
+}
+
+.dropdown-hover:hover>.dropdown-menu {
+    display: inline-block;
+}
+
+.dropdown-hover>.dropdown-toggle:active {
+    /*Without this, clicking will make it sticky*/
+    pointer-events: none;
+}
+
 /*header*/
 
 #masthead {
