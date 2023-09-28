@@ -263,42 +263,31 @@
 </section>
 <!-- End of the team members section-->
 <!-- Newsletter section (from:https://bbbootstrap.com/snippets/bootstrap-subscribe-our-newsletter-form-image-38001349)-->
-<div
-  class="row d-flex justify-content-center align-items-center rows"
-  style="background-image: url('media/hero img/monstera.jpg')" id="newsletter"
->
-  <div class="col-md-6">
-    <div class="card">
-      <div class="text-center">
-        <img src="media/home page img/newsletter.png" width="300" />
 
-        <h2>Want to receive a free first delivery?</h2>
 
-        <span class="d-block mt-3"
-          >Subscribe to our newsletter in order not to miss new arrivals <br />
-          promotions and discounts of our store</span
-        >
-        <div class="mx-5">
-          <div class="input-group mb-3 mt-4">
-            <input
-              type="text"
-              class="form-control"
-              placeholder="Enter email"
-              aria-label="Recipient's username"
-              aria-describedby="button-addon2"
-            />
-            <button
-              class="btn btn-success border-rad"
-              type="button"
-              id="button-addon2"
-            >
-              Subscribe
-            </button>
-          </div>
+<section class="home-newsletter" id="newsletter">
+    <div class="row d-flex justify-content-center align-items-center rows"
+        style="background-image: url('media/hero img/monstera.jpg')" id="newsletter">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="single">
+                    <div class="text-center">
+                        <h2>Want to receive a free first delivery?</h2>
+                    
+                        <span class="d-block mt-3 text-white">Subscribe to our newsletter in order not to miss new arrivals <br />
+                            promotions and discounts of our store</span>
+                    <br>
+                    <div class="input-group">
+                        <input type="email" class="form-control" placeholder="Enter your email">
+                        <span class="input-group-btn">
+                            <button class="btn btn-theme" type="submit">Subscribe</button>
+                        </span>
+                    </div>
+                </div>
+            </div>
         </div>
-      </div>
     </div>
-  </div>
-</div>
+</section>
 <!-- End of newsletter section-->
 {% endblock %}

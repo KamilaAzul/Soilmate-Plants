@@ -273,59 +273,7 @@ body {
     height: 70vh;
 }
 
-/* Newsletter section (from: https: //bbbootstrap.com/snippets/bootstrap-subscribe-our-newsletter-form-image-38001349)*/
 
-.form-control {
-    display: block;
-    width: 100%;
-    min-height: calc(1.5em + .75rem + 2px);
-    padding: .560rem .75rem;
-    font-size: 1rem;
-    font-weight: 400;
-    line-height: 1.5;
-    color: #495057;
-    background-color: #fff;
-    background-clip: padding-box;
-    border: 1px solid #ced4da;
-    -webkit-appearance: none;
-    -moz-appearance: none;
-    appearance: none;
-    border-radius: 52px;
-    transition: border-color .15s ease-in-out, box-shadow .15s ease-in-out;
-}
-
-.card {
-    padding: 20px;
-    background-color: #eee;
-    padding-bottom: 50px;
-    padding-top: 50px;
-
-}
-
-.form-control:focus {
-    color: #495057;
-    background-color: #fff;
-    border-color:#8DB74E;
-    outline: 0;
-    box-shadow: none;
-}
-
-.border-rad {
-
-    border-top-right-radius: 28px;
-    border-bottom-right-radius: 28px;
-
-    color: #fff;
-    background-color: #8DB74E;
-    border-color:#8DB74E;
-}
-
-.border-rad:hover {
-
-    background-color:#8DB74E;
-    border-color:#8DB74E;
-
-}
 @media (max-width: 991px) {
     .card{
     display: block;
@@ -335,4 +283,43 @@ body {
     padding-bottom: 20px;
     margin:10px;
     }
+}
+/* Newsletter section (from: https: //bootsnipp.com/snippets/eoXRa)*/
+.home-newsletter {
+    padding: 80px 0;
+    
+}
+
+.home-newsletter .single {
+    max-width: 650px;
+    margin: 0 auto;
+    text-align: center;
+    position: relative;
+    z-index: 2;
+}
+
+.home-newsletter .single h2 {
+    font-size: 22px;
+    color: white;
+    text-transform: uppercase;
+    margin-bottom: 40px;
+}
+
+.home-newsletter .single .form-control {
+    height: 50px;
+    background: rgba(255, 255, 255, 0.6);
+    border-color: transparent;
+    border-radius: 20px 0 0 20px;
+}
+
+.home-newsletter .single .form-control:focus {
+    box-shadow: none;
+    border-color: #3b9544;
+}
+
+.home-newsletter .single .btn {
+    min-height: 50px;
+    border-radius: 0 20px 20px 0;
+    background: #3b9544;
+    color: #fff;
 }
