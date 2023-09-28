@@ -1,5 +1,6 @@
 html {
     height: 100%;
+    scroll-behavior: smooth;
 }
 
 body {
@@ -8,6 +9,7 @@ body {
     height: calc(100vh - 164px);
     color: #555;
     font-family: 'Lato';
+    
 }
 
 /*Navbar*/
