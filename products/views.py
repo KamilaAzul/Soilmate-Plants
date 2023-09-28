@@ -42,3 +42,10 @@ def product_detail(request, product_id):
     }
 
     return render(request, 'products/product_detail.html', context)
+
+
+def about(request):
+    """
+    Render the about page
+    """
+    return render(request, "about_us.html")

@@ -1,17 +1,18 @@
 <div class="collapse navbar-collapse" id="main-nav">
     <ul class="navbar-nav w-auto mx-auto">
         <li class="nav-item dropdown">
-            <a class="logo-font font-weight-bold nav-link text-black mr-5" href="{% url 'home' %}" id="homeware-link" data-toggle="dropdown"
+            <a class="main logo-font font-weight-bold nav-link text-black mr-5" href="{% url 'home' %}" id="homeware-link" data-toggle="dropdown"
                 aria-haspopup="true" aria-expanded="false">Home</a>
                 <div class="dropdown-menu border-0" aria-labelledby="all-products-link">
-                    <a href="{% url 'products' %}" class="dropdown-item">Our Plants</a>
-                    <a href="" class="dropdown-item"></a>
-                    <a href="" class="dropdown-item ">By Size</a>
-                    <a href="" class="dropdown-item ">By Types</a>
+                    <a href="{}" class="dropdown-item">Plants Quality</a>
+                    <a href="" class="dropdown-item ">Repotting and packing</a>
+                    <a href="" class="dropdown-item ">Delivery</a>
+                    <a href="" class="dropdown-item ">Newsletter</a>
+                    <a href="" class="dropdown-item ">Opinions about us</a>
                 </div>
         </li>
         <li class="nav-item dropdown">
-            <a class="logo-font font-weight-bold nav-link text-black mr-5" href="#" id="homeware-link" data-toggle="dropdown"
+            <a class="main logo-font font-weight-bold nav-link text-black mr-5" href="#" id="homeware-link" data-toggle="dropdown"
                 aria-haspopup="true" aria-expanded="false">Plants</a>
             <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
                 <li><a class="dropdown-item" href="#">All Plants</a></li>
@@ -31,30 +32,13 @@
                             <a class="dropdown-item" href="#">Hanging Plants</a>
                         </li>
                         <li>
-                            <a class="dropdown-item" href="#">Beginners friendly</a>
+                            <a class="dropdown-item" href="#">For Beginners</a>
                         </li>
                         <li>
                             <a class="dropdown-item" href="#">Exotic</a>
                         </li>
                         <li>
                             <a class="dropdown-item" href="#">For the terrace</a>
-                        </li>
-                        <li>
-                            <a class="dropdown-item" href="#">Submenu item 3 &raquo; </a>
-                            <ul class="dropdown-menu dropdown-submenu">
-                                <li>
-                                    <a class="dropdown-item" href="#">Multi level 1</a>
-                                </li>
-                                <li>
-                                    <a class="dropdown-item" href="#">Multi level 2</a>
-                                </li>
-                            </ul>
-                        </li>
-                        <li>
-                            <a class="dropdown-item" href="#">Submenu item 4</a>
-                        </li>
-                        <li>
-                            <a class="dropdown-item" href="#">Submenu item 5</a>
                         </li>
                     </ul>
                 </li>
@@ -62,59 +46,44 @@
                     <a class="dropdown-item" href="#">Species &raquo;</a>
                     <ul class="dropdown-menu dropdown-submenu">
                         <li>
+                            <a class="dropdown-item" href="#">Succulents</a>
+                        </li>
+                        <li>
+                            <a class="dropdown-item" href="#">Creepers</a>
+                        </li>
+                        <li>
+                            <a class="dropdown-item" href="#">Palm trees</a>
+                        </li>
+                        <li>
+                            <a class="dropdown-item" href="#">Sansevieria</a>
+                        </li>
+                        <li>
                             <a class="dropdown-item" href="#">Monsters</a>
                         </li>
                         <li>
-                            <a class="dropdown-item" href="#">Potted trees</a>
+                            <a class="dropdown-item" href="#">Cacti</a>
                         </li>
                         <li>
-                            <a class="dropdown-item" href="#">Potted plants</a>
+                            <a class="dropdown-item" href="#">Philodendrons</a>
                         </li>
                         <li>
-                            <a class="dropdown-item" href="#">Hanging Plants</a>
+                            <a class="dropdown-item" href="#">Dracaena</a>
                         </li>
                         <li>
-                            <a class="dropdown-item" href="#">Beginners friendly</a>
-                        </li>
-                        <li>
-                            <a class="dropdown-item" href="#">Exotic</a>
-                        </li>
-                        <li>
-                            <a class="dropdown-item" href="#">For the terrace</a>
+                            <a class="dropdown-item" href="#">Alocasia</a>
                         </li>
                     </ul>
                 </li>
             </ul>
         </li>
+       
         <li class="nav-item dropdown">
-            <a class="logo-font font-weight-bold nav-link text-black mr-5" href="#" id="all-products-link"
-                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                All Plants
-            </a>
-            <div class="dropdown-menu border-0" aria-labelledby="all-products-link">
-                <a href="{% url 'products' %}" class="dropdown-item">Our Plants</a>
-                <a href="" class="dropdown-item">By Price</a>
-                <a href="" class="dropdown-item ">By Size</a>
-                <a href="" class="dropdown-item ">By Types</a>
-                <a class="dropdown-item" href="#">Submenu item 3 &raquo; </a>
-                <ul class="dropdown-menu dropdown-submenu">
-                    <li>
-                        <a class="dropdown-item" href="#">Submenu item 1</a>
-                    </li>
-                    <li>
-                        <a class="dropdown-item" href="#">Submenu item 1</a>
-                    </li>
-                </ul>
-            </div>
-        </li>
-
-        <li class="nav-item dropdown">
-            <a class="logo-font font-weight-bold nav-link text-black mr-5" href="#" id="clothing-link"
+            <a class="main logo-font font-weight-bold nav-link text-black mr-5" href="{% url 'about' %}"  id="about-link"
                 data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 About us
             </a>
             <div class="dropdown-menu border-0" aria-labelledby="clothing-link">
-                <a href="" class="dropdown-item">Company</a>
+                <a href="{% url 'about' %}" class="dropdown-item">Company</a>
                 <a href="" class="dropdown-item">Plants quality</a>
                 <a href="" class="dropdown-item">Replanting</a>
                 <a href="" class="dropdown-item">Delivery</a>
@@ -122,11 +91,11 @@
         </li>
 
         <li class="nav-item dropdown">
-            <a class="logo-font font-weight-bold nav-link text-black mr-5" href="#" id="homeware-link"
+            <a class="main logo-font font-weight-bold nav-link text-black mr-5" href="#" id="konowlage-link"
                 data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 Basic knowledge
             </a>
-            <div class="dropdown-menu border-0" aria-labelledby="specials-link">
+            <div class="dropdown-menu border-0" aria-labelledby="konwladge-links">
                 <a href="" class="dropdown-item">Light</a>
                 <a href="" class="dropdown-item">Water</a>
                 <a href="" class="dropdown-item">Fertilization</a>
@@ -134,56 +103,21 @@
             </div>
         </li>
 <li class="nav-item dropdown">
-    <a class="logo-font font-weight-bold nav-link text-black mr-5" href="#" id="homeware-link" data-toggle="dropdown"
+    <a class="main logo-font font-weight-bold nav-link text-black mr-5" href="#" id="blog-link" data-toggle="dropdown"
         aria-haspopup="true" aria-expanded="false">Blog</a>
-    <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-        <li><a class="dropdown-item" href="#">Action</a></li>
-        <li>
-            <a class="dropdown-item" href="#">Another action</a>
         </li>
-        <li>
-            <a class="dropdown-item" href="#">
-                Submenu &raquo;
-            </a>
-            <ul class="dropdown-menu dropdown-submenu">
-                <li>
-                    <a class="dropdown-item" href="#">Submenu item 1</a>
-                </li>
-                <li>
-                    <a class="dropdown-item" href="#">Submenu item 2</a>
-                </li>
-                <li>
-                    <a class="dropdown-item" href="#">Submenu item 3 &raquo; </a>
-                    <ul class="dropdown-menu dropdown-submenu">
-                        <li>
-                            <a class="dropdown-item" href="#">Multi level 1</a>
-                        </li>
-                        <li>
-                            <a class="dropdown-item" href="#">Multi level 2</a>
-                        </li>
-                    </ul>
-                </li>
-                <li>
-                    <a class="dropdown-item" href="#">Submenu item 4</a>
-                </li>
-                <li>
-                    <a class="dropdown-item" href="#">Submenu item 5</a>
-                </li>
-            </ul>
-        </li>
-    </ul>
 </li>
-        <li class="nav-item dropdown">
-            <a class="logo-font font-weight-bold nav-link text-black" href="#" id="specials-link" data-toggle="dropdown"
-                aria-haspopup="true" aria-expanded="false">
-                Landscape designer
-            </a>
-            <div class="dropdown-menu border-0" aria-labelledby="specials-link">
-                <a href="" class="dropdown-item">Space arrangement</a>
-                <a href="" class="dropdown-item">Selection of accessories</a>
-                <a href="" class="dropdown-item">Plants preparation</a>
-                <a href="" class="dropdown-item">Delivery&training</a>
-            </div>
-        </li>
+<li class="nav-item dropdown">
+    <a class="main logo-font font-weight-bold nav-link text-black mr-5" href="#" id="landscapeDesigner-links"
+        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        Landscape designer
+    </a>
+    <div class="dropdown-menu border-0" aria-labelledby="Landscape-designer-links">
+        <a href="" class="dropdown-item">Space arrangement</a>
+        <a href="" class="dropdown-item ">Selection of accessories</a>
+        <a href="" class="dropdown-item ">Plants preparation</a>
+        <a href="" class="dropdown-item ">Delivery&training</a>
+    </div>
+</li>
     </ul>
 </div>
