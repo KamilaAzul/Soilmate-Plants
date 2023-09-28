@@ -13,10 +13,10 @@ body {
 /*Navbar*/
 
 
-/*header*/
+/*......................................header*/
 
 #masthead {
-    padding-top: 10.5rem;
+    padding-top: 5.5rem;
     padding-bottom: 6rem;
     text-align: center;
     color: rgb(152, 87, 87);
@@ -219,42 +219,39 @@ body {
     position: relative;
 }
 
-.dropdown li a:hover {
-    font-family: monospace;
-}
-
 #main-nav .main:hover {
     background-color: #705e22;
-    
+}
+#main-nav .dropdown-menu{
+    text-align: left;
 
 }
 
 .dropdown-menu .dropdown-submenu {
     display: none;
     position: absolute;
-    left: 100%;
+    left: 90%;
     top: -7px;
     width: 30px;
     background-color: #daedbe;
 }
 
-@media (min-width: 768px){
+@media (max-width: 768px){
     .dropdown-menu .dropdown-submenu {
         margin-left: 0.7rem;
         margin-right: 0.7rem;
         margin-bottom: .5rem;
     }
-
-    .dropdown-menu {
-        width: 20px;
-
-    }
+#main-nav .dropdown-menu {
+    text-align: left;
+    width: 20px;
+}
 }
 
 .dropdown-menu .dropdown-submenu-left {
     right: 100%;
     left: auto;
-    width: 30px;
+    width: 35px;
     background-color: #72650c;
 }
 
@@ -267,7 +264,6 @@ body {
 }
 
 .dropdown-hover>.dropdown-toggle:active {
-    /*Without this, clicking will make it sticky*/
     pointer-events: none;
 }
 
@@ -329,10 +325,12 @@ body {
 
 }
 @media (max-width: 991px) {
-    .form-control{
+    .card{
     display: block;
-    width: 80%;
-    text-align: centerF;
+    width: 100%;
+    text-align: center;
     padding: 10px;
+    padding-bottom: 20px;
     margin:10px;
     }
+}
