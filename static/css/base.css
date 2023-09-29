@@ -92,6 +92,19 @@ body {
     border: 1px solid black !important;
 }
 
+.overlay {
+    height: 100%;
+    width: 100%;
+    top: 0;
+    left: 0;
+    position: fixed;
+    background: white;
+    z-index: -1;
+}
+a.category-badge>span.badge:hover {
+    background: #212529 !important;
+    color: #fff !important;
+}
 /* -------------------------------- Media Queries */
 
 /* Slightly larger container on xl screens */
@@ -298,8 +311,8 @@ body {
     z-index: 2;
 }
 
-.home-newsletter .single h2 {
-    font-size: 22px;
+#newsletter .single h2 {
+    font-size: 30px;
     color: white;
     text-transform: uppercase;
     margin-bottom: 40px;
