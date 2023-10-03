@@ -281,7 +281,7 @@ a.category-badge>span.badge:hover {
 .dropdown-hover>.dropdown-toggle:active {
     pointer-events: none;
 }
-
+/*............................................Product Section*/
 .rows {
     height: 70vh;
 }
@@ -293,6 +293,14 @@ a.category-badge>span.badge:hover {
 
 .row .productImg img {
     height: 100%;
+}
+
+.productName{
+    font-size: 25px;
+    padding-top: 10px;
+    font-style: italic;
+    font-family: Josefin Slab;
+   
 }
 
 @media (max-width: 991px) {
