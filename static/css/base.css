@@ -285,6 +285,14 @@ a.category-badge>span.badge:hover {
 .rows {
     height: 70vh;
 }
+ 
+.row .productImg{
+    background-color: #8DB74E;
+    height: 360px;
+   
+}
+.row .productImg img{
+    height: 100%;
 
 
 @media (max-width: 991px) {
@@ -300,25 +308,23 @@ a.category-badge>span.badge:hover {
 /* Newsletter section (from: https: //bootsnipp.com/snippets/eoXRa)*/
 .home-newsletter {
     padding: 0;
+    background: #3b9544;;
 }
+
 .home-newsletter .single {
     max-width: 650px;
-    margin: 0 au50;
+    margin: 0 auto;
     text-align: center;
     position: relative;
     z-index: 2;
 }
 
-#newsletter .single h2 {
-    font-size: 40px;
+.home-newsletter .single h2 {
+    font-size: 22px;
     color: white;
     text-transform: uppercase;
     margin-bottom: 40px;
 }
-#newsletter .single .subscribe{
-font-size: 20px;
-}
-
 
 .home-newsletter .single .form-control {
     height: 50px;
@@ -329,11 +335,11 @@ font-size: 20px;
 
 .home-newsletter .single .form-control:focus {
     box-shadow: none;
-    border-color: #3b9544;
+    border-color: #3b9544;;
 }
 
 .home-newsletter .single .btn {
-    min-height: #3b9544;
+    min-height: 50px;
     border-radius: 0 20px 20px 0;
     background: #3b9544;
     color: #fff;
