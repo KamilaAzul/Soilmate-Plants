@@ -286,15 +286,14 @@ a.category-badge>span.badge:hover {
     height: 70vh;
 }
  
-.row .productImg{
-    background-color: #8DB74E;
+.row .productImg {
     height: 360px;
-   
+
 }
-.row .productImg img{
+
+.row .productImg img {
     height: 100%;
-
-
+}
 @media (max-width: 991px) {
     .card{
     display: block;
