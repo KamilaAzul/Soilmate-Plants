@@ -12,9 +12,6 @@ body {
     
 }
 
-/*Navbar*/
-
-
 /*......................................header*/
 
 #masthead {
@@ -351,4 +348,9 @@ a.category-badge>span.badge:hover {
     border-radius: 0 20px 20px 0;
     background: #3b9544;
     color: #fff;
+}
+
+/*.......................Testemonials section*/
+.card {
+    border-radius: .7rem;
 }
