@@ -7,7 +7,6 @@ from .models import Product, Category
 
 # Create your views here.
 
-
 def all_products(request):
     """ A view to show all products, including sorting and search queries """
 
@@ -72,8 +71,4 @@ def product_detail(request, product_id):
     return render(request, 'products/product_detail.html', context)
 
 
-def about(request):
-    """
-    Render the about page
-    """
-    return render(request, "about_us.html")
+

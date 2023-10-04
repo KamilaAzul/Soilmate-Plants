@@ -1,23 +1,19 @@
-{% extends "base.html" %} {% load static %} {% block page_header %}
+{% extends "base.html" %} {% load static %} 
 
-<div class="container header-container bg-dark">
-  <div class="row">
-    <div class="col"></div>
-  </div>
-</div>
-{% endblock %} {% block content %}
+
+{% block content %}
 <!-- Header section-->
 <header>
   <div
-    class="hero" style=" background-image: url('media/hero img/Hero3.jpg');background-size: cover; height: 600px;">
+    class="hero" style=" background-image: url('media/hero img/green-houseplant-background-plant-lovers.jpg');background-size: cover; height: 700px;">
       <div class="container h-100">
         <div class="row h-100">
           <div class="col-7 col-md-6 my-auto">
-            <h1 class="display-4 logo-font text-black">
+            <h1 class="display-4 logo-font text-white">
               Which plant is perfect for me?
             </h1>
             <div class="my-5">
-              <h4><a href="{% url 'products' %}" class="shop-now-button btn btn-lg rounded-0 text-uppercase py-3">Plant search</a>
+              <h4><a href="{% url 'products' %}" class="shop-now-button btn btn-lg rounded-0 text-uppercase py-3" style="background-color:#3e3004" >Plant search</a>
               </h4>
             </div>
           </div>
@@ -26,7 +22,11 @@
   </div>
 </header>
 <!--End of the header section--->
-
+<div id="delivery-banner" class="row text-center">
+    <div class="col bg-black text-white">
+        <h5 class="logo-font my-1">Free delivery on orders over ${{ free_delivery_threshold }}!</h5>                
+    </div>            
+</div>
 <!-- Icons Grid-->
 <section class="page-section" id="services" style="background-color: #f9f5ec">
   <div class="container">

@@ -28,6 +28,11 @@ body {
     background-position: center center;
     background-size: cover;
 }
+#delivery-banner{
+    padding-top: 10px;
+    background-color: #3e3004;
+    padding-bottom: 10px;
+}
 
 /*......................................Products page*/
 
@@ -185,6 +190,7 @@ a.category-badge>span.badge:hover {
 /*..........................................Our services*/
 
 /*..........................................Team members section*/
+#team{
     padding-top: 40px;
     padding-bottom: 30px;
 }
@@ -194,19 +200,21 @@ a.category-badge>span.badge:hover {
     text-align: center;
 
 }
-
-.    width: 20rem;
+.team-member img {
+    width: 20rem;
     height: 30rem;
     border: 0.5rem solid rgba(0, 0, 0, 0.1);
 }
 
-..team-member .h4 {
+.team-member .h4 {
     margin-top: 1.5rem;
     margin-bottom: 0;
 }
 
-.    height: 2.75rem;
+.img-brand {
+    height: 2.75rem;
 }
+
 /*.................................Button back to the top*/
 
 #btt-button {
@@ -216,8 +224,9 @@ a.category-badge>span.badge:hover {
     bottom: 15px;
     right: 12px;
     background-color: #8DB74E;
-    border:#daedbe
-##btt-link {
+    border:#daedbe;}
+
+#btt-link {
     cursor: pointer;
 }
 
