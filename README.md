@@ -143,6 +143,7 @@ README Table Content
 5. Approve user's reviews.
 6. Change a user’s permissions on the website.
 7. Create and upload new posts to be shown on the website.
+   
 ### Agile Methodology
 
 All functionality and development of this project were managed using GitHub which Projects can be found
@@ -169,18 +170,12 @@ All functionality and development of this project were managed using GitHub whic
 #### Typography
 
 - The Lato font is used as the main font for the whole project. The Kaushan font is used to
-display the website logo.
+display the website logo. Font-family: Josefin Slab was used to display product name on the product page.
 
 #### Imagery
 
-- All the images were converted to webp format to improve the website performance. The product images and banners are
-uploaded by the admin panel. The image banners are available in two different sizes. The different sizes allow for the
-banners to be displayed on both desktop and mobile platforms.
-
-#### Video
-
-- On the landing page, 2 videos playing as a background. One video is displayed on the desktop platform whilst
-the second video plays on the mobile platform. The two videos were both compressed to improve the website's performance.
+- All the images were converted to webp format to improve the website performance. The product images are
+uploaded by the admin panel. 
 
 ### Wireframes
 

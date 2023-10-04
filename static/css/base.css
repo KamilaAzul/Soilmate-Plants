@@ -221,6 +221,19 @@ a.category-badge>span.badge:hover {
 .img-brand {
     height: 2.75rem;
 }
+/*...............Button to scroll to the top page*/
+
+.btt-button {
+    height: 42px;
+    width: 42px;
+    position: fixed;
+    bottom: 10px;
+    right: 10px;
+}
+
+.btt-link {
+    cursor: pointer;
+}
 
 /*................................................Footer*/
 
