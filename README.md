@@ -116,12 +116,13 @@ README Table Content
 - As a website user, I can:
 
 1. Navigate around the website and easily find the desired content.
-   See a list of products and choose a desired product.
-2. Search products and be able to find a specific product.
+2. See a list of products and choose a desired product.
+3. Search products and be able to find a specific product.
 4. Click on a product to find more details about it.
 5. Register for an account to be able to use the services offered to members.
 6. View product comments so that I can read other users' opinions.
 7. Buy a product by using the website checkout system.
+8. I can find more information about products on a website blog.
 
 - As a logged in website user, I can:
 
