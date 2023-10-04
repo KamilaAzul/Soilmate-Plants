@@ -188,6 +188,19 @@ a.category-badge>span.badge:hover {
     margin-bottom: 0;
 }
 /*..........................................Our services*/
+.showcase{
+    padding-left: 15px;
+    padding-right: 15px;
+    background-color: rgb(199, 187, 146);
+   
+}
+.showcase p{
+    font-size: 15px;
+}
+.showcase img{
+    object-fit: cover;
+
+}
 
 /*..........................................Team members section*/
 #team{
