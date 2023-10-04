@@ -80,8 +80,7 @@ README Table Content
   - [Admin Panel / Superuser](#admin-panel--superuser)
   - [Marketing and Social Media](#marketing-and-social-media)
     - [Statista - Facebook Users](#statista---facebook-users)
-    - [Watches \& Clocks - Facebook Page](#watches--clocks---facebook-page)
-    - [Meta Pixel - Tracking Audience](#meta-pixel---tracking-audience)
+    - [Soilmate Plants - Facebook Page](#watches--clocks---facebook-page)
     - [Mailchimp Subscription Service](#mailchimp-subscription-service)
   - [Privacy Policy](#privacy-policy)
   - [Search Engine Optimization](#search-engine-optimization)
@@ -116,34 +115,33 @@ README Table Content
 
 - As a website user, I can:
 
-1. Navigate around the site and easily view the desired content.
-2. View a list of products and choose accordingly.
-3. Search products to find a specific product.
-4. Click on a product to read and view the details.
-5. Register for an account to avail of the services offered to members.
-6. View product comments so that I can read other users opinions.
+1. Navigate around the website and easily find the desired content.
+   See a list of products and choose a desired product.
+2. Search products and be able to find a specific product.
+4. Click on a product to find more details about it.
+5. Register for an account to be able to use the services offered to members.
+6. View product comments so that I can read other users' opinions.
 7. Buy a product by using the website checkout system.
 
 - As a logged in website user, I can:
 
-1. Review the website service.
+1. Leave my review on the website about the purchased product.
 2. Delete my previous reviews.
-3. Save my data under my personal profile.
-4. Edit my previous reviews.
-5. Manage my profile by updating my details.
-6. Logout of the website.
-7. Using my personal profile, buy a product by using the website checkout system.
+3. Edit my previous reviews.
+4. Save my data under my personal profile.
+5. Update my profile details.
+6. Log out of the website.
+7. Buy a product using my personal profile, through the website checkout system.
 
 - As a website Superuser, I can:
 
 1. Create and publish a new product.
-2. Create a draft of a a new product so it can be finalised later.
+2. Create a draft of a new product so it can be finalized later.
 3. Create a new user, products, and categories.
-4. Delete user, products, categories and reviews.
+4. Delete users, products, categories, and reviews.
 5. Approve user's reviews.
-6. Change a user’s permissions on the website
-7. Upload new banners to be displayed on the website.
-
+6. Change a user’s permissions on the website.
+7. Create and upload new posts to be shown on the website.
 ### Agile Methodology
 
 All functionality and development of this project were managed using GitHub which Projects can be found
@@ -165,15 +163,11 @@ All functionality and development of this project were managed using GitHub whic
 
 ![Colours Palete](./assets/readme/extras/watches_clocks_color_palete.png)<br>
 
-- The colour scheme is kept simple by opting for a combination of white text set against the image
-background and black text set against the white background. The navbar was set on a white background
-and a light grey on the bottom. The interactive colour is used for icons and the website logo.
-Yellow is used for the "Buy Now" buttons and red is used to the "Discover More" buttons. The Dark grey was used for the
-website footer. This contrasts with the rest of the website.
+- Since the website is a shop that sells flowers, the colors refer to the theme. The colors are warm and inspired by nature, dominated mainly by various shades of green and white.The contrast is maintained so that the content is clearly visible and easy to find, and the website is pleasant to use.
 
 #### Typography
 
-- The Montserrat font is used as the main font for the whole project. The Kaushan font is used to
+- The Lato font is used as the main font for the whole project. The Kaushan font is used to
 display the website logo.
 
 #### Imagery

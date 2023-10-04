@@ -11,7 +11,10 @@ body {
     font-family: 'Lato';
     
 }
-
+#topnav .logo-font{
+    font-family: 'Kaushan Script';
+   
+}
 /*......................................header*/
 
 #masthead {
