@@ -1,134 +1,351 @@
-{% extends "base.html" %} {% load static %} {% block page_header %}
-<div class="container header-container">
-    <div class="row">
-        <div class="col"></div>
-    </div>
-</div>
-{% endblock %} {% block content %}
-<!-- Our services-->
-<section class="showcase">
-    <div class="container-fluid p-0">
-        <div class="row g-0">
-            <div class="col-lg-6 order-lg-2 text-white showcase-img"
-                style="background-image: url('media/home page img/pexels-tiia-pakk-4350803.jpg')"></div>
-            <div class="col-lg-6 order-lg-1 my-auto showcase-text">
-                <h2>Which plant should I choose?</h2>
-                <br />
-                <p class="lead mb-0">
-                    We believe that life is better when we are surrounded by plants and we
-                    will help you find a plant you can handle.
-                </p>
+{% extends "base.html" %} {% load static %} {% block content %}
+      <!-- Header-->
+      <header class="masthead" style=" background-image: url('media/Ikons/about hearder3.jpg'); height: 600px;">
+        <div class="container px-5">
+            <div class="row justify-content-center">
+                <div class="col-lg-8 col-xxl-6">
+                    <div class="text-center my-5 text-white">
+                        <h1 class="fw-bolder mb-3">Our mission is to make building websites easier for everyone.</h1>
+                        <p class="lead fw-normal text-muted mb-4">Start Bootstrap was built on the idea that quality, functional website templates and themes should be available to everyone. Use our open source, free products, or support us by purchasing one of our premium products or services.</p>
+    
+                    </div>
+                </div>
+            </div>
+    </header>
+    <!-- Header-->
+
+    <!-- About section one-->
+    <section class="py-5 bg-light" id="scroll-target">
+        <div class="container px-5 my-5">
+            <div class="row gx-5 align-items-center">
+                <div class="col-lg-6"><img class="img-fluid rounded mb-5 mb-lg-0" src="media/Ikons/owner.jpg" alt="ourCompany" /></div>
+                <div class="col-lg-6">
+                    <h1 class="fw-bolder mainText">Our company</h1>
+                    <p>Soilmate Plants has been operating since 2019, but it all starts with passion and love for plants many years ago!</p>
+                    <p>For as long as I remember, my house has been filled with a variety of plants and I have always been fascinated by how each of them is different and needs proper treatment... Some are capricious and want so much love and attention, while others are content with the free time we give them from time to time.
+                        I have had a vision for a long time that fills me with joy and the desire to act. Share this passion with other nature lovers...</p>
+                        <p>A few years ago, I decided to change my career and follow my true passion. Thanks to the company's rapid growth, I was also joined by Diana and Katy, who have also been passionate about plants for many years.</p>
+                    <p>We belive that the right hand for plants is a myth. Keeping a plant alive is... quite a simple science. Just a few simple rules, actually.
+                        It's worth starting well. A good start is choosing such a plant, and we will be happy to help you with that.</p>
+                        <p class="font-italic">Sarah DaRosa / Owner&Lead Designer</p>
+                    </div>
             </div>
         </div>
-        <div class="row g-0">
-            <div class="col-lg-6 text-white showcase-img" style="background-image: url('media/home page img/1.jpg')">
-            </div>
-            <div class="col-lg-6 my-auto showcase-text">
-                <h2>Plants for begginers</h2>
-                <br>
-                <p class="lead mb-0">
-                    Don't have experience caring for plants? Don't worry! We are here to
-                    advise you and provide you with the appropriate knowledge.
-                </p>
-            </div>
-        </div>
-        <div class="row g-0">
-            <div class="col-lg-6 order-lg-2 text-white showcase-img"
-                style="background-image: url('media/home page img/hoedesign.jpg')"></div>
-            <div class="col-lg-6 order-lg-1 my-auto showcase-text">
-                <h2>Landscape design</h2>
-                <br>
-                <p class="lead mb-0">
-                    Do you dream of a house full of beautiful plants? But you don't know
-                    where to start? Our landscape designer can come to you and select
-                    plants for your space.
-                </p>
+    </section>
+    <!-- About section two-->
+    <section class="py-5">
+        <div class="container px-5 my-5">
+            <div class="row gx-5 align-items-center">
+                <div class="col-lg-6 order-first order-lg-last"><img class="img-fluid rounded mb-5 mb-lg-0" src="https://dummyimage.com/600x400/343a40/6c757d" alt="..." /></div>
+                <div class="col-lg-6">
+                    <h2 class="fw-bolder">Growth &amp; beyond</h2>
+                    <p class="lead fw-normal text-muted mb-0"> 
+                        </p>
+                </div>
             </div>
         </div>
-    </div>
-</section>
+    </section>
+
 <!-- Team members section-->
 <section class="page-section bg-light" id="team">
     <div class="container">
-        <div class="text-center">
-            <h2 class="section-heading text-uppercase">Our Amazing Team</h2>
-            <br />
-            <h3 class="section-subheading text-muted">
-                Lorem ipsum dolor sit amet consectetur.
-            </h3>
-            <br />
+      <div class="text-center">
+        <h2 class="section-heading text-uppercase mainText">Meet our Team</h2>
+        <br>
+      </div>
+      <div class="row">
+        <div class="col-lg-4">
+          <div class="team-member">
+            <img
+              class="mx-auto"
+              src="media/Team img/1teamMember.jpg"
+              alt="team1"/>
+            <h4>Sarah DaRosa</h4>
+            <p class="text-muted">Owner&Lead Designer</p>
+            <p class="text-muted">
+              She is the founder of Soilmate Plants. She combines her passion with
+              her profession and helps not only her friends, but everyone who
+              wants to enter the world of plants. She watches over and takes care
+              of everything. If you have a task that is impossible to complete,
+              contact her!
+            </p>
+            <a
+              class="btn btn-dark btn-social mx-2"
+              href="#!"
+              aria-label="Sarah DaRosa Twitter Profile"
+              ><i class="fab fa-twitter"></i
+            ></a>
+            <a
+              class="btn btn-dark btn-social mx-2"
+              href="#!"
+              aria-label="Sarah DaRosaFacebook Profile"
+              ><i class="fab fa-facebook-f"></i
+            ></a>
+            <a
+              class="btn btn-dark btn-social mx-2"
+              href="#!"
+              aria-label="Sarah DaRosa LinkedIn Profile"
+              ><i class="fab fa-linkedin-in"></i
+            ></a>
+          </div>
         </div>
-        <div class="row">
-            <div class="col-lg-4">
-                <div class="team-member">
-                    <img class="mx-auto" src="media/Team img/1teamMember.jpg" alt="team1" />
-                    <h4>Sarah DaRosa</h4>
-                    <p class="text-muted">Owner&Lead Designer</p>
-                    <p class="text-muted">
-                        She is the founder of Soilmate Plants. She combines her passion with
-                        her profession and helps not only her friends, but everyone who
-                        wants to enter the world of plants. She watches over and takes care
-                        of everything. If you have a task that is impossible to complete,
-                        contact her!
-                    </p>
-                    <a class="btn btn-dark btn-social mx-2" href="#!" aria-label="Sarah DaRosa Twitter Profile"><i
-                            class="fab fa-twitter"></i></a>
-                    <a class="btn btn-dark btn-social mx-2" href="#!" aria-label="Sarah DaRosaFacebook Profile"><i
-                            class="fab fa-facebook-f"></i></a>
-                    <a class="btn btn-dark btn-social mx-2" href="#!" aria-label="Sarah DaRosa LinkedIn Profile"><i
-                            class="fab fa-linkedin-in"></i></a>
-                </div>
-            </div>
-            <div class="col-lg-4">
-                <div class="team-member">
-                    <img class="mx-auto" src="media/Team img/2temMember.jpg" alt="team2" />
-                    <h4>Diana Waterson</h4>
-                    <p class="text-muted">Plant Sitter</p>
-                    <p class="text-muted">
-                        He takes care of our plants. For many years, she had been developing
-                        her interest in plants in the comfort of her home. If you are
-                        wondering who replanted and prepared your plant... Here she is! Many
-                        years of experience in caring for plants and he has been working
-                        with us for three years and combines business with pleasure
-                    </p>
-                    <a class="btn btn-dark btn-social mx-2" href="#!" aria-label="Diana Waterson Twitter Profile"><i
-                            class="fab fa-twitter"></i></a>
-                    <a class="btn btn-dark btn-social mx-2" href="#!" aria-label="Diana Waterson Facebook Profile"><i
-                            class="fab fa-facebook-f"></i></a>
-                    <a class="btn btn-dark btn-social mx-2" href="#!" aria-label="Diana WatersonLinkedIn Profile"><i
-                            class="fab fa-linkedin-in"></i></a>
-                </div>
-            </div>
-            <div class="col-lg-4">
-                <div class="team-member">
-                    <img class="mx-auto" src="media/Team img/teamMember3.jpg" alt="team3" />
-                    <h4>Katy Cutter</h4>
-                    <p class="text-muted">Logistics&Customer Care</p>
-                    <p class="text-muted">
-                        An irreplaceable handyman! She deals with logistics and marketing
-                        support. Reliable and professional. With kindness and infinite
-                        patience, she will answer all your plant questions as quickly as
-                        possible.
-                    </p>
-                    <a class="btn btn-dark btn-social mx-2" href="#!" aria-label="Katy Cutter Twitter Profile"><i
-                            class="fab fa-twitter"></i></a>
-                    <a class="btn btn-dark btn-social mx-2" href="#!" aria-label="Katy Cutter Facebook Profile"><i
-                            class="fab fa-facebook-f"></i></a>
-                    <a class="btn btn-dark btn-social mx-2" href="#!" aria-label="Katy Cutter LinkedIn Profile"><i
-                            class="fab fa-linkedin-in"></i></a>
-                </div>
+        <div class="col-lg-4">
+          <div class="team-member">
+            <img
+              class="mx-auto"
+              src="media/Team img/2temMember.jpg"
+              alt="team2"
+            />
+            <h4>Diana Waterson</h4>
+            <p class="text-muted">Plant Sitter</p>
+            <p class="text-muted">
+              He takes care of our plants. For many years, she had been developing
+              her interest in plants in the comfort of her home. If you are
+              wondering who replanted and prepared your plant... Here she is! Many
+              years of experience in caring for plants and he has been working
+              with us for three years and combines business with pleasure
+            </p>
+            <a
+              class="btn btn-dark btn-social mx-2"
+              href="#!"
+              aria-label="Diana Waterson Twitter Profile"
+              ><i class="fab fa-twitter"></i
+            ></a>
+            <a
+              class="btn btn-dark btn-social mx-2"
+              href="#!"
+              aria-label="Diana Waterson Facebook Profile"
+              ><i class="fab fa-facebook-f"></i
+            ></a>
+            <a
+              class="btn btn-dark btn-social mx-2"
+              href="#!"
+              aria-label="Diana WatersonLinkedIn Profile"
+              ><i class="fab fa-linkedin-in"></i
+            ></a>
+          </div>
+        </div>
+        <div class="col-lg-4">
+          <div class="team-member">
+            <img
+              class="mx-auto"
+              src="media/Team img/teamMember3.jpg"
+              alt="team3"
+            />
+            <h4>Katy Cutter</h4>
+            <p class="text-muted">Logistics&Customer Care</p>
+            <p class="text-muted">
+              An irreplaceable handyman! She deals with logistics and marketing
+              support. Reliable and professional. With kindness and infinite
+              patience, she will answer all your plant questions as quickly as
+              possible.
+            </p>
+            <a
+              class="btn btn-dark btn-social mx-2"
+              href="#!"
+              aria-label="Katy Cutter Twitter Profile"
+              ><i class="fab fa-twitter"></i
+            ></a>
+            <a
+              class="btn btn-dark btn-social mx-2"
+              href="#!"
+              aria-label="Katy Cutter Facebook Profile"
+              ><i class="fab fa-facebook-f"></i
+            ></a>
+            <a
+              class="btn btn-dark btn-social mx-2"
+              href="#!"
+              aria-label="Katy Cutter LinkedIn Profile"
+              ><i class="fab fa-linkedin-in"></i
+            ></a>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-lg-8 mx-auto text-center">
+          <p class="large text-muted">
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut eaque,
+            laboriosam veritatis, quos non quis ad perspiciatis, totam corporis
+            ea, alias ut unde.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- End of the team members section-->
+
+<!-- Gallery -->
+
+<div class="row galleryAbout">
+    <div class="col-lg-4 col-md-12 mb-4 mb-lg-0">
+      <img
+        src="media/Ikons/about11.jpg"
+        class="w-100 shadow-1-strong rounded mb-4"
+        alt="working"/>
+  
+      <img
+        src="media/Ikons/about19.jpg"
+        class="w-100 shadow-1-strong rounded mb-4"
+        alt="searchin for plants"
+      />
+    </div>
+  
+    <div class="col-lg-4 mb-4 mb-lg-0">
+      <img
+        src="media/Ikons/about9.jpg"
+        class="w-100 shadow-1-strong rounded mb-4"
+        alt="choosing"
+      />
+  
+      <img
+        src="media/Ikons/about8.jpg"
+        class="w-100 shadow-1-strong rounded mb-4"
+        alt="Boat on Calm Water"
+      />
+    </div>
+  
+    <div class="col-lg-4 mb-4 mb-lg-0">
+      <img
+        src="media/Ikons/about12.jpg"
+        class="w-100 shadow-1-strong rounded mb-4"
+        alt="Waves at Sea"
+      />
+  
+      <img
+        src="media/Ikons/about 4.jpg"
+        class="w-100 shadow-1-strong rounded mb-4"
+        alt="Yosemite National Park"
+      />
+    </div>
+    
+  </div>
+  <!-- Gallery -->
+
+
+  <!-- Testemonies section (https://mdbootstrap.com/docs/standard/extended/testimonials/)-->
+
+<section style="color: #000; background-color: #f3f2f2;">
+    <div class="container py-5">
+        <div class="row d-flex justify-content-center">
+            <div class="col-md-10 col-xl-8 text-center">
+                <h3 class="fw-bold mb-4">Testimonials</h3>
+                <p class="mb-4 pb-2 mb-md-5 pb-md-0">
+                After shopping at Soilmate Plants, we ask our customers for opinions and photos. Here you can see what people who trust
+                us think about us and see what plants actually end up in their homes.</p>
             </div>
         </div>
-        <div class="row">
-            <div class="col-lg-8 mx-auto text-center">
-                <p class="large text-muted">
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut eaque,
-                    laboriosam veritatis, quos non quis ad perspiciatis, totam corporis
-                    ea, alias ut unde.
-                </p>
+        <div class="row text-center">
+            <div class="col-md-4 mb-4 mb-md-0">
+                <div class="card">
+                    <div class="card-body py-4 mt-2">
+                        <div class="d-flex justify-content-center mb-4">
+                            <img src="https://mdbcdn.b-cdn.net/img/Photos/Avatars/img%20(10).webp"
+                                class="rounded-circle shadow-1-strong" width="100" height="100" />
+                        </div>
+                        <h6 class="font-weight-bold my-3">Title</h6>
+                        <ul class="list-unstyled d-flex justify-content-center">
+                            <li>
+                                <i class="fas fa-star fa-sm text-info"></i>
+                            </li>
+                            <li>
+                                <i class="fas fa-star fa-sm text-info"></i>
+                            </li>
+                            <li>
+                                <i class="fas fa-star fa-sm text-info"></i>
+                            </li>
+                            <li>
+                                <i class="fas fa-star fa-sm text-info"></i>
+                            </li>
+                            <li>
+                                <i class="fas fa-star-half-alt fa-sm text-info"></i>
+                            </li>
+                        </ul>
+                        
+                        <p class="mb-2">
+                            <i class="fas fa-quote-left pe-2"></i>Lorem ipsum dolor sit amet,
+                            consectetur adipisicing elit. Quod eos id officiis hic tenetur quae quaerat
+                            ad velit ab hic tenetur.
+                        </p>
+                        <h6 class="font-weight-bold my-3">Name</h6>
+                        <h6 class="font-weight-bold my-3">Date</h6>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 mb-4 mb-md-0">
+                <div class="card">
+                    <div class="card-body py-4 mt-2">
+                        <div class="d-flex justify-content-center mb-4">
+                            <img src="https://mdbcdn.b-cdn.net/img/Photos/Avatars/img%20(15).webp"
+                                class="rounded-circle shadow-1-strong" width="100" height="100" />
+                        </div>
+                        <h6 class="font-weight-bold my-3">Title</h6>
+                        <ul class="list-unstyled d-flex justify-content-center">
+                            <li>
+                                <i class="fas fa-star fa-sm text-info"></i>
+                            </li>
+                            <li>
+                                <i class="fas fa-star fa-sm text-info"></i>
+                            </li>
+                            <li>
+                                <i class="fas fa-star fa-sm text-info"></i>
+                            </li>
+                            <li>
+                                <i class="fas fa-star fa-sm text-info"></i>
+                            </li>
+                            <li>
+                                <i class="fas fa-star-half-alt fa-sm text-info"></i>
+                            </li>
+                        </ul>
+                        
+                        <p class="mb-2">
+                            <i class="fas fa-quote-left pe-2"></i>Lorem ipsum dolor sit amet,
+                            consectetur adipisicing elit. Quod eos id officiis hic tenetur quae quaerat
+                            ad velit ab hic tenetur.
+                        </p>
+                        <h6 class="font-weight-bold my-3">Name</h6>
+                        <h6 class="font-weight-bold my-3">Date</h6>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 mb-0">
+                <div class="card">
+                    <div class="card-body py-4 mt-2">
+                        <div class="d-flex justify-content-center mb-4">
+                            <img src="https://mdbcdn.b-cdn.net/img/Photos/Avatars/img%20(17).webp"
+                                class="rounded-circle shadow-1-strong" width="100" height="100" />
+                        </div>
+                        <h6 class="font-weight-bold my-3">Title</h6>
+                        <ul class="list-unstyled d-flex justify-content-center">
+                            <li>
+                                <i class="fas fa-star fa-sm text-info"></i>
+                            </li>
+                            <li>
+                                <i class="fas fa-star fa-sm text-info"></i>
+                            </li>
+                            <li>
+                                <i class="fas fa-star fa-sm text-info"></i>
+                            </li>
+                            <li>
+                                <i class="fas fa-star fa-sm text-info"></i>
+                            </li>
+                            <li>
+                                <i class="fas fa-star-half-alt fa-sm text-info"></i>
+                            </li>
+                        </ul>
+                        
+                        <p class="mb-2">
+                            <i class="fas fa-quote-left pe-2"></i>Lorem ipsum dolor sit amet,
+                            consectetur adipisicing elit. Quod eos id officiis hic tenetur quae quaerat
+                            ad velit ab hic tenetur.
+                        </p>
+                        <h6 class="font-weight-bold my-3">Name</h6>
+                        <h6 class="font-weight-bold my-3">Date</h6>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
 </section>
+<!-- End of testemonies-->
 
 {% endblock %}
