@@ -2,30 +2,47 @@
 
 
 {% block content %}
-<!-- Header section-->
-<header>
-  <div
-    class="hero" style=" background-image: url('media/hero img/green-houseplant-background-plant-lovers.jpg');background-size: cover; height: 700px;">
-      <div class="container h-100">
-        <div class="row h-100">
-          <div class="col-7 col-md-6 my-auto">
-            <h1 class="display-4 logo-font text-white">
-              Which plant is perfect for me?
-            </h1>
-            <div class="my-5">
-              <h4><a href="{% url 'products' %}" class="shop-now-button btn btn-lg rounded-0 text-uppercase py-3" style="background-color:#3e3004" >Plant search</a>
-              </h4>
+
+     <!-- Header-->
+     <header class="masthead" style=" background-image: url('media/Ikons/about hearder3.jpg'); height: 600px;">
+        <div class="container px-5">
+            <div class="row justify-content-center">
+                <div class="col-lg-8 col-xxl-6">
+                    <div class="text-center my-5 text-white">
+                        <h3 class="text-white">
+                            Welcome to the world of Soilmate Plants - a place full of passion, joy and the beauty of nature. Here you will find hundreds of plants to choose from, tips on their care, and inspiration for interior design with plants.</div>
+                          </h3>
+                          <div class="my-5">
+                            <h4><a href="{% url 'products' %}" class="shop-now-button btn btn-lg rounded-0 text-uppercase py-3" style="background-color:#3e3004" >Plant search</a>
+                            </h4>
+                    </div>
+                </div>
             </div>
-          </div>
-        </div>
-      </div>
-  </div>
-</header>
+    </header>
+    <!-- Header-->
 <!--End of the header section--->
 <div id="delivery-banner" class="row text-center">
     <div class="col bg-black text-white">
         <h5 class="logo-font my-1">Free delivery on orders over ${{ free_delivery_threshold }}!</h5>                
     </div>            
+</div>
+
+  <!-- Testimonial section-->
+  <div class="py-5 bg-light welcome">
+    <div class="container px-5 my-5">
+        <div class="row gx-5 justify-content-center">
+            <div class="col-lg-10 col-xl-7">
+                <div class="text-center">
+                    <div class="fs-4 mb-4">If you have no experience with plants, don't worry, we will help you start your plant adventure with the first specimens.
+                        For those who already have a small jungle in their home, we will be happy to help you expand your exotic collections.
+                        
+                        We are convinced that thanks to our Soilmate Plants, your home will become an even cozier place where you will feel wonderful relief.
+                        
+                        Good luck finding your new plants.</div>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>
 <!-- Icons Grid-->
 <section class="page-section" id="services" style="background-color: #f9f5ec">

@@ -41,6 +41,9 @@ h4{
     background-color: #3e3004;
     padding-bottom: 10px;
 }
+.welcome{
+    height: 200px;
+}
 
 /*......................................Products page*/
 
@@ -138,6 +141,7 @@ a.category-badge>span.badge:hover {
     .header-container {
         padding-top: 164px;
     }
+   
 }
 
 .showcase text {
@@ -153,6 +157,7 @@ a.category-badge>span.badge:hover {
     .showcase-text {
         padding: 7rem;
     }
+   
 }
 
 /* pad the top a bit when navbar is collapsed on mobile */
@@ -386,11 +391,16 @@ a.category-badge>span.badge:hover {
 }
 
 /*......................................................About*/
+.about{
+    margin-top: 50px;
+    margin-bottom: auto; 
+}
+
 .mastheadAbout{
     margin-top: 50px;
-    margin-bottom: 50px;
-    padding-bottom: 30px;
-    height: 450px;
+    margin-bottom: auto;
+    padding-bottom: auto;
+    height: 650px;
 }
 .galleryAbout{
 
