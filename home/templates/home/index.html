@@ -13,7 +13,7 @@
                             Welcome to the world of Soilmate Plants - a place full of passion, joy and the beauty of nature. Here you will find hundreds of plants to choose from, tips on their care, and inspiration for interior design with plants.</div>
                           </h3>
                           <div class="my-5">
-                            <h4><a href="{% url 'products' %}" class="shop-now-button btn btn-lg rounded-0 text-uppercase py-3" style="background-color:#3e3004" >Plant search</a>
+                            <h4><a href="{% url 'products' %}" class="shop-now-button btn btn-lg rounded-0 text-uppercase py-3" style="background-color:#337427" >Plant search</a>
                             </h4>
                     </div>
                 </div>
@@ -26,46 +26,74 @@
         <h5 class="logo-font my-1">Free delivery on orders over ${{ free_delivery_threshold }}!</h5>                
     </div>            
 </div>
-
-  <!-- Testimonial section-->
-  <div class="py-5 bg-light welcome">
-    <div class="container px-5 my-5">
-        <div class="row gx-5 justify-content-center">
-            <div class="col-lg-10 col-xl-7">
-                <div class="text-center">
-                    <div class="fs-4 mb-4">If you have no experience with plants, don't worry, we will help you start your plant adventure with the first specimens.
-                        For those who already have a small jungle in their home, we will be happy to help you expand your exotic collections.
-                        
-                        We are convinced that thanks to our Soilmate Plants, your home will become an even cozier place where you will feel wonderful relief.
-                        
-                        Good luck finding your new plants.</div>
-                </div>
-            </div>
+<!-- Icons Grid-->
+<section class="page-section bg-light" id="services" style="background-color: #f9f5ec">
+    <div class="row">
+        <div class="text-center">
+            <h2>A better way to buy find your plant</h2>
+        <div class="col-lg-8 mx-auto text-center">
+          <br />
+          <h4 class="large text-muted" style=" font-weight: 300">If you have no experience with plants, don't worry, we will help you start your plant adventure with the first specimens.
+                  For those who already have a small jungle in their home, we will be happy to help you expand your exotic collections.
+                  
+                  We are convinced that thanks to our Soilmate Plants, your home will become an even cozier place where you will feel wonderful relief.
+                  
+          </h4>
+          <h4 style=" font-weight: 200">Good luck finding your new plants. </h4>
+          <br />
         </div>
+      </div>
+  <div class="container">
+    <div class="text-center">
     </div>
-</div>
+    <div class="row">
+      <div class="col-lg-4">
+        <div class="icons_services">
+          <img class="mx-auto rounded-circle" src="media/Ikons/2i.png" alt="quality"/>
+          <h4>We say no to the bad quality</h4>
+          <p class="text-muted">You know what you order</p>
+        </div>
+      </div>
+      <div class="col-lg-4">
+        <div class="icons_services">
+          <img class="mx-auto rounded-circle" src="media/Ikons/1i.png" alt="repotting"/>
+          <h4>Don't worry aboyt replanting</h4>
+          <p class="text-muted">Safe delivery of you new plant</p>
+        </div>
+      </div>
+      <div class="col-lg-4">
+        <div class="icons_services"><a href="{% url 'about' %}" class="item ">
+          <img class="mx-auto rounded-circle" src="media/Ikons/3i.png" alt="contact"/></a>
+          <h4>Contact us</h4>
+          <p class="text-muted">Contact us anytime you need a help or advise</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!--End of Ikons Grid-->
 <!--Home page services section one-->
-<section class="py-5 bg-light" id="Quality">
+<section class="Ourservices py-5 bg-light" id="PlantQuality">
     <div class="container px-5 my-5">
         <div class="row gx-5 align-items-center">
             <div class="col-lg-6"><img class="img-fluid rounded mb-5 mb-lg-0" src="media/products/fromWhere.jpg" alt="PlantsQuality" /></div>
             <div class="col-lg-6">
-                  <h2>Plant Quality</h2>
-        <h2>From where my plant is coming from?</h2>
+                  <h2>Plants quality</h2>
+        <p>We want healthy plants to reach you safely, even to the remotest corners of the country.We cooperate with the best greenhouses in the country.</p>
                 <p class="lead fw-normal text-muted mb-0">In our Soilmate Plants store, we have many species of plants that are most often purchased by our customers. The more exotic ones are brought from the greenhouse only after we know that they will go to a new home. The journey of plants from the greenhouse to our Transplanting Point takes one day. Then they spend another day there under our care, when we transplant them to appropriate soil and larger pots, wash and prepare them. If you are from Berlin, the plants will usually arrive to you on the 3rd day after leaving the greenhouse, if you order the plants with courier delivery, they will be at your door on the 6th-7th. day after leaving the greenhouse - always in perfect shape. The time it takes for the plant to reach your home is 3-7 days.
                 </p>
             </div>
         </div>
     </div>
 </section>
-<!-- home page services section two-->
-<section class="py-5" id="Repotting">
+<!-- Home page services section two-->
+<section class="Ourservices py-5" id="Repotting">
     <div class="container px-5 my-5">
         <div class="row gx-5 align-items-center">
             <div class="col-lg-6 order-first order-lg-last"><img class="img-fluid rounded mb-5 mb-lg-0" src="media/products/repotting.jpg" alt="The repotting process" /></div>
             <div class="col-lg-6">
                 <h2>The repotting process</h2>
-                <br />
+                <br>
                 <p class="lead fw-normal text-muted mb-0"> We carefully check the plants that come to us from the greenhouse to ensure that they reach you in perfect condition and health.
                     If the plant is to be replanted, we select the appropriate pot size and appropriate substrate.
                     We always pour a layer of expanded clay at the bottom. This is drainage that gives the roots room to breathe and prevents water from standing in the pot. Expanded clay is resistant to mold and fungi, so it prevents root rot.
@@ -76,12 +104,13 @@
     </div>
 </section>
 <!--Home page services section three-->
-<section class="py-5 bg-light" id="Delivery">
+<section class=" Ourservices py-5 bg-light" id="delivery">
     <div class="container px-5 my-5">
         <div class="row gx-5 align-items-center">
             <div class="col-lg-6"><img class="img-fluid rounded mb-5 mb-lg-0" src="media/products/shipping.jpg" alt="Deliveryy" /></div>
             <div class="col-lg-6">
                   <h2>Delivery</h2>
+                  <br>
                 <p class="lead fw-normal text-muted mb-0"> The plants are delivered to your homes in Berlin the next day! To the rest of Germany just after the weekend - we ship on Mondays, Tuesdays and Wednesdays. The pots are stable and the entire transport is safe.
                     The pot is placed in a thick cardboard insert: inside there is an ecological filler that protects the pot during shocks, and around it there is cardboard that prevents breakage.
                     On colder days, we additionally dress the plants in agrotextile clothes so that they reach you safe and sound.
@@ -92,61 +121,6 @@
         </div>
     </div>
 </section>
-<!-- Icons Grid-->
-<section class="page-section" id="services" style="background-color: #f9f5ec">
-  <div class="container">
-    <div class="text-center">
-      <h2 class="section-heading text-uppercase">How do we work</h2>
-    </div>
-    <div class="row">
-      <div class="col-lg-4">
-        <div class="icons_services">
-          <img
-            class="mx-auto rounded-circle"
-            src="media/Ikons/2i.png"
-            alt="..."
-          />
-          <h4>We say no to the bad quality</h4>
-          <p class="text-muted">You know what you order</p>
-        </div>
-      </div>
-      <div class="col-lg-4">
-        <div class="icons_services">
-          <img
-            class="mx-auto rounded-circle"
-            src="media/Ikons/1i.png"
-            alt="..."
-          />
-          <h4>Don't worry aboyt replanting</h4>
-          <p class="text-muted">Safe delivery of you new plant</p>
-        </div>
-      </div>
-      <div class="col-lg-4">
-        <div class="icons_services">
-          <img
-            class="mx-auto rounded-circle"
-            src="media/Ikons/3i.png"
-            alt="..."
-          />
-          <h4>Contact us</h4>
-          <p class="text-muted">We will advise and help as much as we can</p>
-        </div>
-      </div>
-    </div>
-    <div class="row">
-      <div class="col-lg-8 mx-auto text-center">
-        <br />
-        <p class="large text-muted">
-          Where do plants come from and what was their life like before they
-          came to your home?
-        </p>
-        <br />
-      </div>
-    </div>
-  </div>
-</section>
-<!--End of Ikons Grid-->
-
 
 
 <!-- Newsletter section (from: https: //bootsnipp.com/snippets/eoXRa)-->
@@ -177,4 +151,5 @@
     </div>
 </section>
 <!-- End of newsletter section-->
+
 {% endblock %}

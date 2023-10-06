@@ -38,11 +38,13 @@ h4{
 }
 #delivery-banner{
     padding-top: 10px;
-    background-color: #3e3004;
+    background-color: #337427;
     padding-bottom: 10px;
 }
 .welcome{
     height: 200px;
+    background-color: #555;
+
 }
 
 /*......................................Products page*/
@@ -187,6 +189,19 @@ a.category-badge>span.badge:hover {
 
 /*..........................................Icons Grid*/
 
+.icons_Quality{
+    
+    background-color: #8DB74E;
+    width: 21rem;
+    height: 19rem;}
+
+
+.icons_Quality .qual .img{
+
+    height: 20px;
+    width: 30px;
+    background-color: #337427;
+}
 #services {
 
     padding-top: 40px;
@@ -195,6 +210,7 @@ a.category-badge>span.badge:hover {
 .icons_services {
     margin-bottom: 1rem;
     text-align: center;
+
 }
 .icons_services img {
     width: 19rem;
@@ -206,7 +222,53 @@ a.category-badge>span.badge:hover {
     margin-top: -35px;
     margin-bottom: 0;
 }
+/*..................................Home Page*/
+
+.Ourservices h2{
+    font-size: 28px;
+    font-family: 'Caveat';
+    font-weight: bold;
+}
+.Ourservices p{
+
+    font-size: 17px;
+}
+
+/*....................................Contact section*/
+
+#contact{
+    margin-bottom: 30px;
+}
+#contact h4 {
+    margin-bottom: 20px;
+    font-size: 40px;}
+
+
+label {
+    color: #333;
+}
+
+.btn-send {
+    font-weight: 300;
+    text-transform: uppercase;
+    letter-spacing: 0.2em;
+    width: 80%;
+    margin-left: 3px;
+    }
+.help-block.with-errors {
+    color: #ff5050;
+    margin-top: 5px;
+
+}
+
+.card{
+	margin-left: 10px;
+	margin-right: 10px;
+}
+
+
 /*..........................................Our services*/
+
 .showcase{
     padding-left: 15px;
     padding-right: 15px;
@@ -272,7 +334,7 @@ a.category-badge>span.badge:hover {
 }
 
 #main-nav .main:hover {
-    background-color: #705e22;
+    background-color: #517d27;
 }
 #main-nav .dropdown-menu{
     text-align: left;
