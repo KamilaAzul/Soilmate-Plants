@@ -90,6 +90,7 @@ h4{
     color: white;
 }
 
+ 
 .shop-now-button:hover,
 .shop-now-button:active,
 .shop-now-button:focus,
@@ -99,6 +100,11 @@ h4{
     background: #222;
     color: white;
 }
+
+.btn-outline-black {
+    background: white;
+    color: black !important; /* use important to override link colors for <a> elements */
+    border: 1px solid black;}
 
 .text-black {
     color: #000 !important;}
@@ -437,49 +443,4 @@ a.category-badge>span.badge:hover {
         }
       }
 
-      
-      #PhotoGallery {
-        color:#313437;
-        background-color:rgb(162, 147, 147);
-        margin:20px auto 40px;
-        padding-top: 20px;
-        padding-bottom: 20px;
-      }
-      
-      .photo-gallery p {
-        color:#7d8285;
-      }
-      
-      .photo-gallery h2 {
-        font-weight:bold;
-        margin-bottom:40px;
-        padding-top:40px;
-        color:inherit;
-      }
-      
-      @media (max-width:767px) {
-        .photo-gallery h2 {
-          margin-bottom:25px;
-          padding-top:25px;
-          font-size:24px;
-        }
-      }
-      
-      .photo-gallery .intro {
-        font-size:16px;
-        max-width:500px;
-       
-      }
-      
-      .photo-gallery .intro p {
-        margin-bottom:0;
-      }
-      
-      .photo-gallery .photos {
-        padding-bottom:20px;
-      }
-      
-      .photo-gallery .item {
-        padding-bottom:30px;
-      }
-      
+     
