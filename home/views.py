@@ -22,7 +22,7 @@ def contact(request):
 
 def design(request):
     """
-     A view that renders the contact page
+     A view that renders the design page
     """
     return render(request, "home/design.html")
 

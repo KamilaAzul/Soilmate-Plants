@@ -234,7 +234,7 @@ a.category-badge>span.badge:hover {
     font-size: 17px;
 }
 
-/*....................................Contact section*/
+/*...........................................Contact section*/
 
 #contact{
     width:100%;
@@ -251,7 +251,6 @@ a.category-badge>span.badge:hover {
     font-weight: 500;
     text-transform: uppercase;
 }
-
 
 label {
     color: #333;
@@ -274,14 +273,28 @@ label {
 	margin-left: 10px;
 	margin-right: 10px;
 }
-@media (max-width: 800px){
-    #contact .page-section{
-    padding-bottom: 30px;
-    margin-bottom: 40px;
-    background-color: #337427;
+
+/*............................................Home design section*/
+
+#Homedesign{
+
+    margin-top:100px;
+    background-color: #a0a16b;
 }
 
+#Homedesign h2{
+    font-family: 'Caveat';
+    font-weight: 400;
 }
+
+#Homedesign ul li{
+
+  font-size: 15px;
+    color: black;}
+#Homedesign .btn{
+    background-color: #D5CFBD;
+} 
+
 
 /*..........................................Our services*/
 
