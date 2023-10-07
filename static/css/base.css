@@ -237,12 +237,20 @@ a.category-badge>span.badge:hover {
 /*....................................Contact section*/
 
 #contact{
-    margin-bottom: 30px;
-    margin-top: 50px;
+    width:100%;
+	height:800px;
+    padding-top: 120px;
+    padding-bottom: 50px;
+    background-size: cover;
 }
 #contact h4 {
     margin-bottom: 20px;
     font-size: 40px;}
+#contact h1{
+
+    font-weight: 500;
+    text-transform: uppercase;
+}
 
 
 label {
@@ -266,7 +274,14 @@ label {
 	margin-left: 10px;
 	margin-right: 10px;
 }
+@media (max-width: 800px){
+    #contact .page-section{
+    padding-bottom: 30px;
+    margin-bottom: 40px;
+    background-color: #337427;
+}
 
+}
 
 /*..........................................Our services*/
 

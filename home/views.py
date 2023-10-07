@@ -20,6 +20,12 @@ def contact(request):
     """
     return render(request, "home/contact_us.html")
 
+def design(request):
+    """
+     A view that renders the contact page
+    """
+    return render(request, "home/design.html")
+
 
 
 
