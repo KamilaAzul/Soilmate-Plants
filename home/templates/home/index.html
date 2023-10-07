@@ -4,6 +4,7 @@
 {% block content %}
 
      <!-- Header-->
+
      <header class="masthead" style=" background-image: url('media/Ikons/about hearder3.jpg'); height: 600px;">
         <div class="container px-5">
             <div class="row justify-content-center">
@@ -12,10 +13,26 @@
                         <h3 class="text-white">
                             Welcome to the world of Soilmate Plants - a place full of passion, joy and the beauty of nature. Here you will find hundreds of plants to choose from, tips on their care, and inspiration for interior design with plants.</div>
                           </h3>
-                          <div class="my-5">
-                            <h4><a href="{% url 'products' %}" class="shop-now-button btn btn-lg rounded-0 text-uppercase py-3" style="background-color:#337427" >Plant search</a>
-                            </h4>
-                    </div>
+                          <div class="ecommerce-gallery" data-mdb-zoom-effect="true" data-mdb-auto-height="true">
+                            <div class="row py-3 shadow-5">
+                                <div class="col-3 mt-1">
+                                    <a href="#PlantQuality"><img src="media/hero img/qual.png" alt="quality" class="w-100"/></a>
+                                    <h3 class="text-center my-3 ">Plant Quality</h3>
+                                  </div>
+                                  <div class="col-3 mt-1">
+                                    <a href="#Repotting"><img src="media/hero img/repotting1.png" alt="quality" class="w-100"/></a>
+                                    <h3 class="text-center my-3 ">Repotting</h3>
+                                  </div>
+                              <div class="col-3 mt-1">
+                                <a href="#delivery"><img src="media/hero img/Delivery1.png" alt="quality" class="w-100"/></a>
+                                    <h3 class="text-center my-3 ">Delivery</h3>
+                              </div>
+                              <div class="col-3 mt-1">
+                                <a href="#delivery"><img src="media/hero img/Search.png" alt="quality" class="w-100"/></a>
+                                    <h3 class="text-center my-3 ">Plant search</h3>
+                              </div>
+                            </div>
+                          </div>
                 </div>
             </div>
     </header>
@@ -33,6 +50,7 @@
             <h2>A better way to buy find your plant</h2>
         <div class="col-lg-8 mx-auto text-center">
           <br />
+         
           <h4 class="large text-muted" style=" font-weight: 300">If you have no experience with plants, don't worry, we will help you start your plant adventure with the first specimens.
                   For those who already have a small jungle in their home, we will be happy to help you expand your exotic collections.
                   
@@ -40,6 +58,7 @@
                   
           </h4>
           <h4 style=" font-weight: 200">Good luck finding your new plants. </h4>
+         
           <br />
         </div>
       </div>
@@ -49,7 +68,7 @@
     <div class="row">
       <div class="col-lg-4">
         <div class="icons_services">
-          <img class="mx-auto rounded-circle" src="media/Ikons/2i.png" alt="quality"/>
+          <img src="media/Ikons/2i.png" alt="quality"/>
           <h4>We say no to the bad quality</h4>
           <p class="text-muted">You know what you order</p>
         </div>

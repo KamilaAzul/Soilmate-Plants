@@ -14,6 +14,12 @@ def about(request):
     """
     return render(request, "home/about_us.html")
 
+def contact(request):
+    """
+     A view that renders the contact page
+    """
+    return render(request, "home/contact_us.html")
+
 
 
 
