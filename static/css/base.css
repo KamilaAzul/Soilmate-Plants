@@ -19,6 +19,11 @@ h4{
     font-family: 'Caveat';
     font-weight: bold;
 }
+h2{
+    font-family: 'Caveat';
+    font-weight: bold;
+    font-weight: 400;
+}
 #topnav .logo-font{
     font-family: 'Kaushan Script';
    
