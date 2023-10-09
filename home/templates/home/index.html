@@ -1,18 +1,21 @@
-{% extends "base.html" %} {% load static %} 
-     <header class="masthead" style=" background-image: url('media/home page img/contact (2).jpg'); height: auto; ">
-        <div class="container px-5">
-            <div class="row justify-content-center">
-                <div class="col-lg-8 col-xxl-6">
-                    <div class="text-center my-5 text-white">
-                        <h3 class="text-white">
-                            Welcome to the world of Soilmate Plants - a place full of passion, joy and the beauty of nature. Here you will find hundreds of plants to choose from, tips on their care, and inspiration for interior design with plants.</div>
-                          </h3>
-                          </div>
-                    </div>
+{% extends "base.html" %} {% load static %} {% block content %}
+     <header class="masthead" style=" background-image: url('media/home page img/contact (2).jpg'); height: 400px; ">
+        <div class="row h-100">
+            <div class="container h-100">
+            <div class="col-7 col-md-6 my-auto">
+                <h4 class="display-4 text-black">
+                    Welcome to the world of Soilmate Plants - a place full of passion, joy and the beauty of nature. Here you will find hundreds of plants to choose from, tips on their care, and inspiration for interior design with plants.
+                </h4>
+                <div class="my-5">
+                    <h4>
+                        <a href="{% url 'products' %}" class="shop-now-button btn btn-lg rounded-0 text-uppercase py-3">Shop Now</a>
+                    </h4>
+                </div>
+            </div>
             </div>
     </header>
-    <!-- Header-    ->
-<!--End of the header section--->
+    <!-- Header-->
+    <!--End of the header section--->
 <div id="delivery-banner" class="row text-center">
     <div class="col bg-black text-white">
         <h5 class="logo-font my-1">Free delivery on orders over ${{ free_delivery_threshold }}!</h5>                
@@ -22,19 +25,19 @@
     <div class="row py-3 shadow-5">
         <div class="col-3 mt-1">
             <a href="#PlantQuality"><img src="media/hero img/qual.png" alt="quality" class="w-100"/></a>
-            <h3 class="text-center my-3 ">Plant Quality</h3>
+            <h4 class="text-center my-3 ">Plant Quality</h4>
           </div>
           <div class="col-3 mt-1">
             <a href="#Repotting"><img src="media/hero img/repotting1.png" alt="quality" class="w-100"/></a>
-            <h3 class="text-center my-3 ">Repotting</h3>
+            <h4 class="text-center my-3 ">Repotting</h4>
           </div>
       <div class="col-3 mt-1">
         <a href="#delivery"><img src="media/hero img/Delivery1.png" alt="quality" class="w-100"/></a>
-            <h3 class="text-center my-3 ">Delivery</h3>
+            <h4 class="text-center my-3 ">Delivery</h4>
       </div>
       <div class="col-3 mt-1">
         <a href="#delivery"><img src="media/hero img/Search.png" alt="quality" class="w-100"/></a>
-            <h3 class="text-center my-3 ">Plant search</h3>
+            <h4 class="text-center my-3 ">Plant search</h4>
       </div>
     </div>
 <!-- Icons Grid-->

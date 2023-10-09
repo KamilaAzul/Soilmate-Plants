@@ -30,16 +30,17 @@ h2{
 }
 /*......................................header*/
 
-#masthead {
+.masthead {
     padding-top: 5.5rem;
     padding-bottom: 6rem;
-    text-align: center;
-    color: rgb(152, 87, 87);
-    background-image: url("../assets/img/header-bg.jpg");
     background-repeat: no-repeat;
-    background-attachment: scroll;
     background-position: center center;
     background-size: cover;
+    position: relative;
+}
+.masthead h4{
+    font-size: 15px;
+    position: absolute;
 }
 #delivery-banner{
     padding-top: 10px;
