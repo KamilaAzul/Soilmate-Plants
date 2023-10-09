@@ -4,10 +4,8 @@ html {
 }
 
 body {
-    background-image: url('/media/Hero3.jpg') no-repeat center center fixed;
     background-size: cover;
     height: calc(100vh - 164px);
-    color: #555;
     font-family: 'Lato';
     
 }
@@ -30,28 +28,31 @@ h2{
 }
 /*......................................header*/
 
-.masthead {
-    padding-top: 5.5rem;
-    padding-bottom: 6rem;
+header.masthead {
+    padding-top: 12rem;
+    padding-bottom: 12rem;
     background-repeat: no-repeat;
     background-position: center center;
     background-size: cover;
-    position: relative;
+   
 }
 .masthead h4{
-    font-size: 15px;
-    position: absolute;
+    font-size: 35px;
 }
+
+  @media (max-width: 768px) {
+    .masthead h4{
+      padding-top: 30px;
+      padding-bottom: 30px;
+      font-size: 25px;
+    }
+  }
 #delivery-banner{
     padding-top: 10px;
-    background-color: #337427;
+    background-color: #5a7220;
     padding-bottom: 10px;
 }
-.welcome{
-    height: 200px;
-    background-color: #555;
 
-}
 
 /*......................................Products page*/
 
@@ -197,7 +198,7 @@ a.category-badge>span.badge:hover {
 
 .icons_Quality{
     
-    background-color: #8DB74E;
+   
     width: 21rem;
     height: 19rem;}
 
@@ -206,11 +207,13 @@ a.category-badge>span.badge:hover {
 
     height: 20px;
     width: 30px;
-    background-color: #337427;
+   
 }
 #services {
 
     padding-top: 40px;
+    background-color: #f8f3e3e7;
+    width:100%;
 }
 
 .icons_services {
@@ -230,14 +233,25 @@ a.category-badge>span.badge:hover {
 }
 /*..................................Home Page*/
 
+.Ourservices{
+    background-color: #f8f3e3e7;
+}
+#Repotting{
+
+    margin-top: -40px;
+    margin-bottom: -20px;}
+
+#delivery{
+    margin-top: -40px;
+}
 .Ourservices h2{
-    font-size: 28px;
+    font-size: 40px;
     font-family: 'Caveat';
-    font-weight: bold;
+  
 }
 .Ourservices p{
 
-    font-size: 17px;
+    font-size: 16px;
 }
 
 .Services1 h3{
@@ -247,7 +261,12 @@ a.category-badge>span.badge:hover {
     font-weight: bold;
     color: white;
 }
+/*Ikons Grid*/
 
+#ikonsGrid{
+    margin-bottom: 20px;
+    margin-top: -60px;
+}
 /*...........................................Contact section*/
 
 #contact{
@@ -459,7 +478,8 @@ label {
 /* ..............................Newsletter section (from: https: //bootsnipp.com/snippets/eoXRa)*/
 .home-newsletter {
     padding: 0;
-    background: #3b9544;;
+    background: #3b9544;
+    width: 100%;
 }
 
 .home-newsletter .single {
@@ -518,34 +538,5 @@ label {
     margin:15px;
     padding: 10px;}
 
-    header.masthead {
-        position: relative;
-        background-color: #343a40;
-        background-size: cover;
-        padding-top: 8rem;
-        padding-bottom: 8rem;
-      }
-      header.masthead:before {
-        content: "";
-        position: absolute;
-        background-color: #273d29;
-        height: 100%;
-        width: 100%;
-        top: 0;
-        left: 0;
-        opacity: 0.5;
-      }
-      header.masthead h1, header.masthead .h1 {
-        font-size: 2rem;
-      }
-      @media (min-width: 768px) {
-        header.masthead {
-          padding-top: 12rem;
-          padding-bottom: 12rem;
-        }
-        header.masthead h1, header.masthead .h1 {
-          font-size: 3rem;
-        }
-      }
 
      
