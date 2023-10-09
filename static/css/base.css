@@ -239,6 +239,14 @@ a.category-badge>span.badge:hover {
     font-size: 17px;
 }
 
+.Services1 h3{
+
+    font-size: 28px;
+    font-family: 'Caveat';
+    font-weight: bold;
+    color: white;
+}
+
 /*...........................................Contact section*/
 
 #contact{
