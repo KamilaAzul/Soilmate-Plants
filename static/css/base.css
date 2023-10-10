@@ -312,7 +312,7 @@ label {
 #Homedesign{
 
     margin-top:100px;
-    background-color: #a0a16b;
+    background-color:#f8f3e3e7;
 }
 
 #Homedesign h2{
@@ -323,7 +323,9 @@ label {
 #Homedesign ul li{
 
   font-size: 15px;
-    color: black;}
+    color: black;
+    text-align: left;
+}
 #Homedesign .btn{
     background-color: #D5CFBD;
 } 
@@ -396,7 +398,7 @@ label {
 }
 
 #main-nav .main:hover {
-    background-color: #517d27;
+    background-color: #f8f3e3e7;
 }
 #main-nav .dropdown-menu{
     text-align: left;

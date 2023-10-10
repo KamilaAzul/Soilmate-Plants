@@ -1,69 +1,56 @@
 {% extends "base.html" %} {% load static %} {% block content %}
 
 <!-- Design section-->
-<header class="bg-dark py-5">
+<header class="py-5" id="Homedesign">
     <div class="container px-5">
         <div class="row gx-5 align-items-center justify-content-center">
             <div class="col-lg-8 col-xl-7 col-xxl-6">
                 <div class="my-5 text-center text-xl-start">
-                    <h1 class="display-5 fw-bolder text-white mb-2">A Bootstrap 5 template for modern businesses</h1>
-                    <p class="lead fw-normal text-white-50 mb-4">Quickly design and customize responsive mobile-first sites with Bootstrap, the world’s most popular front-end open source toolkit!</p>
-                    <div class="d-grid gap-3 d-sm-flex justify-content-sm-center justify-content-xl-start">
-                        <a class="btn btn-primary btn-lg px-4 me-sm-3" href="#features">Get Started</a>
-                        <a class="btn btn-outline-light btn-lg px-4" href="#!">Learn More</a>
-                    </div>
+                    <h2 class="display-4 fw-bolder mb-4 text-black">Professional plant arrangement in your home</h2>
+                    <h3 class="text-black">You don't have to know anything about plants to live among them.</h3>
+                    <h3 class="text-black">Landscape designer can come to you and select plants for your space.</h3>
+                    <ul class="text-black"> They will be matched not only to the location in terms of the conditions in your home, but also to your skills and willingness to devote time to them. We also include existing plants in the arrangements.
+                        <li> What does our service include?</li>
+                        <li> space greening project,</li>
+                        <li> selection of plants, pots, stands and accessories: agreed with the investor,</li>
+                        <li>importing, transplanting and preparing plants,</li>
+                        <li> delivering and placing them on site,</li>
+                        <li> training new caregivers in the care of species that will go to a new home.</li>
+                        <li> The price of the service is PLN 450 net.</li>
+            </ul>
+            <br>
+            <a class="btn btn-lg" href="{% url 'contact' %}">Contact us</a>
                 </div>
             </div>
-            <div class="col-xl-5 col-xxl-6 d-none d-xl-block text-center"><img class="img-fluid rounded-3 my-5" src="media/Home design/designHero.png" alt="..." /></div>
+            <div class="col-xl-5 col-xxl-6 d-none d-xl-block text-center"><img class="img-fluid rounded-3 my-5" src="media/Home design/Ficus_lyrata1.png" alt="design" /></div>
         </div>
     </div>
 </header>
-<section class="py-5" id="Homedesign">
-    <div class="container px-5 my-5">
-        <h2 class="display-4 fw-bolder mb-4 text-black">Professional plant arrangement in your home</h2>
-        <h3 class="text-black">You don't have to know anything about plants to live among them.</h3>
-        <h3 class="text-black">Landscape designer can come to you and select plants for your space.</h3>
-        <ul class="text-black"> They will be matched not only to the location in terms of the conditions in your home, but also to your skills and willingness to devote time to them. We also include existing plants in the arrangements.
-            <li> What does our service include?</li>
-            <li> space greening project,</li>
-            <li> selection of plants, pots, stands and accessories: agreed with the investor,</li>
-            <li>importing, transplanting and preparing plants,</li>
-            <li> delivering and placing them on site,</li>
-            <li> training new caregivers in the care of species that will go to a new home.</li>
-            <li> The price of the service is PLN 450 net.</li>
-</ul>
-    <a class="btn btn-lg" href="{% url 'contact' %}">Contact us</a>
-    </div>
-</section>
+    
   <section class="py-5">
     <div class="container px-5 my-5">
         <div class="text-center mb-5">
             <h1 class="fw-bolder">Our Work</h1>
-            <p class="lead fw-normal text-muted mb-0">Company portfolio</p>
         </div>
         <div class="row gx-5">
             <div class="col-lg-6">
                 <div class="position-relative mb-5">
                     <img class="img-fluid rounded-3 mb-3" src="media/Home design/1.jpg" alt="design1" />
-                    <a class="h3 fw-bolder text-decoration-none link-dark stretched-link" href="#!">Project name</a>
                 </div>
             </div>
             <div class="col-lg-6">
                 <div class="position-relative mb-5">
                     <img class="img-fluid rounded-3 mb-3" src="media/Home design/2.jpg" alt="design2" />
-                    <a class="h3 fw-bolder text-decoration-none link-dark stretched-link" href="#!">Project name</a>
                 </div>
             </div>
             <div class="col-lg-6">
                 <div class="position-relative mb-5 mb-lg-0">
                     <img class="img-fluid rounded-3 mb-3" src="media/Home design/3.jpg" alt="design3" />
-                    <a class="h3 fw-bolder text-decoration-none link-dark stretched-link" href="#!">Project name</a>
                 </div>
             </div>
             <div class="col-lg-6">
                 <div class="position-relative">
                     <img class="img-fluid rounded-3 mb-3" src="media/Home design/4.jpg" alt="design4" />
-                    <a class="h3 fw-bolder text-decoration-none link-dark stretched-link" href="#!">Project name</a>
                 </div>
             </div>
         </div>
