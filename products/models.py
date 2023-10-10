@@ -50,6 +50,7 @@ class Product(models.Model):
     care_level = models.ForeignKey(
         "CareLevel", null=True, blank=True, on_delete=models.SET_NULL
     )
+    has_sizes = models.BooleanField(default=False, null=True, blank=True)
     size = models.ForeignKey(
         "Size", null=True, blank=True, on_delete=models.SET_NULL
     )

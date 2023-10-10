@@ -381,9 +381,11 @@ label {
     background-color: #8DB74E;
     border:#daedbe;}
 
-#btt-link {
-    cursor: pointer;
-}
+    .btt-link,
+    .update-link,
+    .remove-item {
+        cursor: pointer;
+    }
 
 /*................................................Footer*/
 
@@ -398,7 +400,7 @@ label {
 }
 
 #main-nav .main:hover {
-    background-color: #f8f3e3e7;
+    background-color: #3f3514e7;
 }
 #main-nav .dropdown-menu{
     text-align: left;
