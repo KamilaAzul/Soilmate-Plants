@@ -17,63 +17,6 @@
                 aria-haspopup="true" aria-expanded="false">Plants</a>
             <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
                 <li><a class="dropdown-item" href="{% url 'products' %}">All Plants</a></li>
-                <li>
-                    <a class="dropdown-item" href="#">Categories &raquo;</a>
-                    <ul class="dropdown-menu dropdown-submenu">
-                        <li>
-                            <a class="dropdown-item" href="{% url 'products' %}?category=monsters">Monsters</a>
-                        </li>
-                        <li>
-                            <a class="dropdown-item" href="{% url 'products' %}?category=potted_trees">Potted trees</a>
-                        </li>
-                        <li>
-                            <a class="dropdown-item" href="{% url 'products' %}?category=potted_plants">Potted plants</a>
-                        </li>
-                        <li>
-                            <a class="dropdown-item" href="{% url 'products' %}?category=hanging_plants">Hanging Plants</a>
-                        </li>
-                        <li>
-                            <a class="dropdown-item" href="{% url 'products' %}?category=begginers">For Beginners</a>
-                        </li>
-                        <li>
-                            <a class="dropdown-item" href="{% url 'products' %}?category=exotic">Exotic</a>
-                        </li>
-                        <li>
-                            <a class="dropdown-item" href="{% url 'products' %}?category=terrace">For the terrace</a>
-                        </li>
-                    </ul>
-                </li>
-                <li>
-                    <a class="dropdown-item" href="#">Species &raquo;</a>
-                    <ul class="dropdown-menu dropdown-submenu">
-                        <li>
-                            <a class="dropdown-item" href="{% url 'products' %}?category=Succulents">Succulents</a>
-                        </li>
-                        <li>
-                            <a class="dropdown-item" href="{% url 'products' %}?category=Creepers">Creepers</a>
-                        </li>
-                        <li>
-                            <a class="dropdown-item" href="{% url 'products' %}?category=Palm">Palm trees</a>
-                        </li>
-                        <li>
-                            <a class="dropdown-item" href="{% url 'products' %}?category=Sansevieria">Sansevieria</a>
-                        </li>
-                        <li>
-                            <a class="dropdown-item" href="{% url 'products' %}?category=Monsters">Monsters</a>
-                        </li>
-                        <li>
-                            <a class="dropdown-item" href="{% url 'products' %}?category=Cacti">Cacti</a>
-                        </li>
-                        <li>
-                            <a class="dropdown-item" href="{% url 'products' %}?category=Philodendrons">Philodendrons</a>
-                        </li>
-                        <li>
-                            <a class="dropdown-item" href="{% url 'products' %}?category=Dracaena">Dracaena</a>
-                        </li>
-                        <li>
-                            <a class="dropdown-item" href="{% url 'products' %}?category=Alocasia">Alocasia</a>
-                        </li>
-                    </ul>
                     <li><a class="dropdown-item" href="{% url 'products' %}?sort=size&direction=asc">By size</a></li>
                     <li><a class="dropdown-item" href="{% url 'products' %}?sort=price&direction=asc">By price</a></li>
                     <li><a href="{% url 'products' %}?sort=category&direction=asc" class="dropdown-item ">By Category</a></li>
@@ -84,7 +27,20 @@
                 </li>
             </ul>
         </li>
-       
+        <li class="nav-item dropdown">
+            <a class="logo-font font-weight-bold nav-link text-black mr-5" href="#" id="clothing-link" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Categoires
+            </a>
+            <div class="dropdown-menu border-0" aria-labelledby="clothing-link">
+                <a href="{% url 'products' %}?category=monsters" class="dropdown-item">Monsters</a>
+                <a href="{% url 'products' %}?category=potted%20trees" class="dropdown-item">Potted trees</a>
+                <a href="{% url 'products' %}?category=potted%20plants" class="dropdown-item">Potted plants</a>
+                <a href="{% url 'products' %}?category=hanging_plants" class="dropdown-item">Hanging Plants</a>
+                <a href="{% url 'products' %}?category=for%20begginers" class="dropdown-item">For Beginners</a>
+                <a href="{% url 'products' %}?category=exotic" class="dropdown-item">Exotic</a>
+                <a href="{% url 'products' %}?category=exotic,for%20begginers,potted,hanging,monsters" class="dropdown-item">All Categories</a>
+            </div>
+        </li>
         <li class="nav-item dropdown">
             <a class="main logo-font font-weight-bold nav-link text-white mr-5" href="{% url 'about' %}"  id="about-link"
                 data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
