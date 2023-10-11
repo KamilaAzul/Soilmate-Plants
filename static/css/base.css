@@ -22,10 +22,20 @@ h2{
     font-weight: bold;
     font-weight: 400;
 }
-#topnav .logo-font{
+#topnav h2{
+    font-size: 35px;
+    letter-spacing: 2px;
+    z-index: 100;
+    font-weight: 500;
     font-family: 'Kaushan Script';
-   
+    color: rgb(196, 236, 144);
+
 }
+
+#topnav h2:hover{
+    font-size:37px;
+    transition: all 200ms;
+    font-size-adjust: 20px;}
 /*......................................header*/
 
 header.masthead {
@@ -36,8 +46,9 @@ header.masthead {
     background-size: cover;
    
 }
-.masthead h4{
-    font-size: 35px;
+.masthead h3{
+    font-size: 30px;
+    font-family: 'Josefin Slab',
 }
 
   @media (max-width: 768px) {
@@ -235,6 +246,8 @@ a.category-badge>span.badge:hover {
 
 .Ourservices{
     background-color: #f8f3e3e7;
+    margin: 0;
+    align-content: center;
 }
 #Repotting{
 
@@ -389,8 +402,12 @@ label {
 
 /*................................................Footer*/
 
+#footer{
+width: 100%;
+margin: 0;
+}
 #footer .container {
-    background-color: #8DB74E;
+   text-align: center;
 }
 
 /*................................................Navbar*/
@@ -484,6 +501,9 @@ label {
     padding: 0;
     background: #3b9544;
     width: 100%;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
 }
 
 .home-newsletter .single {
@@ -492,6 +512,7 @@ label {
     text-align: center;
     position: relative;
     z-index: 2;
+    padding:50px;
 }
 
 .home-newsletter .single h2 {
