@@ -1,0 +1,1 @@
+web: soilmate_plants.wsgi
