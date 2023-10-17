@@ -30,7 +30,8 @@ SECRET_KEY = os.environ.get('SECRET_KEY', '')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ['8000-kamilaazul-soilmate-plan-fs2xpzgkxn.us2.codeanyapp.com', 'soilmate-plants-a1626f09724b.herokuapp.com']
+ALLOWED_HOSTS = ['8000-kamilaazul-soilmate-plan-fs2xpzgkxn.us2.codeanyapp.com',
+                 'soilmate-plants-a1626f09724b.herokuapp.com', 'localhost']
 
 
 # Application definition
@@ -54,7 +55,7 @@ INSTALLED_APPS = [
     'checkout',
     'profiles',
 
-    #Other
+    # Other
     'crispy_forms',
 ]
 
@@ -99,7 +100,7 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'soilmate_plants.wsgi.application'
 
-MESSAGE_STORAGE = 'django.contrib.messages.storage.session.SessionStorage' 
+MESSAGE_STORAGE = 'django.contrib.messages.storage.session.SessionStorage'
 
 AUTHENTICATION_BACKENDS = (
     # Needed to login by username in Django admin, regardless of `allauth`
@@ -138,7 +139,6 @@ else:
             'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
         }
     }
-
 
 
 # Password validation
