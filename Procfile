@@ -1,1 +1,1 @@
-web: soilmate_plants.wsgi:application
+web: gunicorn soilmate_plants.wsgi:application
