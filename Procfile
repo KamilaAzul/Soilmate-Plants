@@ -1,1 +1,1 @@
-web: soilmate_plants.wsgi
+web: soilmate_plants.wsgi:application
