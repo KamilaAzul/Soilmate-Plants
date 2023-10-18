@@ -13,13 +13,19 @@
     {% block extra_meta %}
     {% endblock %}
     {% block corecss %}
-    
+    <!-- BOOTSTRAP -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
         integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <!-- GOOGLE FONTS -->
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato&display=swap">
     <link href="https://fonts.googleapis.com/css2?family=Kaushan+Script&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Cardo:ital@1&family=Caveat&family=Josefin+Slab:wght@300&display=swap" rel="stylesheet">
+    <!-- BASE CSS -->
     <link rel="stylesheet" href="{% static 'css/base.css' %}">
+    <!-- PROFILE CSS -->
+    <link rel="stylesheet" href="{% static 'profiles/css/profile.css' %}">
+    <!-- CHECKOUT CSS -->
+    <link rel="stylesheet" href="{% static 'checkout/css/checkout.css' %}">
     {% endblock %}
 
     {% block extra_css %}
@@ -34,12 +40,12 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
         integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
         crossorigin="anonymous"></script>
-         <!-- Stripe -->
-         <script src="https://js.stripe.com/v3/"></script>
+    <!-- Stripe -->
+    <script src="https://js.stripe.com/v3/"></script>
     {% endblock %}
-    
+
 <!-- FAVICON IMAGE -->
-<link rel="icon" type="image/png" sizes="32x32" href="{{ MEDIA_URL }}noPhoto.png">
+<link rel="icon" type="image/png" sizes="32x32" href="{{ MEDIA_URL }}favicon1.png">
 
     {% block extra_js %}
     {% endblock %}
