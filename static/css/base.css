@@ -43,7 +43,7 @@ h2{
     padding-top: 10.5rem;
     padding-bottom: 6rem;
     text-align: center;
-    background-image: url("media/home page img/1home.jpg");
+    background-image: url('/media/home page img/1home.jpg');
     background-repeat: no-repeat;
     background-attachment: scroll;
     background-position: center center;
