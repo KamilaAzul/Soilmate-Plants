@@ -12,35 +12,20 @@ class Category(models.Model):
     """
     Model for category
     """
-
-    name = models.CharField(max_length=255, unique=True)
+    title = models.CharField(max_length=20)
 
     class Meta:
-        """
-        This meta class orders the model by name.
-        """
-
-        ordering = ['name']
+        verbose_name = "Category"
+        verbose_name_plural = 'Categories'
 
     def __str__(self):
-        """
-        This function returns the name of the category.
-        """
-
-        return str(self.name)
-
-
-CATEGORY_CHOICES = Category.objects.all().values_list('name', 'name')
-choice_list = []
-for item in CATEGORY_CHOICES:
-    choice_list.append(item)
+        return self.title
 
 
 class Post(models.Model):
     """
     Model for the main blog post
     """
-
     title = models.CharField(max_length=200, unique=True)
     slug = models.SlugField(max_length=200, unique=True, null=True)
     author = models.ForeignKey(
@@ -53,10 +38,8 @@ class Post(models.Model):
     excerpt = models.TextField(blank=True)
     featured_image = models.ImageField(null=True, blank=True)
     status = models.IntegerField(choices=STATUS, default=0)
-    likes = models.ManyToManyField(
-        User, related_name="blogpost_likes", blank=True)
     created_on = models.DateTimeField(auto_now_add=True)
-    comment_count = models.IntegerField(default=0)
+
 
     class Meta:
         ordering = ["-created_on"]
