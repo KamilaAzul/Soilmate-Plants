@@ -26,6 +26,13 @@ def design(request):
     """
     return render(request, "home/design.html")
 
+def thankYou(request):
+    """
+     A view that renders the thank you page
+    """
+    return render(request, "home/thankYou.html")
+
+
 
 
 

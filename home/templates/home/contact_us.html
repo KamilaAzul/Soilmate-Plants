@@ -11,19 +11,19 @@
         <div class="card mt-2 mx-auto p-4 bg-light">
             <div class="card-body bg-light">
             <div class = "container">
-                             <form id="contact-form" role="form">
+            <form action="https://formsubmit.co/soilmate.plans@email.com" method="POST" id="contact-form" role="form">
             <div class="controls">
                 <div class="row">
                     <div class="col-md-6">
                         <div class="form-group">
                             <label for="form_name">Firstname *</label>
-                            <input id="form_name" type="text" name="name" class="form-control" placeholder="Please enter your firstname *" required="required" data-error="Firstname is required.">
+                            <input id="form_name" type="text" name="name" class="form-control" placeholder="Please enter first name *" required="required" data-error="Firstname is required.">
                         </div>
                     </div>
                     <div class="col-md-6">
                         <div class="form-group">
                             <label for="form_lastname">Lastname *</label>
-                            <input id="form_lastname" type="text" name="surname" class="form-control" placeholder="Please enter your lastname *" required="required" data-error="Lastname is required.">
+                            <input id="form_lastname" type="text" name="surname" class="form-control" placeholder="Please enter last name *" required="required" data-error="Lastname is required.">
                             </div>
                     </div>
                 </div>
@@ -51,14 +51,13 @@
                     <div class="col-md-12">
                         <div class="form-group">
                             <label for="form_message">Message *</label>
-                            <textarea id="form_message" name="message" class="form-control" placeholder="Write your message here." rows="4" required="required" data-error="Please, leave us a message."></textarea
-                                >
+                            <textarea id="form_message" name="message" class="form-control" placeholder="Write your message here." rows="4" required="required" data-error="Please, leave us a message."></textarea>
                             </div>
                         </div>
                     <div class="col-md-12">
-                        
-                        <input type="submit" class="btn btn-success btn-send  pt-2 btn-block
-                            " value="Send Message" >
+                        <input type="hidden" name="_next" value="https://soilmate-plants-a1626f09724b.herokuapp.com/thankYou">
+                        <input type="hidden" name="_subject" value="New email!">
+                        <input type="submit" class="btn btn-success btn-send  pt-2 btn-block" value="Send Message" >
                 </div>
                 </div>
         </div>
@@ -66,11 +65,26 @@
         </div>
             </div>
     </div>
-        <!-- /.8 -->
     </div>
-    <!-- /.row-->
     </div>
     </div>
     </section>
     <!-- End of Contact us section-->
+</script>
+<script src="https://smtpjs.com/v3/smtp.js"></script>
+<script>
+    function sendEmail(){
+        Email.send({
+            Host : "smtp.gmail.com",
+            Username : "soilmate.plants",
+            Password : "password",
+            To : 'them@website.com',
+            From : "you@isp.com",
+            Subject : "This is the subject",
+            Body : "And this is the body"
+}).then(
+  message => alert(message)
+);
+    }
+</script>
     {% endblock %}
