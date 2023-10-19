@@ -71,20 +71,4 @@
     </section>
     <!-- End of Contact us section-->
 </script>
-<script src="https://smtpjs.com/v3/smtp.js"></script>
-<script>
-    function sendEmail(){
-        Email.send({
-            Host : "smtp.gmail.com",
-            Username : "soilmate.plants",
-            Password : "password",
-            To : 'them@website.com',
-            From : "you@isp.com",
-            Subject : "This is the subject",
-            Body : "And this is the body"
-}).then(
-  message => alert(message)
-);
-    }
-</script>
     {% endblock %}
