@@ -31,12 +31,12 @@
                             <img class="card-img-top" src="{{ post.featured_image.url }}" alt="{{ post.title }}" style="max-height: 100%; max-width:100%">
                             {% else %}
                             <div class="post_img1">
-                              <img class="card-img-top" src="{{ MEDIA_URL }}noPhoto.png" alt="{{ post.title }}" style="max-height: 100%; max-width:100%;" alt="{{ result }} Image"/>
+                              <img class="card-img-top" src="{{ MEDIA_URL }}NoIMG.jpg" alt="{{ post.title }}" style="max-height: 100%; max-width:100%;" alt="{{ result }} Image"/>
                               {% endif %}
                             </div>
                             <div class="content-img">
                               <p class="categorie ">{% for categ in post.categories.all %}</p>
-                              <h4><i class="fa fa-book"></i>{{ categ }}</h4>
+                              <h4><i class="fa fa-leaf"></i>{{ categ }}</h4>
                               {% endfor %}
                             </div>
                           </div>
