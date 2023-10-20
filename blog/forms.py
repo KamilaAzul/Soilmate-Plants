@@ -1,31 +1,18 @@
+from django.contrib.auth.models import User
+from django.forms import ModelForm
 from django import forms
-from .models import Post
+from .models import Post, Category
 
 
-class BlogPostForm(forms.ModelForm):
+class PostForm(forms.ModelForm):
     """
-    This class creates the blog form.
+    Form to add a blog post
     """
-
     class Meta:
-        """
-        This meta class adds the fields to the form
-        based on the post model. It adds a number
-        of widgets to customize and add functionality
-        to the form.
-        """
-        
         model = Post
         fields = (
             "title",
-            "body",
-            "category",
+            "categories",
+            "content",
             "featured_image",
         )
-
-
-        widgets = {
-                        'category': forms.Select(
-                            attrs={'class': 'form-select'}),
-                        'status': forms.Select(attrs={'class': 'form-select'}),
-                        }
