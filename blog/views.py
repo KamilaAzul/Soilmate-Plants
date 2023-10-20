@@ -22,7 +22,7 @@ class AllBlogPost(generic.ListView):
     """
     model = Post
     queryset = Post.objects.filter(status=1).order_by("-created_on")
-    template_name = "all_blog_posts.html"
+    template_name = "blog/all_blog_posts.html"
     paginate_by = 9
 
 class PostDetail(View):
