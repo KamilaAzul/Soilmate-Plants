@@ -148,9 +148,9 @@
                     <form method="post">
                         {% csrf_token %}
                     <div class="input-group">
-                        <input type="email" id="email" class="form-control" placeholder="Enter your email" name="email" required>
                         <span class="input-group-btn">
-                            <button class="btn btn-theme" type="submit">Subscribe</button>
+                            <form method="post" action="{% url 'subscribe_form' %}"><button class="btn btn-theme" type="submit">Subscribe</button>>
+                            </form>
                         </span>
                     </div>
                     </form>

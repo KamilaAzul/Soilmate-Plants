@@ -32,15 +32,7 @@ def thankYou(request):
     """
     return render(request, "home/thankYou.html")
 
-def subscribe(request):
-    """
-     A view that renders the Subscription successful page
-    """
-    if request.method == 'POST':
-        email = request.POST.get('email')
-        print(f"Subscribed email: {email}")
-        messages.success(request, 'Subscription successful! Thank you for subscribing.')
-    return redirect('home') 
+
 
 
 
