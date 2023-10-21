@@ -5,8 +5,7 @@ from django.db.models import Q
 from django.utils.text import slugify
 from django.contrib.auth.decorators import login_required
 from django.views.generic.edit import UpdateView
-from django.contrib.auth.mixins import LoginRequiredMixin
-from django.contrib.messages.views import SuccessMessageMixin
+
 
 from .forms import PostForm
 from .models import Category, Post
@@ -32,8 +31,7 @@ class PostDetail(View):
         return render(request, 'blog/blog_post_detail.html', {'post': post})
 
 def edit_blog_post(request, slug):
-        """ This view makes it possible to edit a blog post
-        on the site
+        """ This view makes it possible to edit a blog post on the website.
         """
 
         posts = Post.objects.all()
@@ -67,4 +65,32 @@ def edit_blog_post(request, slug):
             'posts': posts,
         }
         return render(request, template, context)
+
+@login_required
+def create_post(request):
+    """
+    Creating a new post
+    """
+    template = 'blog/add_blog_post.html'
+    context = {}
+    form = PostForm(request.POST or None)
+    if request.method == "POST":
+        if form.is_valid():
+            print("\n\n form is valid")
+            new_post = form.save(commit=False)
+            new_post.author = request.user
+            new_post.save()
+            messages.success(
+                    request, "Your post was created successfully!")
+
+            return redirect('blog/all_blog_detail.html')
+
+    context.update({
+        'form': form,
+        'title': 'Create New Post'
+    })
+    return render(request, template, context)
+
+
+
     

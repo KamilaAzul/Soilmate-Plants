@@ -82,7 +82,7 @@
     </div>
 </section>
 <!--Home page services section three-->
-<section class=" Ourservices py-3" id="delivery">
+<section class=" Ourservices py-3" id="Delivery">
     <div class="container px-5 my-5">
         <div class="row gx-5 align-items-center">
             <div class="col-lg-6"><img class="img-fluid rounded mb-5 mb-lg-0" src="{{ MEDIA_URL }}products/shipping.jpg" alt="Deliveryy" /></div>
@@ -145,13 +145,13 @@
                         <h5 class="subscribe d-block mt-3 text-white">Subscribe to our newsletter in order not to miss new arrivals <br />
                             promotions and discounts of our store</h5>
                     <br>
-                    <form method="post">
-                        {% csrf_token %}
                     <div class="input-group">
+                        <input type="email" class="form-control" placeholder="Enter your email">
                         <span class="input-group-btn">
-                            <form method="post" action="{% url 'subscribe_form' %}"><button class="btn btn-theme" type="submit">Subscribe</button>>
-                            </form>
+                        <button class="btn btn-theme" type="submit"><a href="{% url 'subscribe' %}"></a>Subscribe</button>
                         </span>
+                         </div>
+                   </div>
                     </div>
                     </form>
                 </div>
