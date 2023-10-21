@@ -36,9 +36,9 @@
           </p>
         <strong>
     <p class="text-center mb-4">
-        <a href="{% url 'home' %}" class="btn btn-outline-secondary btn-sm">Back to home</a>
+        <a href="{% url 'home' %}" class="mx-2 btn  btn btn-success" >Back to home</a>
         {% if request.user.is_superuser %}
-        <a href="" class="btn btn-danger btn-sm">Edit</a>
+        <a href="{% url 'edit_blog_post' slug=post.slug %}"class="btn btn-danger">Edit</a>
         {% endif %}
     </p>
 </div>

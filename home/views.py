@@ -1,6 +1,6 @@
-from django.shortcuts import render
-
-# Create your views here.
+from django.shortcuts import render, redirect
+from django.urls import path
+from django.contrib import messages
 
 
 def index(request):
@@ -31,6 +31,16 @@ def thankYou(request):
      A view that renders the thank you page
     """
     return render(request, "home/thankYou.html")
+
+def subscribe(request):
+    """
+     A view that renders the Subscription successful page
+    """
+    if request.method == 'POST':
+        email = request.POST.get('email')
+        print(f"Subscribed email: {email}")
+        messages.success(request, 'Subscription successful! Thank you for subscribing.')
+    return redirect('home') 
 
 
 

@@ -145,12 +145,15 @@
                         <h5 class="subscribe d-block mt-3 text-white">Subscribe to our newsletter in order not to miss new arrivals <br />
                             promotions and discounts of our store</h5>
                     <br>
+                    <form method="post">
+                        {% csrf_token %}
                     <div class="input-group">
-                        <input type="email" class="form-control" placeholder="Enter your email">
+                        <input type="email" id="email" class="form-control" placeholder="Enter your email" name="email" required>
                         <span class="input-group-btn">
                             <button class="btn btn-theme" type="submit">Subscribe</button>
                         </span>
                     </div>
+                    </form>
                 </div>
             </div>
         </div>
