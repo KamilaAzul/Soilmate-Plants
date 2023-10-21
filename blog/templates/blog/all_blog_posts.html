@@ -15,7 +15,7 @@
       <h1 class="mb-3 h2 font-monospace">Welcome to the Soilmate Plants blog page</h1>
     </div>
     {% if request.user.is_superuser %}
-    <a href="{% url 'create_post' %}"class="mx-2 btn  btn btn-success">Add new post</a>
+    <a href="{% url 'add_post' %}"class="mx-2 btn text-center btn btn-success">Add new post</a>
     {% endif %}
       <div class="container-fluid ">
         <div class="row">

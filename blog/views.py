@@ -71,8 +71,8 @@ def create_post(request):
     """
     Creating a new post
     """
-    template = 'blog/add_blog_post.html'
     context = {}
+    template = "blog/add_blog_post.html"
     form = PostForm(request.POST or None)
     if request.method == "POST":
         if form.is_valid():
@@ -83,13 +83,14 @@ def create_post(request):
             messages.success(
                     request, "Your post was created successfully!")
 
-            return redirect('blog/all_blog_detail.html')
+            return redirect('home')
 
     context.update({
         'form': form,
         'title': 'Create New Post'
     })
     return render(request, template, context)
+
 
 
 
