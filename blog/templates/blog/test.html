@@ -1,0 +1,89 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block page_header %}
+<div class="container header-container">
+    <div class="row">
+        <div class="col"></div>
+    </div>
+</div>
+{% endblock %}
+
+{% block content %}
+<section id="blog-page">
+    <div id="intro" class="p-5 text-center bg-light">
+      <h1 class="mb-3 h2 font-monospace">Welcome to the Soilmate Plants blog page</h1>
+    </div>
+    {% for categ in post.categories.all %}
+    <a class="category-badge text-decoration-none" href="{% url 'all_blog' %}?category={{ categ }}">
+        <span class="p-2 mt-2 badge badge-white text-black rounded-0 border border-dark">{{ categ }}</span>
+    </a>
+{% endfor %}
+    {% if request.user.is_superuser %}
+    <a href="{% url 'add_post' %}"class="mx-2 btn text-center btn btn-success">Add new post</a>
+    {% endif %}
+
+<main class="my-5">
+    <div class="container">
+      <!--Section: Content-->
+      <section class="text-center">
+        <h4 class="mb-5"><strong>Welcome to the Soilmate Plants blog page</strong></h4>
+
+        <div class="row">
+            {% for post in post_list %}
+          <div class="col-lg-4 col-md-12 mb-4">
+            <div class="card">
+                <a href="{% url 'blog_post_detail' post.slug %}" aria-label="Go to the post detail page">
+              <div class="bg-image hover-overlay ripple" data-mdb-ripple-color="light">
+                {% if "placeholder" in post.featured_image.url %}
+                <img src="{{ post.featured_image.url }}" alt="{{ post.title }}" class="card-img-top img-fluid img-thumbnail mb-3" width="150" height="100"/>
+                            {% else %}
+                            <div class="post_img1">
+                              <img src="{{ MEDIA_URL }}NoIMG.jpg" alt="{{ post.title }}" class="card-img-top img-fluid img-thumbnail mb-3" width="150" height="100"/>
+                              {% endif %}
+                              <div class="content-img">
+                                <p class="categorie ">{% for categ in post.categories.all %}</p>
+                                <h4><i class="fa fa-leaf"></i>{{ categ }}</h4>
+                                {% endfor %}
+              </div>
+              <div class="card-body">
+                <a href="{% url 'blog_post_detail' post.slug  %}" class="post-link">
+                    <h2 class="card-title">{{ post.title }}</h2>
+                    <p class="card-text">{{ post.excerpt }}</p>
+                <p class="card-text">
+                        {{ post.content | slice:":50" | safe }}..
+                </p>
+                <hr>
+                <p class="card-text text-muted h6">Created by:
+                  <span>{{ post.author }} | </span>
+                  {{ post.created_on}} <span><i class="fa fa-calendar"></i></span>
+                </p>
+              </div>
+            </div>
+        </a>
+          </div>
+          {% if forloop.counter|divisibleby:3 %}
+        </div>
+        <div class="row">{% endif %} {% endfor %}</div>
+          {% if is_paginated %}
+          <nav aria-label="Page navigation">
+            <ul class="pagination justify-content-center">
+              {% if page_obj.has_previous %}
+              <li>
+                <a href="?page={{ page_obj.previous_page_number }}" class="page-link DownButton">&laquo; PREV
+                </a>
+              </li>
+              {% endif %} {% if page_obj.has_next %}
+              <li>
+                <a href="?page={{ page_obj.next_page_number }}" class="page-link DownButton">
+                  NEXT &raquo;</a>
+              </li>
+    
+              {% endif %}
+            </ul>
+          </nav>
+          {% endif %}
+        </div>
+      </section>
+      {% endblock %}
+  

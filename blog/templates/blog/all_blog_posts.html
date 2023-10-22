@@ -14,26 +14,31 @@
     <div id="intro" class="p-5 text-center bg-light">
       <h1 class="mb-3 h2 font-monospace">Welcome to the Soilmate Plants blog page</h1>
     </div>
+    {% for categ in post.categories.all %}
+    <a class="category-badge text-decoration-none" href="{% url 'all_blog' %}?category={{ categ }}">
+        <span class="p-2 mt-2 badge badge-white text-black rounded-0 border border-dark">{{ categ }}</span>
+    </a>
+{% endfor %}
     {% if request.user.is_superuser %}
     <a href="{% url 'add_post' %}"class="mx-2 btn text-center btn btn-success">Add new post</a>
     {% endif %}
-      <div class="container-fluid ">
-        <div class="row">
+    <main class="my-5">
+        <div class="container">
           <div class="col-12 mt-3 left ">
             <div class="row ">
               {% for post in post_list %}
-              <div class="col-md-4 ">
-                <div class="card mb-4 content-box" style="background-color: #ddcfcc;">
-                  <div class="card-body">
+              <div class="col-lg-4 col-md-4 col-sm-12">
+                    <div class="card mb-4 border-0 shadow rounded bg-white">
+                        <div class="card-body">
                     <a href="{% url 'blog_post_detail' post.slug %}" aria-label="Go to the post detail page">
                       <div class="image-container Image_blog_box">
                         {% if "placeholder" in post.featured_image.url %}
                         <div class="content-box bg-linear-gradient">
                           <div class="content-imgPhoto">
-                            <img class="card-img-top" src="{{ post.featured_image.url }}" alt="{{ post.title }}" style="max-height: 100%; max-width:100%">
+                            <img src="{{ post.featured_image.url }}" alt="{{ post.title }}" class="card-img-top img-fluid img-thumbnail mb-3" width="150" height="100"/>
                             {% else %}
                             <div class="post_img1">
-                              <img class="card-img-top" src="{{ MEDIA_URL }}NoIMG.jpg" alt="{{ post.title }}" style="max-height: 100%; max-width:100%;" alt="{{ result }} Image"/>
+                              <img src="{{ MEDIA_URL }}NoIMG.jpg" alt="{{ post.title }}" class="card-img-top img-fluid img-thumbnail mb-3" width="150" height="100"/>
                               {% endif %}
                             </div>
                             <div class="content-img">
@@ -50,7 +55,7 @@
                       </a>
                     </div>
                     <div class="card-text">
-                      {{ post.content | slice:":250" | safe }}...
+                      {{ post.content | slice:":50" | safe }}...
                     </div>
                     <hr>
                     <p class="card-text text-muted h6">Created by:
