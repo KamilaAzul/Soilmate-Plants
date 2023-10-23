@@ -789,3 +789,14 @@ margin: 0;
         padding: .25rem .5rem !important;
     }
 }
+
+/*............................................blog section*/
+#blog_container a{
+
+color: #28a745;
+text-decoration: none; 
+      }
+#blog_container a {
+color: #28a745;
+  }
+

@@ -1,5 +1,6 @@
-{% extends "base.html" %}
+{% extends 'base.html' %}
 {% load static %}
+{% load crispy_forms_tags %}
 
 {% block page_header %}
 <div class="container header-container">
@@ -9,21 +10,25 @@
 </div>
 {% endblock %}
 
+
 {% block content %}
 <section id="blog-page">
     <div id="intro" class="p-5 text-center bg-light">
       <h1 class="mb-3 h2 font-monospace">Welcome to the Soilmate Plants blog page</h1>
+      <br>
+      {% if request.user.is_superuser %}
+    <a href="{% url 'add_post' %}"class="mx-2 btn text-center btn btn-success">Add new post</a>
+    {% endif %}
     </div>
+    
     {% for categ in post.categories.all %}
     <a class="category-badge text-decoration-none" href="{% url 'all_blog' %}?category={{ categ }}">
         <span class="p-2 mt-2 badge badge-white text-black rounded-0 border border-dark">{{ categ }}</span>
     </a>
 {% endfor %}
-    {% if request.user.is_superuser %}
-    <a href="{% url 'add_post' %}"class="mx-2 btn text-center btn btn-success">Add new post</a>
-    {% endif %}
+    
     <main class="my-5">
-        <div class="container">
+        <div class="container" id="blog_container">
           <div class="col-12 mt-3 left ">
             <div class="row ">
               {% for post in post_list %}
@@ -35,23 +40,23 @@
                         {% if "placeholder" in post.featured_image.url %}
                         <div class="content-box bg-linear-gradient">
                           <div class="content-imgPhoto">
-                            <img src="{{ post.featured_image.url }}" alt="{{ post.title }}" class="card-img-top img-fluid img-thumbnail mb-3" width="150" height="100"/>
+                            <img src="{{ post.featured_image.url }}" alt="{{ post.title }}" class="card-img-top img-fluid img-thumbnail mb-3"/>
                             {% else %}
-                            <div class="post_img1">
-                              <img src="{{ MEDIA_URL }}NoIMG.jpg" alt="{{ post.title }}" class="card-img-top img-fluid img-thumbnail mb-3" width="150" height="100"/>
+                            <div class="content-imgPhoto">
+                              <img src="{{ MEDIA_URL }}NoIMG.jpg" alt="{{ post.title }}" class="card-img-top img-fluid img-thumbnail mb-3">
                               {% endif %}
                             </div>
-                            <div class="content-img">
-                              <p class="categorie ">{% for categ in post.categories.all %}</p>
-                              <h4><i class="fa fa-leaf"></i>{{ categ }}</h4>
+                            <div class="blog_categ text-center text-decoration-none">
+                              <p class="categorie">{% for categ in post.categories.all %}</p>
+                              <h4 style="text-decoration: none;  color: rgb(53, 62, 43)"><i class="fa fa-leaf "></i>{{ categ }}</h4>
                               {% endfor %}
                             </div>
                           </div>
                     </a>
                     <div class="content-description">
                       <a href="{% url 'blog_post_detail' post.slug  %}" class="post-link">
-                        <h2 class="card-title">{{ post.title }}</h2>
-                        <p class="card-text">{{ post.excerpt }}</p>
+                        <h2 class="card-title text-center" style="text-decoration: none; color: rgb(96, 148, 37)">{{ post.title }}</h2>
+                       
                       </a>
                     </div>
                     <div class="card-text">

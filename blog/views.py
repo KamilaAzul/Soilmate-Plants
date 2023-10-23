@@ -71,25 +71,61 @@ def create_post(request):
     """
     Creating a new post
     """
-    context = {}
-    template = "blog/add_blog_post.html"
-    form = PostForm(request.POST or None)
-    if request.method == "POST":
+    posts = Post.objects.all()
+    query = None
+
+    if request.GET:
+        if 'q' in request.GET:
+            query = request.GET['q']
+            if not query:
+                messages.error(request,
+                               'You did not enter any search criteria!')
+                return redirect(reverse('add_product'))
+            queries = Q(title__icontains=query) | Q(body__icontains=query)
+            posts = posts.filter(queries)
+
+    if not request.user.is_superuser:
+        messages.error(request, 'You do not have access to this page!')
+        return redirect(reverse('home'))
+
+    if request.method == 'POST':
+        form = PostForm(request.POST, request.FILES)
         if form.is_valid():
-            print("\n\n form is valid")
-            new_post = form.save(commit=False)
-            new_post.author = request.user
-            new_post.save()
-            messages.success(
-                    request, "Your post was created successfully!")
+            form.instance.author = request.user
+            form.instance.slug = slugify(form.instance.title)
+            post = Post(published=True)
+            form.save()
+            messages.success(request, 'Successfully added blog post!')
+            return redirect(
+                reverse('blog_post_detail', args=[form.instance.slug]))
+        else:
+            messages.error(request,
+                           'Failed to add blog post. '
+                           'Please ensure the form is valid.')
+    else:
+        form = PostForm()
 
-            return redirect('home')
-
-    context.update({
+    template = 'blog/add_blog_post.html'
+    context = {
         'form': form,
-        'title': 'Create New Post'
-    })
+        'posts': posts,
+    }
     return render(request, template, context)
+
+
+@login_required
+def delete_blog_post(request, slug):
+    """ This view deletes a blog post from the site """
+
+    if not request.user.is_superuser:
+        messages.error(request, 'You do not have access to this page!')
+        return redirect(reverse('all_blog'))
+
+    blog_post = get_object_or_404(Post, slug=slug)
+    blog_post.delete()
+    messages.success(request, 'Successfully deleted the blog post!')
+    return redirect(reverse('blog_post_detail'))
+
 
 
 

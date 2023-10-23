@@ -38,6 +38,7 @@ class Post(models.Model):
     featured_image = models.ImageField(null=True, blank=True)
     status = models.IntegerField(choices=STATUS, default=0)
     created_on = models.DateTimeField(auto_now_add=True)
+    published = models.BooleanField(default=True)
     
 
     class Meta:

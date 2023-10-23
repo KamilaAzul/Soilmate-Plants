@@ -8,6 +8,13 @@ class PostForm(forms.ModelForm):
     """
     Form to add a blog post
     """
+    STATUS_CHOICES = (
+        ('draft', 'Draft'),
+        ('published', 'Published'),
+    )
+
+    status = forms.ChoiceField(choices=STATUS_CHOICES, initial='draft')
+    
     class Meta:
         model = Post
         fields = (
