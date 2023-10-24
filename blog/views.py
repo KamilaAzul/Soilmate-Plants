@@ -1,4 +1,4 @@
-from django.shortcuts import render, redirect, reverse, get_object_or_404
+from django.shortcuts import render, redirect, reverse, get_object_or_404, HttpResponseRedirect
 from django.contrib import messages
 from django.views import generic, View
 from django.db.models import Q
@@ -93,8 +93,7 @@ def create_post(request):
         if form.is_valid():
             form.instance.author = request.user
             form.instance.slug = slugify(form.instance.title)
-            post = Post(published=True)
-            form.save()
+            post = form.save()
             messages.success(request, 'Successfully added blog post!')
             return redirect(
                 reverse('blog_post_detail', args=[form.instance.slug]))
@@ -114,18 +113,14 @@ def create_post(request):
 
 
 @login_required
-def delete_blog_post(request, slug):
+def delete_blog_post(request, pk):
     """ This view deletes a blog post from the site """
 
-    if not request.user.is_superuser:
-        messages.error(request, 'You do not have access to this page!')
-        return redirect(reverse('all_blog'))
-
-    blog_post = get_object_or_404(Post, slug=slug)
-    blog_post.delete()
-    messages.success(request, 'Successfully deleted the blog post!')
-    return redirect(reverse('blog_post_detail'))
-
+    if request.method == "POST":
+        post = Post.objects.get(pk=pk)
+        post.delete()
+        return redirect('all_blog')
+    return render(request,'blog/delete_blog_post.html')
 
 
 
