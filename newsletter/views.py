@@ -4,37 +4,26 @@ from .forms import SubscriberForm
 from .models import Subscriber, Newsletter
 from django.core.mail import send_mail
 from django.utils.crypto import get_random_string
+from django.http import HttpResponseRedirect
+from mailchimp3 import MailChimp
 
 
 class SubscribeView(View):
 
-     def get(self, request):
-        form = SubscriberForm()
-        return render(request, 'newsletter/subscription_form.html', {'form': form})
+     def post(self, request, *args, **kwargs):
+        email = request.POST.get('email')  
+        api_key = 'YOUR_MAILCHIMP_API_KEY'
+        list_id = 'YOUR_MAILCHIMP_LIST_ID'
+        
+        if email:
+            # Initialize the Mailchimp client
+            client = MailChimp(mc_api=api_key, mc_user='your_username')
 
-     def post(self, request):
-        form = SubscriberForm(request.POST)
+            # Subscribe the email to your Mailchimp list
+            client.lists.members.create_or_update(list_id, {'email_address': email}, merge_fields={'FNAME': 'First Name'})
 
-        if form.is_valid():
-            email = form.cleaned_data['email']
+            # You may want to handle success and error responses here
 
-            # Generate a confirmation key
-            confirmation_key = get_random_string(length=32)
-            form.cleaned_data['confirmation_key'] = confirmation_key
-
-            subscriber = form.save()
-
-            # Send a confirmation email
-            send_mail(
-                'Confirm Your Subscription',
-                f'Thank you for subscribing to our newsletter. To confirm your subscription, click on the following link: {request.build_absolute_uri(f"/confirm/{confirmation_key}/")}',
-                'soilmate.plans@gamil.com', 
-                [email],
-                fail_silently=False,
-            )
-
-            return render(request, 'newsletter/subscription_success.html', {'subscriber': subscriber})
-
-        return render(request, 'newsletter/subscription_form.html', {'form': form})
-
+        return HttpResponseRedirect('newsletter/subscription_success.html') 
+           
 

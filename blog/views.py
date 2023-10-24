@@ -119,7 +119,9 @@ def delete_blog_post(request, pk):
     if request.method == "POST":
         post = Post.objects.get(pk=pk)
         post.delete()
+        messages.success(request, "The post was deleted successfully")
         return redirect('all_blog')
+
     return render(request,'blog/delete_blog_post.html')
 
 
