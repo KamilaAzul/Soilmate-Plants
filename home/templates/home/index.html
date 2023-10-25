@@ -145,20 +145,51 @@
                         <h5 class="subscribe d-block mt-3 text-white">Subscribe to our newsletter in order not to miss new arrivals <br />
                             promotions and discounts of our store</h5>
                     <br>
-                    <div class="input-group">
-                        <input type="email" class="form-control" placeholder="Enter your email">
-                        <span class="input-group-btn">
-                        <button class="btn btn-theme" type="submit"><a href="{% url 'subscribe' %}"></a>Subscribe</button>
-                        </span>
-                         </div>
+                    <form id="newsletter-form">
+                        <label for="email" class="text-white">Email:</label>
+                        <input type="email" name="email" placeholder="Enter your email" required>
+                        <button type="submit" class="btn-secondary">Subscribe</button>
+                    </form>
+                    <div id="newsletter-message"></div>
                    </div>
                     </div>
-                    </form>
                 </div>
             </div>
         </div>
     </div>
 </section>
 <!-- End of newsletter section-->
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script>
+    dotenv.config();
+
+    $(document).ready(function () {
+        $('#newsletter-form').on('submit', function (event) {
+            event.preventDefault();  
+            const email = $('#newsletter-form input[name="email"]').val();
+            const api_key = process.env.MAILCHIMP_API_KEY;
+            const list_id = process.env.LIST_ID;
+
+            $.ajax({
+                url: `https://usX.api.mailchimp.com/3.0/lists/${list_id}/members`,
+                type: 'POST',
+                data: JSON.stringify({
+                    email_address: email,
+                    status: 'pending',
+                }),
+                headers: {
+                    'Authorization': `Bearer ${api_key}`,
+                },
+                contentType: 'application/json',
+                success: function (response) {
+                    $('#newsletter-message').text('Subscription successful');
+                },
+                error: function (xhr, status, error) {
+                    $('#newsletter-message').text('Failed to subscribe. Please ensure the form is valid.');
+                }
+            });
+        });
+    });
+</script>
 
 {% endblock %}
