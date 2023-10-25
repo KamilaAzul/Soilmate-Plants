@@ -21,7 +21,7 @@
         {% csrf_token %}
         {{ form | crispy }}
         <input type="submit" name="confirm_delete" class=" mx-2 btn btn btn-danger" value="Yes">
-        <a href="{%  url 'all_blog' %}" class=" mx-2 btn btn btn-secondary">Go back to blog page</a>
+        <a href="{% url 'all_blog' %}" class=" btn btn-success" >Back to blog page</a>
     </form>
     </div>
   </div>

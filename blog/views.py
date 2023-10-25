@@ -116,6 +116,10 @@ def create_post(request):
 def delete_blog_post(request, pk):
     """ This view deletes a blog post from the site """
 
+    if not request.user.is_superuser:
+            messages.error(request, 'You do not have access to this page!')
+            return redirect(reverse('home'))
+            
     if request.method == "POST":
         post = Post.objects.get(pk=pk)
         post.delete()

@@ -12,6 +12,7 @@ django-storages==1.14.2
 django-summernote==0.8.20.0
 gunicorn==21.2.0
 jmespath==1.0.1
+mailchimp3==3.0.21
 oauthlib==3.2.2
 Pillow==10.0.1
 psycopg2==2.9.9
