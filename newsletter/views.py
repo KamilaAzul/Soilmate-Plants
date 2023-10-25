@@ -5,12 +5,12 @@ from .models import Subscriber, Newsletter
 from django.core.mail import send_mail
 from django.utils.crypto import get_random_string
 from mailchimp3 import MailChimp
-import requests
 from django.contrib import messages
 from requests.exceptions import RequestException
+from django.http import JsonResponse, HttpResponse
 import os
-import json
-from django.http import JsonResponse
+import requests
+
 
 def subscribe_newsletter(request):
     if request.method == 'POST':
@@ -30,11 +30,14 @@ def subscribe_newsletter(request):
             response.raise_for_status()  # Raise an exception for HTTP errors
             if response.status_code == 200:
                 # Subscription successful
-                return JsonResponse({'message': 'Subscription successful'})
+                # Redirect to subscription success page
+                return redirect('subscription_success')
             else:
                 return JsonResponse({'message': 'Failed to subscribe. Please ensure the form is valid.'})
         except RequestException as e:
             return JsonResponse({'message': f'Failed to connect to Mailchimp: {str(e)}'})
 
-    # Return a default response (optional)
-    return JsonResponse({'message': 'Invalid request'}, status=400)
+    return render(request, 'index.html')  # Render the index.html page for GET requests
+
+def subscription_success(request):
+    return render(request, 'subscription_success.html')

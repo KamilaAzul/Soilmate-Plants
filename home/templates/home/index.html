@@ -1,8 +1,6 @@
 {% extends "base.html" %} {% load static %} {% block content %}
    
       <header class="masthead" >
-        <!-- welcome message
-        style=" background-image: url('{{ MEDIA_URL }}home page img/1home.jpg')" > -->
             <div class="container">
                 <div class="mastheadS text-black">Welcome To Our Studio!</div>
                 <h1 class="masthead text-black">Life is better surrounded by plants</div>
@@ -17,19 +15,19 @@
 <div class="Services" data-mdb-zoom-effect="true" data-mdb-auto-height="true" id="Services1">
     <div class="row py-3 shadow-5">
         <div class="col-3 mt-1">
-            <a href="#PlantQuality"><img src="{{ MEDIA_URL }}hero img/qual.png" alt="quality" class="w-100"/></a>
+            <a href="#PlantQuality"><img src="{{ MEDIA_URL }}hero_img/qual.png" alt="quality" class="w-100"/></a>
             <h2 class="text-center my-3 ">Plant Quality</h2>
           </div>
           <div class="col-3 mt-1">
-            <a href="#Repotting"><img src="{{ MEDIA_URL }}hero img/repotting1.png" alt="repotting" class="w-100"/></a>
+            <a href="#Repotting"><img src="{{ MEDIA_URL }}hero_img/repotting1.png" alt="repotting" class="w-100"/></a>
             <h2 class="text-center my-3 ">Repotting</h2>
           </div>
       <div class="col-3 mt-1">
-        <a href="#delivery"><img src="{{ MEDIA_URL }}hero img/Delivery1.png" alt="delivery" class="w-100"/></a>
+        <a href="#delivery"><img src="{{ MEDIA_URL }}hero_img/Delivery1.png" alt="delivery" class="w-100"/></a>
             <h2 class="text-center my-3 ">Delivery</h2>
       </div>
       <div class="col-3 mt-1">
-        <a href="#delivery"><img src="{{ MEDIA_URL }}hero img/Search.png" alt="quality" class="w-100"/></a>
+        <a href="#delivery"><img src="{{ MEDIA_URL }}hero_img/Search.png" alt="quality" class="w-100"/></a>
             <h2 class="text-center my-3 ">Plant search</h2>
       </div>
     </div>
@@ -145,10 +143,11 @@
                         <h5 class="subscribe d-block mt-3 text-white">Subscribe to our newsletter in order not to miss new arrivals <br />
                             promotions and discounts of our store</h5>
                     <br>
-                    <form id="newsletter-form">
-                        <label for="email" class="text-white">Email:</label>
-                        <input type="email" name="email" placeholder="Enter your email" required>
-                        <button type="submit" class="btn-secondary">Subscribe</button>
+                    <form id="subscribe-form" method="post" action="{% url 'subscribe' %}">
+                        {% csrf_token %}
+                        <label for="email">Email:</label>
+                        <input type="email" name="email" id="email" required>
+                        <button type="submit">Subscribe</button>
                     </form>
                     <div id="newsletter-message"></div>
                    </div>
@@ -159,37 +158,4 @@
     </div>
 </section>
 <!-- End of newsletter section-->
-<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-<script>
-    dotenv.config();
-
-    $(document).ready(function () {
-        $('#newsletter-form').on('submit', function (event) {
-            event.preventDefault();  
-            const email = $('#newsletter-form input[name="email"]').val();
-            const api_key = process.env.MAILCHIMP_API_KEY;
-            const list_id = process.env.LIST_ID;
-
-            $.ajax({
-                url: `https://usX.api.mailchimp.com/3.0/lists/${list_id}/members`,
-                type: 'POST',
-                data: JSON.stringify({
-                    email_address: email,
-                    status: 'pending',
-                }),
-                headers: {
-                    'Authorization': `Bearer ${api_key}`,
-                },
-                contentType: 'application/json',
-                success: function (response) {
-                    $('#newsletter-message').text('Subscription successful');
-                },
-                error: function (xhr, status, error) {
-                    $('#newsletter-message').text('Failed to subscribe. Please ensure the form is valid.');
-                }
-            });
-        });
-    });
-</script>
-
 {% endblock %}
