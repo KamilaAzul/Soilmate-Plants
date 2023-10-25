@@ -1,43 +1,46 @@
 from django.shortcuts import render, redirect
-from django.views.generic import View
-from .forms import SubscriberForm
-from .models import Subscriber, Newsletter
-from django.core.mail import send_mail
+from django.views import View
 from django.utils.crypto import get_random_string
-from mailchimp3 import MailChimp
-from django.contrib import messages
-from requests.exceptions import RequestException
-from django.http import JsonResponse, HttpResponse
-import os
-import requests
+from django.core.mail import send_mail
+from .models import Subscriber
+from .forms import SubscriptionForm
 
 
-def subscribe_newsletter(request):
-    if request.method == 'POST':
-        email = request.POST.get('email')
-        api_key = os.environ.get('YOUR_MAILCHIMP_API_KEY')
-        list_id = os.environ.get('YOUR_LIST_ID')
-        endpoint = f'https://usX.api.mailchimp.com/3.0/lists/{list_id}/members'
-        data = {
-            'email_address': email,
-            'status': 'pending',
-        }
-        headers = {
-            'Authorization': f'Bearer {api_key}',
-        }
+class SubscriptionView(View):
+    def get(self, request):
+        form = SubscriptionForm()
+        return render(request, 'newsletter/subscription_form.html', {'form': form})
+
+    def post(self, request):
+        form = SubscriptionForm(request.POST)
+        if form.is_valid():
+            email = form.cleaned_data['email']
+            confirmation_code = get_random_string(32)
+
+            subscriber, created = Subscriber.objects.get_or_create(email=email)
+            subscriber.is_confirmed = False
+            subscriber.save()
+
+            # Send confirmation email
+            confirmation_link = f"{request.build_absolute_uri('/')}{confirmation_code}"
+            subject = "Confirm Your Subscription"
+            message = f"Click the following link to confirm your subscription: {confirmation_link}"
+            from_email = "soilmate.plans@gmail.com"  # Update with your email
+            recipient_list = [email]
+            send_mail(subject, message, from_email, recipient_list, fail_silently=False)
+
+            return render(request, 'newsletter/subscription_success.html')
+        return render(request, 'newsletter/subscription_form.html', {'form': form})
+
+
+class ConfirmationView(View):
+    def get(self, request, confirmation_code):
         try:
-            response = requests.post(endpoint, json=data, headers=headers)
-            response.raise_for_status()  # Raise an exception for HTTP errors
-            if response.status_code == 200:
-                # Subscription successful
-                # Redirect to subscription success page
-                return redirect('subscription_success')
-            else:
-                return JsonResponse({'message': 'Failed to subscribe. Please ensure the form is valid.'})
-        except RequestException as e:
-            return JsonResponse({'message': f'Failed to connect to Mailchimp: {str(e)}'})
+            subscriber = Subscriber.objects.get(is_confirmed=False, confirmation_code=confirmation_code)
+            subscriber.is_confirmed = True
+            subscriber.save()
+            return render(request, 'newsletter/subscription_confirmed.html')
+        except Subscriber.DoesNotExist:
+            messages.error(request, 'Invalid confirmation code!')
+            return render(request, 'newsletter/subscription_form.html')
 
-    return render(request, 'index.html')  # Render the index.html page for GET requests
-
-def subscription_success(request):
-    return render(request, 'subscription_success.html')

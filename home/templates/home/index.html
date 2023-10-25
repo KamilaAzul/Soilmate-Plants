@@ -143,10 +143,9 @@
                         <h5 class="subscribe d-block mt-3 text-white">Subscribe to our newsletter in order not to miss new arrivals <br />
                             promotions and discounts of our store</h5>
                     <br>
-                    <form id="subscribe-form" method="post" action="{% url 'subscribe' %}">
+                    <form method="post" action="{% url 'subscribe' %}">
                         {% csrf_token %}
-                        <label for="email">Email:</label>
-                        <input type="email" name="email" id="email" required>
+                        {{ form.as_p }}
                         <button type="submit">Subscribe</button>
                     </form>
                     <div id="newsletter-message"></div>
