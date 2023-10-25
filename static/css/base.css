@@ -414,6 +414,7 @@ a.category-badge>span.badge:hover {
     padding-top: 120px;
     padding-bottom: 50px;
     background-size: cover;
+    background-image: url('/media/home_page_img/contact(2).jpg');
 }
 #contact h4 {
     margin-bottom: 20px;
