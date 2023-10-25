@@ -42,12 +42,6 @@
                         {% else %}
                         <img src=" {{ post.featured_image.url }}" id="post-content-img" width="100%" alt="{{ post.title }} Image" />
                         {% endif %}
-                  
-                        <div class="content-description" id="contentDescriptionPost">
-                          {% for categ in post.categories.all %}
-                          <h4 class="pt-3" id="bookclateg"><i class="fa fa-leaf"></i>{{ categ }}</h4>
-                          {% endfor %}
-                            </div>
                             <div class="blog_categ text-center text-decoration-none">
                               <p class="categorie">{% for categ in post.categories.all %}</p>
                               <h4 style="text-decoration: none;  color: rgb(53, 62, 43)"><i class="fa fa-leaf "></i>{{ categ }}</h4>
