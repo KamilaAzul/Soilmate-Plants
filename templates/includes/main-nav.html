@@ -51,17 +51,9 @@
             </div>
         </li>
 
-        <li class="nav-item dropdown">
-            <a class="main logo-font font-weight-bold nav-link text-white mr-5" href="all_blog" id="clothing-link" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                Blog</a>
-            <div class="dropdown-menu border-0" aria-labelledby="clothing-link">
-                <a href="{% url 'all_blog' %}?category=Potted%20trees" class="dropdown-item">All blog</a>
-                <a href="{% url 'all_blog' %}?category=Indoor%20plants" class="dropdown-item">Indoor plants</a>
-                <a href="{% url 'all_blog' %}?category=Plant%20care" class="dropdown-item">Plant care</a>
-                <a href="{% url 'all_blog' %}?category=Other" class="dropdown-item">Other</a>
-                <a href="{% url 'all_blog' %}?category=Home%20design" class="dropdown-item">Home design</a>
-
-            </div>  
+        <li class="nav-item">
+            <a class=" nav-link active main  logo-font font-weight-bold nav-link text-white mr-5"  aria-current="page" href="{% url 'all_blog' %}" id="contact-link">Blog</a>
+                </li>
         </li>
 <li class="nav-item">
     <a class=" nav-link active main  logo-font font-weight-bold nav-link text-white mr-5"  aria-current="page" href="{% url 'contact' %}" id="contact-link">Contact</a>

@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import Product, Category, SpeciesCategory, Light, Size, CareLevel, Safety
+from .models import Product, Category, SpeciesCategory, Light, Size, CareLevel, Safety, Review
 
 # Register your models here.
 
@@ -36,3 +36,10 @@ admin.site.register(Light)
 admin.site.register(Size)
 admin.site.register(CareLevel)
 admin.site.register(Safety)
+
+@admin.register(Review)
+class ReviewAdmin(admin.ModelAdmin):
+    list_display = ('user', 'product', 'rating', 'created_at')
+    list_filter = ('rating', 'created_at')
+    search_fields = ('user__username', 'product__name', 'comment')
+    list_per_page = 20

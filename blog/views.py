@@ -10,14 +10,28 @@ from django.views.generic.edit import UpdateView
 from .forms import PostForm
 from .models import Category, Post
 
-class AllBlogPost(generic.ListView):
-    """
-    Render the blog page
-    """
-    model = Post
-    queryset = Post.objects.filter(status=1).order_by("-created_on")
-    template_name = "blog/all_blog_posts.html"
-    paginate_by = 9
+class AllBlogPost(View):
+    def get(self, request):
+        category = request.GET.get('category')
+        posts = Post.objects.filter(status=1).order_by("-created_on")
+
+        if category:
+            posts = posts.filter(category__name=category)
+
+        paginate_by = 9
+        page = request.GET.get('page')
+        
+        # You can paginate the posts here if needed
+
+        categories = Category.objects.all()
+
+        context = {
+            'blog_posts': posts,
+            'category': category,
+            'categories': categories,
+        }
+
+        return render(request, 'blog/all_blog_posts.html', context)
 
 class PostDetail(View):
     """

@@ -1,4 +1,5 @@
 from django.db import models
+from django.contrib.auth.models import User
 
 
 class Category(models.Model):
@@ -40,7 +41,7 @@ class Product(models.Model):
     """
     Modal for Product
     """
-    name = models.CharField(max_length=254)
+    name = models.CharField(max_length=255)
     sku = models.CharField(max_length=254, null=True, blank=True)
     category = models.ForeignKey(
         'Category', null=True, blank=True, on_delete=models.SET_NULL)
@@ -139,3 +140,17 @@ class Safety(models.Model):
 
     def get_friendly_name(self):
         return self.friendly_name
+
+class Review(models.Model):
+    """
+    A review for the product
+    """
+    product = models.ForeignKey(Product, on_delete=models.CASCADE)
+    user = models.ForeignKey(User, on_delete=models.CASCADE)
+    rating = models.PositiveIntegerField()
+    comment = models.TextField()
+    created_at = models.DateTimeField(auto_now_add=True)
+    approved = models.BooleanField(default=False)
+
+    def __str__(self):
+        return f"{self.user.username}'s review for {self.product.name}"

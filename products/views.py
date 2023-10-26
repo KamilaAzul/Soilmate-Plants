@@ -3,9 +3,12 @@ from django.contrib import messages
 from django.contrib.auth.decorators import login_required
 from django.db.models import Q
 from django.db.models.functions import Lower
+from django.views.generic import CreateView, UpdateView
+from django.views import View
 
-from .models import Product, Category
-from .forms import ProductForm
+from .models import Product, Category, Review
+from .forms import ProductForm, ReviewForm
+
 
 # Create your views here.
 
@@ -58,17 +61,33 @@ def all_products(request):
 
     return render(request, 'products/products.html', context)
 
+class ProductDetail(View):
+    template_name = 'products/product_detail.html'
 
-def product_detail(request, product_id):
-    """ A view to show individual product details """
+    def get(self, request, product_id):
+        product = get_object_or_404(Product, pk=product_id)
+        reviews = Review.objects.filter(product=product, approved=True)
+        form = ReviewForm()
+        context = {
+            'product': product,
+            'reviews': reviews,
+            'form': form,
+        }
+        return render(request, self.template_name, context)
 
-    product = get_object_or_404(Product, pk=product_id)
+class AddReview(View):
 
-    context = {
-        'product': product,
-    }
-
-    return render(request, 'products/product_detail.html', context)
+    def post(self, request, product_id):
+        product = get_object_or_404(Product, pk=product_id)
+        form = ReviewForm(request.POST)
+        if form.is_valid():
+            review = form.save(commit=False)
+            review.product = product
+            review.user = request.user
+            review.save()
+            messages.success(request, 'Your review was sent successfully and is awaiting approval!')
+            return redirect('product_detail', product_id=product_id)
+        return render(request, 'products/product_detail.html', {'form': form, 'product': product})
 
 
 @login_required
@@ -137,3 +156,16 @@ def delete_product(request, product_id):
     product.delete()
     messages.success(request, 'Product deleted!')
     return redirect(reverse('products'))
+
+def reviews(request):
+    """
+    Renders the reviews page
+    """
+    reviews_list = (
+        Reviews.objects.all().filter(approved=True).order_by("-timestamp"))
+    return render(
+        request,
+        "products/all_reviews.html", {"reviews_list": reviews_list})
+
+
+
