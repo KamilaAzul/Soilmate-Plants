@@ -1,6 +1,7 @@
 {% extends "base.html" %}
 {% load static %}
 
+
 {% block page_header %}
     <div class="container header-container">
         <div class="row">
@@ -109,49 +110,80 @@
             </div>
         </div>
     </div>
-
-    <h2>Product Reviews</h2>
-    <ul>
-      {% for review in reviews %}
-        <li>
-          <strong>{{ review.user.username }}:</strong>
-          {{ review.title }}
-          <p>{{ review.content }}</p>
-          <p>Rating: {{ review.rating }}</p>
-        </li>
-      {% empty %}
-        <p>No reviews for this product yet.</p>
-      {% endfor %}
-    </ul>
-  
+<div class= "container">
+        {% for review in reviews_list %}
+        <div class="row">
+            <!-- Left side: Review Image -->
+            <div class="col-md-4">
+                {% if review.image %}
+                    <img class="review-image card-img-top img-fluid mt-3" src="{{ review.image.url }}" alt="{{ review.name }} Review Image">
+                {% else %}
+                    <img class="review-image card-img-top img-fluid mt-3" src="{{ MEDIA_URL }}NoIMG.jpg" alt="{{ review.name }} Review Image">
+                {% endif %}
+            </div>
+        
+            <!-- Right side: Review Information -->
+            <div class="col-md-8">
+                <p>{{ review.name }}</p>
+                <p>"{{ review.review_title }}"</p>
+                <p>Posted at date: {{ review.created_at }}</p>
+                <p>Service Review: {{ review.service_review }}</p>
+                <p>Service Rating: {{ review.star_rating }} stars</p>
+        
+                {% if can_edit_delete_review %}
+                    <div class="text-center mt-3">
+                        <a href="{% url 'edit_review' review.id %}" aria-label="Go to edit review {{ review.id }} page" class="btn-edit btn-sm btn-secondary mb-3">Edit</a>
+                        <button type="button" class="btn-sm btn-danger mb-3" data-bs-toggle="modal" data-bs-target="#delete-review-{{ review.id }}" aria-label="Delete">Delete</button>
+                    </div>
+                {% endif %}
+            </div>
+        </div>
+        
+        <!-- Delete review bootstrap modal -->
+        <div class="modal fade" id="delete-review-{{ review.id }}" tabindex="-1" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title">Delete Review</h5>
+                    </div>
+                    <div class="modal-body">
+                        Are you sure you want to delete your review?
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" aria-label="Close Modal">Close</button>
+                        <a href="{% url 'delete_review' review.id %}" aria-label="Delete review {{ review.id }}" class="btn btn-danger">Delete</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+</div>
+   
+<div class=" container">
     {% if user.is_authenticated %}
       <h2>Add a Review</h2>
       <form method="post" action="{% url 'add_review' product_id=product.id %}">
-        {% csrf_token %}
-        <div class="form-group">
-          <label for="title">Title:</label>
-          <input type="text" id="title" name="title" class="form-control">
-        </div>
-        <div class="form-group">
-          <label for="content">Review:</label>
-          <textarea id="content" name="content" class="form-control"></textarea>
-        </div>
-        <div class="form-group">
-            <label for="rating">Rating:</label>
-            <select name="rating" id="rating" class="form-control">
-                <option value="5" {% if review.service_rating == 5 %}selected{% endif %}>5 stars</option>
-                <option value="4" {% if review.service_rating == 4 %}selected{% endif %}>4 stars</option>
-                <option value="3" {% if review.service_rating == 3 %}selected{% endif %}>3 stars</option>
-                <option value="2" {% if review.service_rating == 2 %}selected{% endif %}>2 stars</option>
-                <option value="1" {% if review.service_rating == 1 %}selected{% endif %}>1 star</option>
-            </select>
-        </div>
-        <button type="submit" class="btn btn-primary">Submit Review</button>
-      </form>
+        <form method="post" enctype="multipart/form-data">
+            {% csrf_token %}
+            {% for field in form %}
+            {% if field.name != 'image' %}
+            {{ field | as_crispy_field }}
+            {% else %}
+            {{ field }}
+            {% endif %}
+            {% endfor %}
+         <div class="text-center">
+               <button class="btn btn-secondary right mb-4" type="submit" value="Save" aria-label="Submit Review">
+               Submit
+               </button>
+            </div>
+         </form>
     {% else %}
       <p>Please <a href="{% url 'login' %}">log in</a> to leave a review.</p>
     {% endif %}
   </div>
+  
+  
 
 {% endblock %}
 

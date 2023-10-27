@@ -39,7 +39,14 @@ admin.site.register(Safety)
 
 @admin.register(Review)
 class ReviewAdmin(admin.ModelAdmin):
-    list_display = ('user', 'product', 'rating', 'created_at')
-    list_filter = ('rating', 'created_at')
-    search_fields = ('user__username', 'product__name', 'comment')
-    list_per_page = 20
+    """
+    Displays the Reviews in the admin panel
+    """
+    list_display = (
+        "name",
+        "review_title",
+        "created_at",
+        "service_review",
+        "service_rating",
+        "approved",
+    )

@@ -1,40 +1,6 @@
 from django.db import models
 from django.contrib.auth.models import User
-
-
-class Category(models.Model):
-    """
-    Modal for categories
-    """
-    class Meta:
-        verbose_name_plural = 'Categories'
-
-    name = models.CharField(max_length=254)
-    friendly_name = models.CharField(max_length=254, null=True, blank=True)
-
-    def __str__(self):
-        return self.name
-
-    def get_friendly_name(self):
-        return self.friendly_name
-
-
-class SpeciesCategory(models.Model):
-    """
-    Modal for Plant Species categories
-    """
-
-    class Meta:
-        verbose_name_plural = "Species Categories"
-
-    name = models.CharField(max_length=100)
-    friendly_name = models.CharField(max_length=100, null=True, blank=True)
-
-    def __str__(self):
-        return self.name
-
-    def get_friendly_name(self):
-        return self.friendly_name
+from django.urls import reverse
 
 
 class Product(models.Model):
@@ -72,6 +38,70 @@ class Product(models.Model):
     def __str__(self):
         return self.name
 
+
+class Category(models.Model):
+    """
+    Modal for categories
+    """
+    class Meta:
+        verbose_name_plural = 'Categories'
+
+    name = models.CharField(max_length=254)
+    friendly_name = models.CharField(max_length=254, null=True, blank=True)
+
+    def __str__(self):
+        return self.name
+
+    def get_friendly_name(self):
+        return self.friendly_name
+
+
+class SpeciesCategory(models.Model):
+    """
+    Modal for Plant Species categories
+    """
+
+    class Meta:
+        verbose_name_plural = "Species Categories"
+
+    name = models.CharField(max_length=100)
+    friendly_name = models.CharField(max_length=100, null=True, blank=True)
+
+    def __str__(self):
+        return self.name
+
+    def get_friendly_name(self):
+        return self.friendly_name
+
+class Review(models.Model):
+    """
+    Model for Reviews
+    """
+
+    class Meta:
+        verbose_name_plural = "Reviews"
+
+    product = models.ForeignKey(Product, on_delete=models.CASCADE, default=None)
+    review_title = models.CharField(max_length=100, default='Default Title')
+    name = models.CharField(max_length=100, default="Default Name")
+    image = models.ImageField(
+                              upload_to="reviews_images/",
+                              null=True,
+                              blank=True)
+    created_at = models.DateTimeField(auto_now_add=True)
+    service_review = models.TextField(null=True, max_length=400)
+    service_rating = models.DecimalField(
+        max_digits=5, decimal_places=2, null=True, blank=True
+    )
+    approved = models.BooleanField(default=False)
+
+    def __str__(self):
+        return self.name
+
+    def get_absolute_url(self):
+        """Sets absolute URL"""
+        return reverse("reviews")
+        
 
 class CareLevel(models.Model):
     """
@@ -141,16 +171,6 @@ class Safety(models.Model):
     def get_friendly_name(self):
         return self.friendly_name
 
-class Review(models.Model):
-    """
-    A review for the product
-    """
-    product = models.ForeignKey(Product, on_delete=models.CASCADE)
-    user = models.ForeignKey(User, on_delete=models.CASCADE)
-    rating = models.PositiveIntegerField()
-    comment = models.TextField()
-    created_at = models.DateTimeField(auto_now_add=True)
-    approved = models.BooleanField(default=False)
+from django.urls import reverse
 
-    def __str__(self):
-        return f"{self.user.username}'s review for {self.product.name}"
+

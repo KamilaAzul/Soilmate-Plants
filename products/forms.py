@@ -20,8 +20,13 @@ class ProductForm(forms.ModelForm):
         for field_name, field in self.fields.items():
             field.widget.attrs['class'] = 'border-black rounded-0'
 
-class ReviewForm(forms.Form):
-    rating = forms.ChoiceField(choices=[(i, i) for i in range(1, 5)])
-    comment = forms.CharField(widget=forms.Textarea(attrs={'rows': 3}))
+class ReviewForm(forms.ModelForm):
+    class Meta:
+        model = Review
+        fields = ("review_title", "service_review", "service_rating", "image")
+
+    image = forms.ImageField(
+        label="Image", required=False, widget=CustomClearableFileInput
+    )
 
     

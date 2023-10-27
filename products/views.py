@@ -5,6 +5,8 @@ from django.db.models import Q
 from django.db.models.functions import Lower
 from django.views.generic import CreateView, UpdateView
 from django.views import View
+from django.contrib.messages.views import SuccessMessageMixin
+from django.contrib.auth.mixins import LoginRequiredMixin
 
 from .models import Product, Category, Review
 from .forms import ProductForm, ReviewForm
@@ -65,7 +67,7 @@ class ProductDetail(View):
     template_name = 'products/product_detail.html'
 
     def get(self, request, product_id):
-        product = get_object_or_404(Product, pk=product_id)
+        product = get_object_or_404(Product, id=product_id)
         reviews = Review.objects.filter(product=product, approved=True)
         form = ReviewForm()
         context = {
@@ -74,20 +76,6 @@ class ProductDetail(View):
             'form': form,
         }
         return render(request, self.template_name, context)
-
-class AddReview(View):
-
-    def post(self, request, product_id):
-        product = get_object_or_404(Product, pk=product_id)
-        form = ReviewForm(request.POST)
-        if form.is_valid():
-            review = form.save(commit=False)
-            review.product = product
-            review.user = request.user
-            review.save()
-            messages.success(request, 'Your review was sent successfully and is awaiting approval!')
-            return redirect('product_detail', product_id=product_id)
-        return render(request, 'products/product_detail.html', {'form': form, 'product': product})
 
 
 @login_required
@@ -157,15 +145,72 @@ def delete_product(request, product_id):
     messages.success(request, 'Product deleted!')
     return redirect(reverse('products'))
 
+
 def reviews(request):
     """
     Renders the reviews page
     """
-    reviews_list = (
-        Reviews.objects.all().filter(approved=True).order_by("-timestamp"))
-    return render(
-        request,
-        "products/all_reviews.html", {"reviews_list": reviews_list})
+    reviews_list = Review.objects.filter(approved=True).order_by("-created_at")
+
+    for review in reviews_list:
+        review.star_rating = '⭐' * int(review.service_rating)
+
+    context = {
+        'reviews_list': reviews_list,
+        'can_edit_delete_review': True, 
+    }
+
+    return render(request, "products/all_review.html", context)
 
 
+class AddReview(View):
 
+    def post(self, request, product_id):
+        product = get_object_or_404(Product, pk=product_id)
+        form = ReviewForm(request.POST)
+        if form.is_valid():
+            review = form.save(commit=False)
+            review.product = product
+            review.user = request.user
+            review.save()
+            messages.success(request, 'Your review was sent successfully and is awaiting approval!')
+            return redirect('product_detail', product_id=product_id)
+        return render(request, 'products/product_detail.html', {'form': form, 'product': product})
+
+class EditReview(LoginRequiredMixin, SuccessMessageMixin, UpdateView):
+    """
+    Edit User Review
+    """
+    model = Review
+    form_class = ReviewForm
+    template_name = "products/edit_review.html"
+    success_message = "The review was successfully updated"
+
+    def get_object(self, queryset=None):
+        obj = super().get_object(queryset)
+        if not self.request.user.is_superuser and self.request.user != obj.user:
+            messages.error(self.request, 'Sorry, only the review creator can edit it.')
+            return redirect(reverse('product_detail'))
+        return obj
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context['can_edit_delete_review'] = (
+            self.request.user.is_authenticated and
+            (self.request.user.username == self.object.name or self.request.user.is_superuser)
+        )
+        return context
+
+    def get_success_url(self):
+        return reverse('product_detail', args=[self.object.product.id])
+
+@login_required
+def delete_review(request, review_id):
+    """
+    Delete User Review
+    """
+    review = get_object_or_404(Review, id=review_id)
+    product_id = review.product.id 
+    review.delete()
+    messages.success(request, "The review was deleted successfully")
+    return redirect('product_detail', product_id=product_id)
