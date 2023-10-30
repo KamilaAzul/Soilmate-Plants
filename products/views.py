@@ -1,14 +1,15 @@
 from django.shortcuts import render, redirect, reverse, get_object_or_404
 from django.contrib import messages
+from django.urls import reverse_lazy
 from django.contrib.auth.decorators import login_required
 from django.db.models import Q
 from django.db.models.functions import Lower
-from django.views.generic import CreateView, UpdateView
+from django.views.generic import CreateView, UpdateView, DeleteView
 from django.views import View
 from django.contrib.messages.views import SuccessMessageMixin
 from django.contrib.auth.mixins import LoginRequiredMixin
 
-from .models import Product, Category, Review
+from .models import Product, Category, Review, calculate_product_rating
 from .forms import ProductForm, ReviewForm
 
 
@@ -70,10 +71,14 @@ class ProductDetail(View):
         product = get_object_or_404(Product, id=product_id)
         reviews = Review.objects.filter(product=product, approved=True)
         form = ReviewForm()
+        
+        product_rating = calculate_product_rating(product)
+        
         context = {
             'product': product,
             'reviews': reviews,
             'form': form,
+            'product_rating': product_rating,
         }
         return render(request, self.template_name, context)
 
@@ -152,18 +157,21 @@ def reviews(request):
     """
     reviews_list = Review.objects.filter(approved=True).order_by("-created_at")
 
-    for review in reviews_list:
-        review.star_rating = '⭐' * int(review.service_rating)
-
     context = {
         'reviews_list': reviews_list,
-        'can_edit_delete_review': True, 
     }
 
     return render(request, "products/all_review.html", context)
 
 
 class AddReview(View):
+    """
+    Renders the Add Review page
+    """
+    def get(self, request, product_id):
+        product = get_object_or_404(Product, pk=product_id)
+        form = ReviewForm()
+        return render(request, 'reviews/add_review.html', {'form': form, 'product': product})
 
     def post(self, request, product_id):
         product = get_object_or_404(Product, pk=product_id)
@@ -175,7 +183,7 @@ class AddReview(View):
             review.save()
             messages.success(request, 'Your review was sent successfully and is awaiting approval!')
             return redirect('product_detail', product_id=product_id)
-        return render(request, 'products/product_detail.html', {'form': form, 'product': product})
+        return render(request, 'reviews/add_review.html', {'form': form, 'product': product})
 
 class EditReview(LoginRequiredMixin, SuccessMessageMixin, UpdateView):
     """
@@ -183,8 +191,9 @@ class EditReview(LoginRequiredMixin, SuccessMessageMixin, UpdateView):
     """
     model = Review
     form_class = ReviewForm
-    template_name = "products/edit_review.html"
+    template_name = 'reviews/edit_review.html'
     success_message = "The review was successfully updated"
+
 
     def get_object(self, queryset=None):
         obj = super().get_object(queryset)
@@ -204,13 +213,18 @@ class EditReview(LoginRequiredMixin, SuccessMessageMixin, UpdateView):
     def get_success_url(self):
         return reverse('product_detail', args=[self.object.product.id])
 
-@login_required
-def delete_review(request, review_id):
+
+class DeleteReview(DeleteView):
     """
     Delete User Review
     """
-    review = get_object_or_404(Review, id=review_id)
-    product_id = review.product.id 
-    review.delete()
-    messages.success(request, "The review was deleted successfully")
-    return redirect('product_detail', product_id=product_id)
+    model = Review
+    template_name = 'reviews/delete_review.html'
+    success_url = reverse_lazy('product_detail')
+
+    def delete(self, request, *args, **kwargs):
+        messages.success(request, "The review was deleted successfully")
+        return super().delete(request, *args, **kwargs)
+
+    def get_success_url(self):
+        return reverse_lazy('product_detail', kwargs={'product_id': self.object.product.id})

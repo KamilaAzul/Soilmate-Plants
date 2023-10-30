@@ -1,6 +1,7 @@
 from django.db import models
 from django.contrib.auth.models import User
 from django.urls import reverse
+from django.db.models import Avg
 
 
 class Product(models.Model):
@@ -85,7 +86,7 @@ class Review(models.Model):
     review_title = models.CharField(max_length=100, default='Default Title')
     name = models.CharField(max_length=100, default="Default Name")
     image = models.ImageField(
-                              upload_to="reviews_images/",
+                              upload_to="media/",
                               null=True,
                               blank=True)
     created_at = models.DateTimeField(auto_now_add=True)
@@ -102,6 +103,11 @@ class Review(models.Model):
         """Sets absolute URL"""
         return reverse("reviews")
         
+def calculate_product_rating(product):
+    """ Calculate the average service_rating for the product's reviews"""
+
+    rating = Review.objects.filter(product=product, approved=True).aggregate(Avg('service_rating'))['service_rating__avg']
+    return rating if rating is not None else 0 
 
 class CareLevel(models.Model):
     """
@@ -171,6 +177,6 @@ class Safety(models.Model):
     def get_friendly_name(self):
         return self.friendly_name
 
-from django.urls import reverse
+
 
 

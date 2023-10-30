@@ -37,10 +37,11 @@
                         </a>
                     </p>
                     {% endif %}
-                    {% if product.rating %}
-                        <small class="text-muted"><i class="fas fa-star mr-1"></i>{{ product.rating }} / 5</small>
-                    {% else %}
-                        <small class="text-muted">No Rating</small>
+                    {% if product_rating > 0 %}
+    <small class="text-muted"><i class="fas fa-star mr-1"></i>{{ product_rating }}/5</small>
+{% else %}
+    <small class="text-muted">No Rating</small>
+
                     {% endif %}
                     {% if request.user.is_superuser %}
                     <small class="ml-3">
@@ -110,80 +111,53 @@
             </div>
         </div>
     </div>
-<div class= "container">
-        {% for review in reviews %}
-        <div class="row">
-            <!-- Left side: Review Image -->
-            <div class="col-md-4">
-                {% if review.image %}
-                    <img class="review-image card-img-top img-fluid mt-3" src="{{ review.image.url }}" alt="{{ review.name }} Review Image">
-                {% else %}
-                    <img class="review-image card-img-top img-fluid mt-3" src="{{ MEDIA_URL }}NoIMG.jpg" alt="{{ review.name }} Review Image">
-                {% endif %}
-            </div>
         
-            <!-- Right side: Review Information -->
-            <div class="col-md-8">
-                <p>{{ review.name }}</p>
-                <p>"{{ review.review_title }}"</p>
-                <p>Posted at date: {{ review.created_at }}</p>
-                <p>Service Review: {{ review.service_review }}</p>
-                <p>Service Rating: {{ review.star_rating }} stars</p>
-        
-                {% if can_edit_delete_review %}
-                    <div class="text-center mt-3">
-                        <a href="{% url 'edit_review' review.id %}" aria-label="Go to edit review {{ review.id }} page" class="btn-edit btn-sm btn-secondary mb-3">Edit</a>
-                        <button type="button" class="btn-sm btn-danger mb-3" data-bs-toggle="modal" data-bs-target="#delete-review-{{ review.id }}" aria-label="Delete">Delete</button>
-                    </div>
-                {% endif %}
-            </div>
+    <div class=" row d-flex justify-content-center">
+        {% if user.is_authenticated %}
+        <a href="{% url 'add_review' product_id=product.id %}"class="mx-2 btn text-center btn btn-success">Add review</a>
+        {% else %}
+          <p>Please <a href="{% url 'account_login' %}">log in</a> to leave a review.</p>
+        {% endif %}
+      </div>
+      <br>
+    <div class="row d-flex justify-content-center">
+      <div class="col-md-10">
+      {% for review in reviews %}
+        <div class="card">
+          <div class="card-body m-3">
+            <div class="row">
+              <div class="col-lg-4 d-flex justify-content-center align-items-center mb-4 mb-lg-0">
+                     {% if review.image %} 
+                      <img class=" img-fluid shadow-1-strong" width="200" height="200" src="{{ review.image.url }}" alt="{{ review.name }} Review Image">
+                  {% else %}
+                  <img class=" img-fluid shadow-1-strong" width="200" height="200" src="{{ MEDIA_URL }}NoIMG.jpg" alt="{{ review.name }} Review Image">
+                  {% endif %}
+             
+              </div>
+              <div class="col-lg-8">
+               <h5 class="text-muted fw-light mb-4">{{ review.name }}</h5>
+              <h6 class="text-muted fw-light mb-4">"{{ review.review_title }}"</h6>
+              <p class="text-muted fw-light mb-4"> <i class="fas fa-quote-left pe-2"></i>
+                 {{ review.service_review }}
+                </p>
+             <p class="text-muted fw-light mb-4">Posted at date: {{ review.created_at }}</p>
+            <p class="text-muted fw-light mb-4">Service Rating:  {{  review.service_rating }}</p>
+             
+    {% if user.is_authenticated and user.username == review.name or user.is_superuser %}
+                      <div class="text-center mt-3">
+                        <a href="{% url 'edit_review' review.id %}" aria-label="Go to edit review {{ review.id }} page" class=" mx-2 btn btn btn-secondary">Edit</a>
+                        <a href="{% url 'delete_review' review.id %}" class="btn btn-danger" data-bs-target="#delete-review-{{ review.id }}" aria-label="Delete">Delete Review</a>        
+                      </div>          
+                  {% endif %}
         </div>
-        
-        <!-- Delete review bootstrap modal -->
-        <div class="modal fade" id="delete-review-{{ review.id }}" tabindex="-1" aria-hidden="true">
-            <div class="modal-dialog">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <h5 class="modal-title">Delete Review</h5>
-                    </div>
-                    <div class="modal-body">
-                        Are you sure you want to delete your review?
-                    </div>
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" aria-label="Close Modal">Close</button>
-                        <a href="{% url 'delete_review' review.id %}" aria-label="Delete review {{ review.id }}" class="btn btn-danger">Delete</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-        {% endfor %}
+    </div>
 </div>
-   
-<div class=" container">
-    {% if user.is_authenticated %}
-      <h2>Add a Review</h2>
-      <form method="post" action="{% url 'add_review' product_id=product.id %}">
-        <form method="post" enctype="multipart/form-data">
-            {% csrf_token %}
-            {% for field in form %}
-            {% if field.name != 'image' %}
-            {{ field | as_crispy_field }}
-            {% else %}
-            {{ field }}
-            {% endif %}
-            {% endfor %}
-         <div class="text-center">
-               <button class="btn btn-secondary right mb-4" type="submit" value="Save" aria-label="Submit Review">
-               Submit
-               </button>
-            </div>
-         </form>
-    {% else %}
-      <p>Please <a href="{% url 'account_login' %}">log in</a> to leave a review.</p>
-    {% endif %}
-  </div>
-  
-  
+</div>
+<br>
+{% endfor %}
+</div>
+</div>
+<br>
 
 {% endblock %}
 
