@@ -11,39 +11,39 @@
 
 {% block content %}
 <section id="post-content">
-    <div id="intro" class="p-5 text-center bg-light">
-        <h2 class="mb-3 h2 font-monospace"> <i class="fa fa-leaf"></i>{{ post.title }}<i class="fa fa-leaf"></i> </h2>
-      </div>
+    <div id="post_detail" class="p-5 text-center" style="background-color: #f9f5ec">
+        <h2 class="mb-3 h2 font-monospace"><i class="fa fa-leaf"></i>{{ post.title }}<i class="fa fa-leaf"></i></h2>
+    </div>
     <div class="row featurette p-5 container-fluid">
-      <div class="col-md-5 text-center" id="Post_photo_container">
-        {% if "placeholder" in post.featured_image.url %}
-        <img class="post-img" id="post-content-img" src="{{ MEDIA_URL }}NoIMG.jpg" width="400" height="500"/>
-        {% else %}
-        <img src=" {{ post.featured_image.url }}" id="post-content-img" width="400" height="500" alt="{{ post.title }} Image" />
-        {% endif %}
-  
-        <div class="content-description" id="contentDescriptionPost">
-          {% for categ in post.categories.all %}
-          <h4 class="pt-3" id="bookclateg"><i class="fa fa-leaf"></i>{{ categ }}</h4>
-          {% endfor %}
+        <div class="col-md-5 col-sm-12 text-center" id="Post_photo_container">
+            {% if "placeholder" in post.featured_image.url %}
+            <img class="post-img" id="post-content-img" src="{{ MEDIA_URL }}NoIMG.jpg" width="100%" height="auto" />
+            {% else %}
+            <img src="{{ post.featured_image.url }}" id="post-content-img" class="img-fluid" alt="{{ post.title }} Image" />
+            {% endif %}
+            <div class="content-description" id="contentDescriptionPost">
+                {% for categ in post.categories.all %}
+                <h4 class="pt-3" id="bookclateg"><i class="fa fa-leaf"></i>{{ categ }}</h4>
+                {% endfor %}
+            </div>
         </div>
-      </div>
-      <!-- The post content -->
-      <div class="col-md-7" id="post_text">
-        <p class="mt-3 text-justify">{{ post.content | safe }}</p>
-        <p class="post-author font-monospace" id="PostedBY">
-            Posted by : {{ post.author }} | {{ post.created_on }}
-          </p>
-        <strong>
-    <p class="text-center mb-4">
-        <a href="{% url 'all_blog' %}" class=" btn btn-success" >Back to blog page</a>
-        {% if request.user.is_superuser %}
-        <a href="{% url 'edit_blog_post' slug=post.slug %}" class=" mx-2 btn btn btn-secondary">Edit</a>
-        <a href="{% url 'delete_blog_post' post.id %}" class="btn btn-danger" data-bs-toggle="modal"data-bs-target="#warningModal">Delete Post</a>
-        {% endif %}
-    </p>
-</div>
-</div>
+        <!-- The post content -->
+        <div class="col-md-7 col-sm-12" id="post_text">
+            <p class="mt-3 text-justify">{{ post.content | safe }}</p>
+            <p class="post-author font-monospace" id="PostedBY">
+                Posted by: {{ post.author }} | {{ post.created_on }}
+            </p>
+            <strong>
+            <p class="text-center mb-4">
+                <a href="{% url 'all_blog' %}" class="btn btn-success">Back to blog page</a>
+                {% if request.user.is_superuser %}
+                <a href="{% url 'edit_blog_post' slug=post.slug %}" class="mx-2 btn btn-secondary">Edit</a>
+                <a href="{% url 'delete_blog_post' post.id %}" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#warningModal">Delete Post</a>
+                {% endif %}
+            </p>
+        </div>
+    </div>
+</section>
 {% endblock %}
 
 

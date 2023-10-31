@@ -13,23 +13,8 @@
             </div>
         </li>
         <li class="nav-item dropdown">
-            <a class="main logo-font font-weight-bold nav-link text-white mr-5" href="{% url 'products' %}" id="homeware-link" data-toggle="dropdown"
-                aria-haspopup="true" aria-expanded="false">Plants</a>
-            <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                <li><a class="dropdown-item" href="{% url 'products' %}">All Plants</a></li>
-                    <li><a class="dropdown-item" href="{% url 'products' %}?sort=size&direction=asc">By size</a></li>
-                    <li><a class="dropdown-item" href="{% url 'products' %}?sort=price&direction=asc">By price</a></li>
-                    <li><a href="{% url 'products' %}?sort=category&direction=asc" class="dropdown-item ">By Category</a></li>
-                    <li><a class="dropdown-item" href="{% url 'products' %}?sort=rating&direction=desc" class="dropdown-item ">By Rating</a></li>
-                    <li>
-                    <li>
-                <li>
-                </li>
-            </ul>
-        </li>
-        <li class="nav-item dropdown">
             <a class="main logo-font font-weight-bold nav-link text-white mr-5" href="#" id="clothing-link" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                Categoires</a>
+                Our Plants</a>
             <div class="dropdown-menu border-0" aria-labelledby="clothing-link">
                 <a href="{% url 'products' %}?category=Exotic,Beginners%20friendly,Potted%20plants,Monsters,Potted%20trees,Hanging%20Plants" class="dropdown-item">All Categories</a>
                 <a href="{% url 'products' %}?category=Potted%20trees" class="dropdown-item">Potted trees</a>
@@ -37,6 +22,7 @@
                 <a href="{% url 'products' %}?category=Hanging%20Plants" class="dropdown-item">Hanging Plants</a>
                 <a href="{% url 'products' %}?category=Beginners%20friendly" class="dropdown-item">For Beginners</a>
                 <a href="{% url 'products' %}?category=Exotic" class="dropdown-item">Exotic</a>
+                <a class="dropdown-item" href="{% url 'products' %}?sort=rating&direction=desc" class="dropdown-item ">By Rating</a>
             </div>  
         </li>
         <li class="nav-item dropdown">
