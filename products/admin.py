@@ -10,6 +10,7 @@ class ProductAdmin(admin.ModelAdmin):
         'name',
         'category',
         'species_category',
+        'watering',
         'image',
         'size',
         'safty',
