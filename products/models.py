@@ -18,9 +18,6 @@ class Product(models.Model):
     care_level = models.ForeignKey(
         "CareLevel", null=True, blank=True, on_delete=models.SET_NULL
     )
-    watering = models.ForeignKey(
-        "Watering", null=True, blank=True, on_delete=models.SET_NULL
-    )
     has_sizes = models.BooleanField(default=False, null=True, blank=True)
     size = models.ForeignKey(
         "Size", null=True, blank=True, on_delete=models.SET_NULL
@@ -180,22 +177,6 @@ class Safety(models.Model):
     def get_friendly_name(self):
         return self.friendly_name
 
-class Watering(models.Model):
-    """
-    Modal for Plant watering 
-    """
-
-    class Meta:
-        verbose_name_plural = "Watering"
-
-    name = models.CharField(max_length=100)
-    friendly_name = models.CharField(max_length=100, null=True, blank=True)
-
-    def __str__(self):
-        return self.name
-
-    def get_friendly_name(self):
-        return self.friendly_name
 
 
 
