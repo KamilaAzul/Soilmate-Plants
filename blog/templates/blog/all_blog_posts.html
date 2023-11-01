@@ -28,10 +28,10 @@
             <div class="row">
                 {% for post in blog_posts %}
                 <div class="col-lg-4 col-md-4 col-sm-12">
-                    <div class="card mb-4 border-0 shadow rounded bg-white">
+                    <div class="card mb-4 border-0 shadow rounded bg-white" id="card-body_Post">
                         <div class="card-body">
                             <a href="{% url 'blog_post_detail' post.slug %}" aria-label="Go to the post detail page">
-                                <div class="image-container Image_blog_box">
+                                <div class="image-container " id="Image_blog">
                                     {% if "placeholder" in post.featured_image.url %}
                                     <img class="post-img img-fluid" id="post-content-img" src="{{ MEDIA_URL }}NoIMG.jpg" alt="{{ post.title }} Image">
                                     {% else %}

@@ -8,30 +8,31 @@
 </div>
 {% endblock %}
 {% block content %}
-<div class="container box-shadow text-center" id="add-post">
-    <div class="row">
-      <div class="col-12 text-center">
-          <h2> <span style="color: rgb(106, 61, 10)">Hello {{ user }}, you can add your new post here:
-          </span></h2>
-          <br>
-      </div>
+<div class="row">
+    <div class="col-12 text-center">
+        <h2>
+            <span style="color: rgb(106, 61, 10)">Hello {{ user }}, you can add your new post here:</span>
+        </h2>
+        <br>
     </div>
+</div>
+<div class="container box-shadow d-flex justify-content-center align-items-center" id="add-post">
     <div class="col-md-6 p-2">
         <form method="post" enctype="multipart/form-data">
-           {% csrf_token %}
-           {% for field in form %}
-           {% if field.name != 'image' %}
-           {{ field | as_crispy_field }}
-           {% else %}
-           {{ field }}
-           {% endif %}
-           {% endfor %}
-        <div class="text-center">
-              <button class="btn btn-secondary right mb-4" type="submit" value="Save" aria-label="Submit Review">
-              Submit
-              </button>
-           </div>
+            {% csrf_token %}
+            {% for field in form %}
+                {% if field.name != 'image' %}
+                    {{ field | as_crispy_field }}
+                {% else %}
+                    {{ field }}
+                {% endif %}
+            {% endfor %}
+            <div class="text-center">
+                <button class="btn btn-secondary right mb-4" type="submit" value="Save" aria-label="Submit Review">
+                    Submit
+                </button>
+            </div>
         </form>
-     </div>
+    </div>
 </div>
 {% endblock %}

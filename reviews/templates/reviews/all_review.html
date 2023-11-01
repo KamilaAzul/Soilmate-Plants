@@ -1,0 +1,78 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block page_header %}
+    <div class="container header-container">
+        <div class="row">
+            <div class="col"></div>
+        </div>
+    </div>
+{% endblock %}
+
+{% block content %}
+   <!-- REVIEWS SECTION -->
+   <section id="reviews" class="container text-center">
+    <h2 class="sub-title">Customers Reviews</h2>
+    <hr>
+    <div class="row row-cols-1 row-cols-md-2 row-cols-lg-4">
+        {% for review in reviews_list %}
+            <div class="col">
+                <div class="card mb-4 mb-4-spacing h-100"> 
+                    <div class="card-body d-flex flex-column"> 
+                        <div class="d-flex justify-content-center mb-4">
+                            <div class="w-100" id="Image_review"> 
+                                {% if review.image %}
+                                    <img class="img-fluid shadow-1-strong " src="{{ review.image.url }}" alt="{{ review.name }} Review Image">
+                                {% else %}
+                                    <img class="img-fluid shadow-1-strong "  src="{{ MEDIA_URL }}NoIMG.jpg" alt="{{ review.name }} Review Image">
+                                {% endif %}
+                            </div>
+                        </div>
+                        <div>
+                            <h6 class="text-muted fw-light mb-2">{{ review.product }}</h6>
+                            <h6 class="text-muted fw-light mb-2">"{{ review.review_title }}"</h6>
+                            <p class="text-muted fw-light mb-4">
+                                <i class="fas fa-quote-left pe-2"></i>
+                                {{ review.service_review | slice:":50" | safe }}
+                            </p>
+                            <p class="text-muted fw-light mb-4">Posted at date: {{ review.created_at }}</p>
+                            <p class="text-muted fw-light mb-4">Service Rating: {{ review.service_rating }}</p>
+    
+                            {% if user.is_authenticated and user.username == review.name or user.is_superuser %}
+                                <div class="text-center mt-3">
+                                    <a href="{% url 'edit_review' review.id %}" aria-label="Go to edit review {{ review.id }} page"
+                                       class="mx-2 btn btn-secondary  btn-sm">Edit</a>
+                                    <a href="{% url 'delete_review' review.id %}" class="btn btn-danger  btn-sm"
+                                       data-bs-target="#delete-review-{{ review.id }}" aria-label="Delete">Delete Review</a>
+                                </div>
+                                <br>
+                            {% endif %}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+    {% if is_paginated %}
+    <nav aria-label="Page navigation">
+        <ul class="pagination justify-content-center">
+            {% if page_obj.has_previous %}
+            <li>
+                <a href="?page={{ page_obj.previous_page_number }}" class="page-link DownButton">&laquo; PREV
+                </a>
+            </li>
+            {% endif %}
+            {% if page_obj.has_next %}
+            <li>
+                <a href="?page={{ page_obj.next_page_number }}" class="page-link DownButton">
+                    NEXT &raquo;</a>
+            </li>
+            {% endif %}
+        </ul>
+    </nav>
+{% endif %}
+<br>
+    </section>
+    <br>
+ <!-- END OF REVIEWS SECTION -->
+{% endblock %}

@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import Product, Category, SpeciesCategory, Light, Size, CareLevel, Safety, Review
+from .models import Product, Category, SpeciesCategory, Light, Size, CareLevel, Safety 
 
 # Register your models here.
 
@@ -37,16 +37,3 @@ admin.site.register(Size)
 admin.site.register(CareLevel)
 admin.site.register(Safety)
 
-@admin.register(Review)
-class ReviewAdmin(admin.ModelAdmin):
-    """
-    Displays the Reviews in the admin panel
-    """
-    list_display = (
-        "name",
-        "review_title",
-        "created_at",
-        "service_review",
-        "service_rating",
-        "approved",
-    )

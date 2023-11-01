@@ -11,6 +11,9 @@ from .forms import PostForm
 from .models import Category, Post
 
 class AllBlogPost(View):
+    """
+    Renders the all post Page
+    """
     def get(self, request):
         category = request.GET.get('category')
         posts = Post.objects.filter(status=1).order_by("-created_on")
@@ -20,8 +23,6 @@ class AllBlogPost(View):
 
         paginate_by = 9
         page = request.GET.get('page')
-        
-        # You can paginate the posts here if needed
 
         categories = Category.objects.all()
 

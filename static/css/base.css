@@ -199,6 +199,7 @@ input[name='q']::placeholder {
     background: white;
     z-index: -1;
 }
+
 a.category-badge>span.badge:hover {
     background: #212529 !important;
     color: #fff !important;
@@ -612,6 +613,9 @@ margin: 0;
     font-family: 'Caveat';
    
 }
+.mb-4-spacing {
+    margin-bottom: 20px;
+}
 
 @media (max-width: 991px) {
     .card{
@@ -804,4 +808,23 @@ color: #28a745;
 .top_info{
 
     margin-top: -10px;
+}
+
+#card-body_Post{
+
+    min-height: 750px;
+}
+
+#Image_blog img{
+
+    height: 400px;
+    width: 400px;
+}
+
+/*............................................Review section*/
+
+#Image_review img{
+
+    height: 200px;
+    width: 200px;
 }
