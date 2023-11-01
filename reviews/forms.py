@@ -1,5 +1,6 @@
 from django import forms
 from .models import Review
+from products.widgets import CustomClearableFileInput
 
 class ReviewForm(forms.ModelForm):
     class Meta:

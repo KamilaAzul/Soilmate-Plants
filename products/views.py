@@ -4,10 +4,11 @@ from django.urls import reverse_lazy
 from django.contrib.auth.decorators import login_required
 from django.db.models import Q
 from django.db.models.functions import Lower
-from django.views.generic import CreateView, UpdateView, DeleteView
 from django.views import View
 
 from .models import Product, Category
+from reviews.models import Review, calculate_product_rating
+from reviews.forms import ReviewForm
 from .forms import ProductForm
 
 

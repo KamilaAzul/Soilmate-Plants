@@ -3,10 +3,11 @@ from django.contrib import messages
 from django.urls import reverse_lazy
 from django.contrib.auth.decorators import login_required
 from django.db.models import Q
-from django.views.generic import DeleteView
-from django.views import View
+from django.views.generic import UpdateView, DeleteView
+from django.views import View 
 
 from .models import Review, calculate_product_rating
+from products.models import Product
 from .forms import ReviewForm
 from django.contrib.messages.views import SuccessMessageMixin
 from django.contrib.auth.mixins import LoginRequiredMixin
