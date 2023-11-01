@@ -4,7 +4,7 @@ from django.urls import reverse_lazy
 from django.contrib.auth.decorators import login_required
 from django.db.models import Q
 from django.views.generic import UpdateView, DeleteView
-from django.views import View 
+from django.views import generic, View
 
 from .models import Review, calculate_product_rating
 from products.models import Product
@@ -13,27 +13,17 @@ from django.contrib.messages.views import SuccessMessageMixin
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.core.paginator import Paginator
 
-
 # Create your views here.
 
+class ReviewList(generic.ListView):
 
-def reviews(request):
-    """
-    Renders the reviews page with pagination
-    """
-    reviews_list = Review.objects.filter(approved=True).order_by("-created_at")
+    model = Review
+    template_name = 'reviews/all_review.html'  
+    context_object_name = 'reviews_list'  
+    paginate_by = 4  
 
-    paginate_by = 4
-    paginator = Paginator(reviews_list, paginate_by)
-    page_number = request.GET.get('page')
-
-    page_obj = paginator.get_page(page_number)
-
-    context = {
-        'reviews_list': page_obj,
-    }
-
-    return render(request, "reviews/all_review.html", context)
+    def get_queryset(self):
+        return Review.objects.filter(approved=True).order_by("-created_at")
 
 
 class AddReview(View):

@@ -1,6 +1,7 @@
 from django.db import models
 from products.models import Product 
 from django.db.models import Avg
+from django.urls import reverse
 
 # Create your models here.
 
