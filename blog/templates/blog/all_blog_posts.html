@@ -1,98 +1,73 @@
-{% extends 'base.html' %}
-{% load static %}
-{% load crispy_forms_tags %}
-
-{% block page_header %}
-<div class="container header-container">
-    <div class="row">
-        <div class="col"></div>
-    </div>
-</div>
-{% endblock %}
+{% extends "base.html" %} {% load static %} {% block content %}
 
 
-{% block content %}
-<section id="blog-page">
-    <div id="intro" class="p-5 text-center">
-        <h1 class="mb-3 h2 font-monospace">Welcome to the Soilmate Plants blog page</h1>
-        <br>
-        {% if request.user.is_superuser %}
-        <a href="{% url 'add_post' %}" class="mx-2 btn text-center btn btn-success">Add new post</a>
+<header class="py-5"></header>
+<br>
+<section style="color: #000; background-color: #f3f2f2;">
+    <div class="container py-5">
+        <div class="row d-flex justify-content-center">
+            <div class="col-md-10 col-xl-8 text-center">
+                <h2 class="fw-bold mb-4">Welcome to the Soilmate Plants blog</h2>
+                <p class="mb-4 pb-2 mb-md-5 pb-md-0">
+                    Check the most useful information about plant care, and all the tips and tricks. We hope you will like it and learn a lot together with us.                 </p>
+            </div>
+        </div>
+        <div class="text-center">
+            {% if request.user.is_superuser %}
+            <a href="{% url 'add_post' %}" class="mx-2 btn text-center btn btn-success">Add new post</a>
         {% endif %}
-    </div>
-
-    <h1 class="mt-3">{% if category %} [{{ category }}]{% endif %}</h1>
-
-    <div class="container" id="blog_container">
-        <div class="col-12 mt-3 left">
-            <div class="row">
-                {% for post in blog_posts %}
-                <div class="col-lg-4 col-md-4 col-sm-12">
-                    <div class="card mb-4 border-0 shadow rounded bg-white" id="card-body_Post">
-                        <div class="card-body">
-                            <a href="{% url 'blog_post_detail' post.slug %}" aria-label="Go to the post detail page">
-                                <div class="image-container " id="Image_blog">
-                                    {% if "placeholder" in post.featured_image.url %}
-                                    <img class="post-img img-fluid" id="post-content-img" src="{{ MEDIA_URL }}NoIMG.jpg" alt="{{ post.title }} Image">
-                                    {% else %}
-                                    <img class="post-img img-fluid" src="{{ post.featured_image.url }}" alt="{{ post.title }} Image">
-                                    {% endif %}
-                                </div>
-                            </a>
-                            <div class="blog_categ text-center text-decoration-none">
-                                <p class="categorie">
-                                    {% for categ in post.categories.all %}
-                                    <h4 style="text-decoration: none; color: rgb(53, 62, 43)">
-                                        <i class="fa fa-leaf"></i>
-                                        <a class="text-muted" href="{% url 'all_blog' %}?category={{ categ }}">{{ categ }}</a>
-                                    </h4>
-                                    {% endfor %}
-                                </p>
-                            </div>
-
-                            <div class="content-description">
+        </div>
+        <br>
+        <div class="row text-center">
+            {% for post in blog_posts %}
+                <div class="col-md-4 mb-4 mb-md-0">
+                    <div class="card mb-4 border-0 shadow rounded bg-white" id="Blog_post">
+                        <div class="card-body py-4 mt-2" >
+                            <div class="d-flex justify-content-center mb-4">
                                 <a href="{% url 'blog_post_detail' post.slug %}" class="post-link">
-                                    <h2 class="card-title text-center" style="text-decoration: none; color: rgb(96, 148, 37)">{{ post.title }}</h2>
-                                </a>
+                                {% if "placeholder" in post.featured_image.url %}
+                                <img class="shadow-1-strong" width="200" height="200" src="{{ MEDIA_URL }}NoIMG.jpg" alt="{{ post.title }} Image">
+                                {% else %}
+                                    <img class=" shadow-1-strong" width="200" height="200" src="{{ post.featured_image.url }}" alt="{{ post.title }} Image">
+                                {% endif %}
                             </div>
-
-                            <div class="card-text">
-                                {{ post.content | slice:":50" | safe }}...
-                            </div>
-                            <hr>
-                            <p class="card-text text-muted h6">Created by:
-                                <span>{{ post.author }} | </span>
-                                {{ post.created_on }} <span><i class="fa fa-calendar"></i></span>
+                            <p class="mb-2">
+                                <h2 class="font-weight-bold my-3">{{ post.title | slice:":20" | safe}}</h2>
                             </p>
+                            {% for categ in post.categories.all %}
+                            <h4 style="text-decoration: none; color: rgb(53, 62, 43)">
+                                <i class="fa fa-leaf"></i>
+                                <a class="text-muted" href="{% url 'all_blog' %}?category={{ categ }}">{{ categ }}</a>
+                            </h4>
+                            {% endfor %}
+                                <h6 class="my-3"> {{ post.content | slice:":50" | safe }}...</h6>
+                                <h6 class="my-3"> {{ post.created_on }} <span><i class="fa fa-calendar"></i></span></h6>
+                            </a>
                         </div>
                     </div>
                 </div>
                 {% if forloop.counter|divisibleby:3 %}
-                </div>
-                <div class="row">{% endif %}
-                {% endfor %}
-            </div>
+                {% endif %}
+            {% endfor %}
         </div>
     </div>
+   
     {% if is_paginated %}
-    <nav aria-label="Page navigation">
-        <ul class="pagination justify-content-center">
-            {% if page_obj.has_previous %}
-            <li>
-                <a href="?page={{ page_obj.previous_page_number }}" class="page-link DownButton">&laquo; PREV
-                </a>
-            </li>
-            {% endif %}
-            {% if page_obj.has_next %}
-            <li>
-                <a href="?page={{ page_obj.next_page_number }}" class="page-link DownButton">
-                    NEXT &raquo;</a>
-            </li>
-            {% endif %}
-        </ul>
-    </nav>
+        <nav aria-label="Page navigation">
+            <ul class="pagination justify-content-center">
+                {% if page_obj.has_previous %}
+                    <li>
+                        <a href="?page={{ page_obj.previous_page_number }}" class="mx-2 btn text-center btn btn-success">&laquo; PREV</a>
+                    </li>
+                {% endif %}
+                {% if page_obj.has_next %}
+                    <li>
+                        <a href="?page={{ page_obj.next_page_number }}" class="mx-2 btn text-center btn btn-success">NEXT &raquo;</a>
+                    </li>
+                {% endif %}
+            </ul>
+        </nav>
     {% endif %}
 </section>
 {% endblock %}
-
 

@@ -1,17 +1,11 @@
 {% extends "base.html" %}
 {% load static %}
 
-{% block page_header %}
-<div class="container header-container">
-    <div class="row">
-        <div class="col"></div>
-    </div>
-</div>
-{% endblock %}
-
 {% block content %}
+<header class="py-5"></header>
+<br>
 <section id="post-content">
-    <div id="post_detail" class="p-5 text-center" style="background-color: #f9f5ec">
+    <div id="post_detail" class="p-5 text-center" style="background-color: #f3f2f2;">
         <h2 class="mb-3 h2 font-monospace"><i class="fa fa-leaf"></i>{{ post.title }}<i class="fa fa-leaf"></i></h2>
     </div>
     <div class="row featurette p-5 container-fluid">

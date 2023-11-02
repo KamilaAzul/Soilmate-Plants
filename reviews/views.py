@@ -20,7 +20,7 @@ class ReviewList(generic.ListView):
     model = Review
     template_name = 'reviews/all_review.html'  
     context_object_name = 'reviews_list'  
-    paginate_by = 4  
+    paginate_by = 6  
 
     def get_queryset(self):
         return Review.objects.filter(approved=True).order_by("-created_at")

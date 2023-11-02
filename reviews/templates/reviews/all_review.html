@@ -1,59 +1,57 @@
 {% extends "base.html" %}
 {% load static %}
 
-{% block page_header %}
-    <div class="container header-container">
-        <div class="row">
-            <div class="col"></div>
-        </div>
-    </div>
-{% endblock %}
 
 {% block content %}
+<header class="py-5"></header>
+<br>
    <!-- REVIEWS SECTION -->
-   <section id="reviews" class="container text-center">
-    <h2 class="sub-title">Customers Reviews</h2>
-    <hr>
-    <div class="row row-cols-1 row-cols-md-2 row-cols-lg-4">
-        {% for review in reviews_list %}
-            <div class="col">
-                <div class="card mb-4 mb-4-spacing h-100"> 
-                    <div class="card-body d-flex flex-column"> 
+  <!--  (https://mdbootstrap.com/docs/standard/extended/testimonials/)-->
+
+  <section style="color: #000; background-color: #f3f2f2;">
+    <div class="container py-5">
+        <div class="row d-flex justify-content-center">
+            <div class="col-md-10 col-xl-8 text-center">
+                <h2 class="fw-bold mb-4">Testimonials</h2>
+                <p class="mb-4 pb-2 mb-md-5 pb-md-0">
+                After shopping at Soilmate Plants, we ask our customers for opinions and photos. Here you can see what people who trust
+                us think about us and see what plants actually end up in their homes.</p>
+            </div>
+        </div>
+        <div class="row text-center">
+            {% for review in reviews_list %}
+            <div class="col-md-4 mb-4 mb-md-0">
+                <div class="card" id="ReviewsCard">
+                    <div class="card-body py-4 mt-2">
                         <div class="d-flex justify-content-center mb-4">
-                            <div class="w-100" id="Image_review"> 
-                                {% if review.image %}
-                                    <img class="img-fluid shadow-1-strong " src="{{ review.image.url }}" alt="{{ review.name }} Review Image">
-                                {% else %}
-                                    <img class="img-fluid shadow-1-strong "  src="{{ MEDIA_URL }}NoIMG.jpg" alt="{{ review.name }} Review Image">
-                                {% endif %}
-                            </div>
-                        </div>
-                        <div>
-                            <h6 class="text-muted fw-light mb-2">{{ review.product }}</h6>
-                            <h6 class="text-muted fw-light mb-2">"{{ review.review_title }}"</h6>
-                            <p class="text-muted fw-light mb-4">
-                                <i class="fas fa-quote-left pe-2"></i>
-                                {{ review.service_review | slice:":50" | safe }}
-                            </p>
-                            <p class="text-muted fw-light mb-4">Posted at date: {{ review.created_at }}</p>
-                            <p class="text-muted fw-light mb-4">Service Rating: {{ review.service_rating }}</p>
-    
-                            {% if user.is_authenticated and user.username == review.name or user.is_superuser %}
-                                <div class="text-center mt-3">
-                                    <a href="{% url 'edit_review' review.id %}" aria-label="Go to edit review {{ review.id }} page"
-                                       class="mx-2 btn btn-secondary  btn-sm">Edit</a>
-                                    <a href="{% url 'delete_review' review.id %}" class="btn btn-danger  btn-sm"
-                                       data-bs-target="#delete-review-{{ review.id }}" aria-label="Delete">Delete Review</a>
-                                </div>
-                                <br>
+                            {% if review.image %}
+                            <img class="rounded-circle shadow-1-strong" width="100" height="100" src="{{ review.image.url }}" alt="{{ review.name }} Review Image">
+                            {% else %}
+                            <img class="rounded-circle shadow-1-strong" width="100" height="100" src="{{ MEDIA_URL }}NoIMG.jpg" alt="{{ review.name }} Review Image">
                             {% endif %}
                         </div>
+                        <h6 class="font-weight-bold my-3">{{ review.review_title }}</h6>
+                        
+                        <p class="mb-2">
+                            <i class="fas fa-quote-left pe-2"></i> {{ review.service_review }}
+                        </p>
+                       
+                        <h6 class="font-weight-bold my-3">Rating : {{ review.service_rating }}</h6>
+                        <h6 class="font-weight-bold my-3">{{ review.created_at }}</h6>
+                        {% if user.is_authenticated and user.username == review.name or user.is_superuser %}
+                        <div class="text-center mt-3">
+                          <a href="{% url 'edit_review' review.id %}" aria-label="Go to edit review {{ review.id }} page" class=" mx-2 btn btn btn-secondary">Edit</a>
+                          <a href="{% url 'delete_review' review.id %}" class="btn btn-danger" data-bs-target="#delete-review-{{ review.id }}" aria-label="Delete">Delete Review</a>        
+                        </div>          
+                    {% endif %}
                     </div>
                 </div>
             </div>
-        {% endfor %}
+            {% if forloop.counter|divisibleby:3 %}
+                {% endif %}
+            {% endfor %}
+        </div>
     </div>
-    <br>
     {% if is_paginated %}
     <nav aria-label="Page navigation">
         <ul class="pagination justify-content-center">
@@ -71,9 +69,11 @@
             {% endif %}
         </ul>
     </nav>
-{% endif %}
-<br>
-    </section>
+    {% endif %}
     <br>
+</section>
+
+<!-- End of testemonies-->
+
  <!-- END OF REVIEWS SECTION -->
 {% endblock %}

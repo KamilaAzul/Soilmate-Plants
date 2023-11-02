@@ -810,15 +810,16 @@ color: #28a745;
     margin-top: -10px;
 }
 
-#card-body_Post{
 
-    min-height: 750px;
+#Blog_post{
+
+background-color: #17a2b8;
 }
 
-#Image_blog img{
+#Blog_post h3:hover {
+    background-color: #f5f1f1;
+    color: #6a5124;
 
-    height: 400px;
-    width: 400px;
 }
 
 /*............................................Review section*/
@@ -827,4 +828,9 @@ color: #28a745;
 
     height: 200px;
     width: 200px;
+}
+
+#ReviewsCard{
+    height: auto;
+    margin-bottom: 15px;
 }
