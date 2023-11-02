@@ -21,18 +21,19 @@
         <div class="row text-center">
             {% for post in blog_posts %}
                 <div class="col-md-4 mb-4 mb-md-0">
-                    <div class="card mb-4 border-0 shadow rounded bg-white" id="Blog_post">
+                    <div class="card mb-4 border-0 shadow rounded bg-white" >
                         <div class="card-body py-4 mt-2" >
-                            <div class="d-flex justify-content-center mb-4">
+                            <div class="d-flex justify-content-center mb-4" id="Blog_post" >
                                 <a href="{% url 'blog_post_detail' post.slug %}" class="post-link">
                                 {% if "placeholder" in post.featured_image.url %}
                                 <img class="shadow-1-strong" width="200" height="200" src="{{ MEDIA_URL }}NoIMG.jpg" alt="{{ post.title }} Image">
                                 {% else %}
                                     <img class=" shadow-1-strong" width="200" height="200" src="{{ post.featured_image.url }}" alt="{{ post.title }} Image">
                                 {% endif %}
+                            </a>
                             </div>
                             <p class="mb-2">
-                                <h2 class="font-weight-bold my-3">{{ post.title | slice:":20" | safe}}</h2>
+                                <h2 class="font-monospace my-3 ">{{ post.title | slice:":20" | safe}}</h2>
                             </p>
                             {% for categ in post.categories.all %}
                             <h4 style="text-decoration: none; color: rgb(53, 62, 43)">
@@ -42,7 +43,7 @@
                             {% endfor %}
                                 <h6 class="my-3"> {{ post.content | slice:":50" | safe }}...</h6>
                                 <h6 class="my-3"> {{ post.created_on }} <span><i class="fa fa-calendar"></i></span></h6>
-                            </a>
+                            
                         </div>
                     </div>
                 </div>

@@ -813,14 +813,20 @@ color: #28a745;
 
 #Blog_post{
 
-background-color: #17a2b8;
+    overflow: hidden;
+    margin: 0 auto;
 }
 
-#Blog_post h3:hover {
-    background-color: #f5f1f1;
-    color: #6a5124;
+#Blog_post img{
 
+    transition: 0.5s all ease-in-out;
+    }
+    
+
+#Blog_post:hover img {
+    transform: scale(1.1);
 }
+
 
 /*............................................Review section*/
 
@@ -830,7 +836,5 @@ background-color: #17a2b8;
     width: 200px;
 }
 
-#ReviewsCard{
-    height: auto;
-    margin-bottom: 15px;
-}
+
+
