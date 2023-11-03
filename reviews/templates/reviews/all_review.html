@@ -26,9 +26,9 @@
                         <h2 class="my-3">{{ review.review_title }}</h2>
                         <div class="d-flex justify-content-center mb-4">
                             {% if review.image %}
-                            <img class="shadow-1-strong" width="100" height="100" src="{{ review.image.url }}" alt="{{ review.product }} Review Image">
+                            <img class="shadow-1-strong" width="100" height="100" src="{{ review.image.url }}" alt="{{ review.product }}">
                             {% else %}
-                            <img class="shadow-1-strong" width="100" height="100" src="{{ MEDIA_URL }}NoIMG.jpg" alt="{{ review.name }} Review Image">
+                            <img class="shadow-1-strong" width="100" height="100" src="{{ MEDIA_URL }}NoIMG.jpg" alt="{{ review.product }}">
                             {% endif %}
                         </div>
                         <h6 class="font-weight-bold my-3">{{ review.product }}</h6>

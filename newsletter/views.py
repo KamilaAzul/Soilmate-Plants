@@ -14,27 +14,27 @@ class SubscriptionView(View):
     """
     Renders the all subscription view
     """
-    template_name = 'subscription_form.html'
-
-    def get(self, request):
-        form = SubscriptionForm()
-        return render(request, self.template_name, {'form': form})
-
     def post(self, request):
-        form = SubscriptionForm(request.POST)
-
-        if form.is_valid():
-            email = form.cleaned_data['email']
-            confirmation_code = generate_confirmation_code(email)
-            confirmation_link = f"{request.build_absolute_uri(reverse('confirmation', args=[confirmation_code]))}"
-            subject = "Confirm Your Subscription"
-            message = f"Click the following link to confirm your subscription: {confirmation_link}"
-            from_email = "soilmate.plans@gmail.com"  
-            recipient_list = [email]
-            send_mail(subject, message, from_email, recipient_list, fail_silently=False)
-
-            return redirect('confirmation', confirmation_code=confirmation_code)
-        return render(request, self.template_name, {'form': form})
+        email = request.POST.get('email')
+        if email:
+            subscriber, created = Subscriber.objects.get_or_create(email=email)
+            if not created:
+                messages.error(request, _('You are already subscribed.'))
+            else:
+                subscriber.generate_confirmation_code()
+                confirmation_link = reverse('confirmation', args=[subscriber.confirmation_code])
+                confirmation_url = f"{get_current_site(request)}{confirmation_link}"
+                send_mail(
+                    _('Confirm Your Subscription'),
+                    f'Please confirm your subscription by clicking on the following link: {confirmation_url}',
+                    'from@example.com',
+                    [email],
+                    fail_silently=False,
+                )
+                messages.success(request, _('A confirmation email has been sent to your email address.'))
+        else:
+            messages.error(request, _('Please provide a valid email address.'))
+        return redirect('subscribe')
 
 class ConfirmationView(View):
     """
@@ -42,13 +42,13 @@ class ConfirmationView(View):
     """
     def get(self, request, confirmation_code):
         try:
-            subscriber = Subscriber.objects.get(is_confirmed=False, confirmation_code=confirmation_code)
-            subscriber.is_confirmed = True
+            subscriber = Subscriber.objects.get(confirmation_code=confirmation_code)
+            subscriber.confirmation_code = ''
             subscriber.save()
-            return render(request, 'newsletter/subscription_confirmed.html')
+            messages.success(request, _('You have successfully subscribed to our newsletter.'))
         except Subscriber.DoesNotExist:
-            messages.error(request, 'Invalid confirmation code!')
-            return render(request, 'newsletter/subscription_form.html')
+            messages.error(request, _('Invalid confirmation code.'))
+        return redirect('subscribe')
 
 def generate_confirmation_code(email):
     """
