@@ -16,6 +16,9 @@ from django.core.paginator import Paginator
 # Create your views here.
 
 class ReviewList(generic.ListView):
+    """
+    Renders the all reviews view
+    """
 
     model = Review
     template_name = 'reviews/all_review.html'  
