@@ -17,7 +17,7 @@ class Review(models.Model):
     review_title = models.CharField(max_length=100, default='Default Title')
     name = models.CharField(max_length=100, default="Default Name")
     image = models.ImageField(
-                              upload_to="media/",
+                              upload_to="review_images",
                               null=True,
                               blank=True)
     created_at = models.DateTimeField(auto_now_add=True)
