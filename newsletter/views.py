@@ -9,7 +9,7 @@ from django.core.exceptions import ValidationError
 from django.contrib.auth.decorators import login_required
 
 from .models import Subscriber
-from .forms import SubscriptionForm
+from .forms import SubscriptionForm, NewsletterForm
 
 
 

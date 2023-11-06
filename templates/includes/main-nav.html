@@ -51,6 +51,9 @@
     <div class="dropdown-menu border-0" aria-labelledby="clothing-link">
         <a href="{% url 'reviews' %}" class="dropdown-item ">Cusomer Reviews</a>
         <a href="{% url 'design' %}" class="dropdown-item ">Design services</a>
+        {% if user.is_superuser %}
+        <a href="{% url 'newsletter' %}">Newsletter</a>
+    {% endif %}
     </div>
 </li>
     </ul>

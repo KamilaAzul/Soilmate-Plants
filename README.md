@@ -212,7 +212,7 @@ uploaded by the admin panel.
   If the user is logged in as an administrator the sub-menus look different.
  
 **Navigation - User Not Logged In**
-* **Home** - Shows the user a hero image and 
+* **Home** - Welcome massage, Shows the user a hero image and and gives option to start shoping.
 * **Products** - Lets the user sort/view the products by **added date**, **price**, **rating**, **name** and **all products**
 * **Categories** - Lets the user sort/view the products by the categories **tapes**, **cds**, **posters**, **pins**, **t-shirts**, **tank tops**, **tote bags** and **vinyls**
 * **Special Offers** -Lets the user sort/view the products by the tags **new arrivals** and **product of the month**

@@ -7,6 +7,7 @@ class SubscriptionForm(forms.Form):
     receivers = forms.CharField()
     message = forms.CharField(widget=TinyMCE(), label="Email content")
 
-  
-
+class NewsletterForm(forms.Form):
+    subject = forms.CharField(max_length=200)
+    message = forms.CharField(widget=forms.Textarea)
         
