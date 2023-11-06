@@ -178,11 +178,10 @@ uploaded by the admin panel.
 
 ## Database Diagram
 
-![Database Diagrama](./assets/readme/extras/watches_clocks_database_diagram.jpg)<br>
+![Database Diagrama]()<br>
 
 ## Features
 
-    - [Landing Page](#landing-page)
     - [Home Page - Hero Imagel](#home-page---hero-image)
     - [Home Page -Plants Quality](#home-page---plants-quality)
     - [Home Page -Repotting](#home-page--repotting)
@@ -207,7 +206,27 @@ uploaded by the admin panel.
     - [Logout Page](#logout-page)
     - [Reset Password Page](#reset-password-page)
     - [Change Password Page](#change-password-page)
-    - [Navbar](#navbar)
+
+### Navbar
+  The navigation bar includes the same basic options for the user (logged in or not logged in). 
+  If the user is logged in as an administrator the sub-menus look different.
+ 
+**Navigation - User Not Logged In**
+* **Home** - Shows the user a hero image and 
+* **Products** - Lets the user sort/view the products by **added date**, **price**, **rating**, **name** and **all products**
+* **Categories** - Lets the user sort/view the products by the categories **tapes**, **cds**, **posters**, **pins**, **t-shirts**, **tank tops**, **tote bags** and **vinyls**
+* **Special Offers** -Lets the user sort/view the products by the tags **new arrivals** and **product of the month**
+* **My Account** - Lets the user either **register an account** or **login**
+* **Cart** - Views the total cost of the cart when the user starts adding to it. When the user clicks on it the **bag** template opens up.
+* **Search Box** - Lets the user search for products on the page.
+
+**Navigation - User Logged In**
+
+When user is logged in the **my account** gets more available options, **my profile** and **my wishlist**.
+
+* **My Profile** - On the profile page the user can change delivery information and see the order history (and confirmations from earlier purchases)
+* **My Wishlist** - On the wishlist page the user can find their wishlist that is populated when the user adds items to the wishlist from the product detail area. From this view the user also can remove products from the wishlist.
+
     - [Footer](#footer)
     - [Page 404 - Page Not Found](#page-404---page-not-found)
   - [Messages and Interaction with Users](#messages-and-interaction-with-users)
