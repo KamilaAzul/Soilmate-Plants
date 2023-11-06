@@ -143,12 +143,23 @@
                         <h5 class="subscribe d-block mt-3 text-white">Subscribe to our newsletter in order not to miss new arrivals <br />
                             promotions and discounts of our store</h5>
                     <br>
-                    <form method="post">
+                    <form action="{% url 'subscribe' %}" method="post">
+                        <div class="row d-flex justify-content-center">
                         {% csrf_token %}
-                        {{ form.as_p }}
-                        <label for="email">Email:</label>
-                        <input type="email" id="email" name="email" required>
-                        <button type="submit">Subscribe</button>
+                        <div class="col-auto">
+                            <input id="name" name="name" class="form-control" placeholder="Your Name"/>
+                        </div>
+
+                        <div class="col-auto">
+                            <input id="email" name="email" type="email" class="form-control" placeholder="Email address"/>
+                        </div>
+
+                        <div class="col-auto">
+                            <button type="submit" class="btn btncolor">
+                                <i class="fa fa-arrow-circle-right fa-lg"></i>
+                            </button>
+                        </div>
+                        </div>
                     </form>
                     <div id="newsletter-message"></div>
                    </div>

@@ -1,14 +1,10 @@
 from django.db import models
-
+from django.utils import timezone
 
 class Subscriber(models.Model):
-    email = models.EmailField(unique=True)
-    is_confirmed = models.BooleanField(default=False)
-    confirmation_code = models.CharField(max_length=64, blank=True, null=True)
-
-    def generate_confirmation_code(self):
-        self.confirmation_code = get_random_string(32)
-        self.save()
+    name = models.CharField(max_length=100, default="Subscriber name")
+    email = models.EmailField(unique=True, max_length=100)
+    created_date = models.DateTimeField('Date created', default=timezone.now)
 
     def __str__(self):
         return self.email

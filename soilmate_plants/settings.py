@@ -55,6 +55,7 @@ INSTALLED_APPS = [
     'django_summernote',
     'newsletter',
     'reviews',
+    'tinymce',
 
     # Other
     'crispy_forms',
@@ -251,4 +252,10 @@ SUMMERNOTE_CONFIG = {
         "width": "100%",
         "height": "480",
     }
+}
+
+TINYMCE_DEFAULT_CONFIG = {
+    'theme': 'advanced',
+    'width': 600,
+    'height': 400,
 }
