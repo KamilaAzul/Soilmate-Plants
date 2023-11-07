@@ -219,6 +219,7 @@ uploaded by the admin panel.
 * **About us** - Lets the user find information about the company.
 * **Blog** - Lets the user see the posts about different subjects related to plant care.
 * **Contact** - Allows the user to send a message to the company with a specific inquiry
+* **More** - Allows the user to see **Customer Reviews** and **Desing Services**. Superuser can add **Newsletter** to send it to subscribed users. 
 * **Search Box** - Lets the user search for products on the page.
 * **My Account** - Lets the user either **register an account** or **login**
 * **Cart** - Views the total cost of the cart when the user starts adding to it. When the user clicks on it the **bag** template opens up.

@@ -471,6 +471,24 @@ label {
     background-color: #D5CFBD;
 } 
 
+/*..........................................Thank you page*/
+
+#ThankYou{
+
+    margin-top:100px;
+    background-color:#f8f3e3e7;
+}
+
+#ThankYou h2{
+    font-family: 'Caveat';
+    font-weight: 400;
+}
+
+
+#ThankYou .btn{
+    background-color: #8DB74E;
+} 
+
 
 /*..........................................Our services*/
 
