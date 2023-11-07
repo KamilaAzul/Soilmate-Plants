@@ -212,10 +212,14 @@ uploaded by the admin panel.
   If the user is logged in as an administrator the sub-menus look different.
  
 **Navigation - User Not Logged In**
-* **Home** - Welcome massage, Shows the user a hero image and and gives option to start shoping.
-* **Products** - Lets the user sort/view the products by **added date**, **price**, **rating**, **name** and **all products**
-* **Categories** - Lets the user sort/view the products by the categories **tapes**, **cds**, **posters**, **pins**, **t-shirts**, **tank tops**, **tote bags** and **vinyls**
-* **Special Offers** -Lets the user sort/view the products by the tags **new arrivals** and **product of the month**
+
+* **Home**- Lets the user find information about: **Plants Quality**, **Repotting**, **Delivery**, **Newsletter**.
+* **Our Plants** - Lets the user sort/view the products by **All Plants**, **Potted trees**, **Potted plants**, **Hanging Plants**, **For Beginners**, **Exotic** and **By Rating**,
+* **Special Offers** -Lets the user sort/view the products by the tags **new arrivals** and **product of the month** and **Sales**
+* **About us** - Lets the user find information about the company.
+* **Blog** - Lets the user see the posts about different subjects related to plant care.
+* **Contact** - Allows the user to send a message to the company with a specific inquiry
+* **Search Box** - Lets the user search for products on the page.
 * **My Account** - Lets the user either **register an account** or **login**
 * **Cart** - Views the total cost of the cart when the user starts adding to it. When the user clicks on it the **bag** template opens up.
 * **Search Box** - Lets the user search for products on the page.
