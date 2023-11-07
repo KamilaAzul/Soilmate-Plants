@@ -36,16 +36,15 @@ README Table Content
 - [Delete Product](#delete-product)
 - [Shopping Bag](#shopping-bag)
 - [Update Bag](#update-bag)
-- [Remove Product from Bag](#remove-product-from-bag)
 - [Products Checkout](#products-checkout)
 - [Products Checkout - Success](#products-checkout---success)
-- [Purchase Success](#purchase-success)
-- [Purchase Success - Confirmation Email](#purchase-success---confirmation-email)
-- [Profile Page](#profile-page)
+  - [Service Reviews under the product](#service-reviews-under-the-product)
 - [Service Reviews Page](#service-reviews-page)
 - [Add/Edit Service Review Page](#addedit-service-review-page)
-- [Update Review](#update-review)
 - [Delete Review](#delete-review)
+- [Profile Page](#profile-page)
+- [Profile Update](#profile-update)
+- [About us](#about-us)
 - [Signup Page](#signup-page)
 - [Login Page](#login-page)
 - [Logout Page](#logout-page)
@@ -138,39 +137,66 @@ uploaded by the admin panel.
 # Delivery
 # Newsletter
 # Our Plants Page
+
+- In this feature users, can see a selection of plants on sale. The sale items are chosen by the website admin. Adding a product to sale is completed through the admin panel or from the website front-end.<br>
+  
 # Products Details
 # Add Product
 # Edit Product 
 # Delete Product 
 # Shopping Bag
+
+- Here, users can add products and quantities. Check the total price, and delivery costs and go 
+to the secure checkout to finish the order. The user can also leave this page by pressing the button "Keep Shopping".<br>
+
 # Update Bag
-# Remove Product from Bag
+-The user can change the quantity od the products and remove unwanted products.
+
 # Products Checkout
+
+-- On the checkout page, users will have to fill out the form and add the credit/debit card details to finish the purchase.<br>
+
 # Products Checkout - Success
-# Purchase Success
-# Purchase Success - Confirmation Email
-# Profile Page
+
+- Once the user have successfully purchased products, a confirmation message will appear and a confirmation email will be sent.
+
+## Service Reviews under the product
+
+The user can leave a review under the purchased flower.
+
 # Service Reviews Page
+
+- On this feature, users can see all reviews left by website users. The page admin will first have to approve a review before it will appear on the website.<br>
+- 
 # Add/Edit Service Review Page
-# Update Review 
+
+ The edit and delete buttons will appear if the user created a particular review.
+
 # Delete Review
 
+Usen can delete unwanted review.
+
+# Profile Page
+
+# Profile Update
+# About us
+Company
+Out Team
+Gallery
+Blog Page
+Contact Page
+More
+Customer Reviews
+Design Services
+Newsletter
 # Signup Page
 # Login Page
 # Logout Page
 # Reset Password Page
 # Change Password Page
-
-
-
 # Page 404 - Page Not Found
 # Messages and Interaction with Users
-  
-    - [Profile Update](#profile-update)
- 
-    
-    -
--
+
 ### Navbar
   The navigation bar includes the same basic options for the user (logged in or not logged in). 
   If the user is logged in as an administrator the sub-menus look different.
