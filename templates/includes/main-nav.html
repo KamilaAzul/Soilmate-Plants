@@ -6,10 +6,10 @@
                 Home
             </a>
             <div class="dropdown-menu border-0" aria-labelledby="info-links">
-                <a href="{% url 'home' %}" class="dropdown-item">Plants Quality</a>
-                <a href="#Repotting" class="dropdown-item ">Repotting</a>
-                <a href="#Delivery" class="dropdown-item ">Delivery</a>
-                <a href="#Newsletter" class="dropdown-item">Newsletter</a>
+                <a href="{% url 'home' %}#PlantQuality" class="dropdown-item">Plants Quality</a>
+                <a href="{% url 'home' %}#Repotting" class="dropdown-item ">Repotting</a>
+                <a href="{% url 'home' %}#Delivery" class="dropdown-item ">Delivery</a>
+                <a href="{% url 'home' %}#Newsletter" class="dropdown-item">Newsletter</a>
             </div>
         </li>
         <li class="nav-item dropdown">
@@ -30,8 +30,9 @@
                 data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 About us</a>
             <div class="dropdown-menu border-0" aria-labelledby="about-company">
-                <a href="{% url 'about' %}" class="dropdown-item">Company</a>
-                <a href="#OurTeam" class="dropdown-item ">Our Team</a>
+                <a href="{% url 'about' %}#Company" class="dropdown-item">Company</a>
+                <a href="{% url 'about' %}#team" class="dropdown-item ">Our Team</a>
+                <a href="{% url 'about' %}#gallery" class="dropdown-item ">Gallery</a>
             </div>
         </li>
 

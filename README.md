@@ -233,6 +233,8 @@ When user is logged in the **my account** gets more available options, **my prof
 * **My Wishlist** - On the wishlist page the user can find their wishlist that is populated when the user adds items to the wishlist from the product detail area. From this view the user also can remove products from the wishlist.
 
     - [Footer](#footer)
+
+On the website footer, users can see basic information about the Soilmate Plants. The information includes contact, social media, copyright, newsletter.<br>
     - [Page 404 - Page Not Found](#page-404---page-not-found)
   - [Messages and Interaction with Users](#messages-and-interaction-with-users)
     - [Sign up 1](#sign-up-1)
