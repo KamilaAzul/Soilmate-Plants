@@ -11,102 +11,50 @@ clear and concise site navigation.
 
 README Table Content
 
-- [Soilamate Plants - Introduction](#watches--clocks---introduction)
+- [Soilmate Plants - Introduction](#soilmate-plants---introduction)
   - [User Experience - UX](#user-experience---ux)
     - [User Stories](#user-stories)
     - [Agile Methodology](#agile-methodology)
     - [The Scope](#the-scope)
       - [Main Site Goals](#main-site-goals)
   - [Design](#design)
-    - [Colours](#colours)
-    - [Typography](#typography)
-    - [Imagery](#imagery)
-    - [Video](#video)
-    - [Wireframes](#wireframes)
+      - [Colours](#colours)
+      - [Typography](#typography)
+      - [Imagery](#imagery)
   - [Database Diagram](#database-diagram)
   - [Features](#features)
-    - [Landing Page](#landing-page)
-    - [Home Page - Hero Imagel](#home-page---hero-image)
-    - [Home Page -Plants Quality](#home-page---plants-quality)
-    - [Home Page -Repotting](#home-page--repotting)
-    - [Home Page -Delivery](#home-page--delivery)
-    - [Home Page - TestemoniesCarousel](#home-page---testemonies-carousel)
-    - [Products Page](#products-page)
-    - [Products Details](#products-details)
-    - [Products Details - Features](#products-details---features)
-    - [Products Details - Products on Sale](#products-details---products-on-sale)
-    - [Products Shopping Bag](#products-shopping-bag)
-    - [Products Shopping Bag - Products Coming Soon](#products-shopping-bag---products-coming-soon)
-    - [Products Checkout](#products-checkout)
-    - [Products Checkout - Success](#products-checkout---success)
-    - [Products Management](#products-management)
-    - [Profile Page](#profile-page)
-      - [Service Reviews Page](#service-reviews-page)
-      - [Add/Edit Service Review Page](#addedit-service-review-page)
-    - [Signup Page](#signup-page)
-    - [Signup Page - Verify Email](#signup-page---verify-email)
-    - [Signup Page - Confirm Email](#signup-page---confirm-email)
-    - [Login Page](#login-page)
-    - [Logout Page](#logout-page)
-    - [Reset Password Page](#reset-password-page)
-    - [Change Password Page](#change-password-page)
+  - [Home Page](#home-page)
+- [Hero image](#hero-image)
+- [Plants Quality](#plants-quality)
+- [Repotting](#repotting)
+- [Delivery](#delivery)
+- [Newsletter](#newsletter)
+- [Our Plants Page](#our-plants-page)
+- [Products Details](#products-details)
+- [Add Product](#add-product)
+- [Edit Product](#edit-product)
+- [Delete Product](#delete-product)
+- [Shopping Bag](#shopping-bag)
+- [Update Bag](#update-bag)
+- [Remove Product from Bag](#remove-product-from-bag)
+- [Products Checkout](#products-checkout)
+- [Products Checkout - Success](#products-checkout---success)
+- [Purchase Success](#purchase-success)
+- [Purchase Success - Confirmation Email](#purchase-success---confirmation-email)
+- [Profile Page](#profile-page)
+- [Service Reviews Page](#service-reviews-page)
+- [Add/Edit Service Review Page](#addedit-service-review-page)
+- [Update Review](#update-review)
+- [Delete Review](#delete-review)
+- [Signup Page](#signup-page)
+- [Login Page](#login-page)
+- [Logout Page](#logout-page)
+- [Reset Password Page](#reset-password-page)
+- [Change Password Page](#change-password-page)
+- [Page 404 - Page Not Found](#page-404---page-not-found)
+- [Messages and Interaction with Users](#messages-and-interaction-with-users)
     - [Navbar](#navbar)
     - [Footer](#footer)
-    - [Page 404 - Page Not Found](#page-404---page-not-found)
-  - [Messages and Interaction with Users](#messages-and-interaction-with-users)
-    - [Sign up 1](#sign-up-1)
-    - [Sign up 2](#sign-up-2)
-    - [Login](#login)
-    - [Logout](#logout)
-    - [Profile Update](#profile-update)
-    - [Service Review - Add Review](#service-review---add-review)
-    - [Service Review - Update Review 1](#service-review---update-review-1)
-    - [Service Review - Update Review 2](#service-review---update-review-2)
-    - [Service Review - Delete Review 1](#service-review---delete-review-1)
-    - [Service Review - Delete Review 2](#service-review---delete-review-2)
-    - [Service Review - Delete Review 3](#service-review---delete-review-3)
-    - [Add Product](#add-product)
-    - [Edit Product 1](#edit-product-1)
-    - [Edit Product 2](#edit-product-2)
-    - [Edit Product 3](#edit-product-3)
-    - [Delete Product 1](#delete-product-1)
-    - [Delete Product 2](#delete-product-2)
-    - [Delete Product 3](#delete-product-3)
-    - [Add Product to Bag](#add-product-to-bag)
-    - [Update Bag](#update-bag)
-    - [Remove Product from Bag](#remove-product-from-bag)
-    - [Purchase Success](#purchase-success)
-    - [Purchase Success - Confirmation Email](#purchase-success---confirmation-email)
-  - [Admin Panel / Superuser](#admin-panel--superuser)
-  - [Marketing and Social Media](#marketing-and-social-media)
-    - [Statista - Facebook Users](#statista---facebook-users)
-    - [Soilmate Plants - Facebook Page](#watches--clocks---facebook-page)
-  - [Privacy Policy](#privacy-policy)
-  - [Search Engine Optimization](#search-engine-optimization)
-    - [sitemap.xml](#sitemapxml)
-    - [robots.txt](#robotstxt)
-    - [Sitemap Google Registration](#sitemap-google-registration)
-  - [AWS Setup Process](#aws-setup-process)
-    - [AWS S3 Bucket](#aws-s3-bucket)
-    - [IAM Set Up](#iam-set-up)
-    - [Connecting AWS to the Project](#connecting-aws-to-the-project)
-  - [Stripe Payments](#stripe-payments)
-    - [Payments](#payments)
-    - [Webhooks](#webhooks)
-  - [Technologies Used](#technologies-used)
-    - [Languages Used](#languages-used)
-    - [Django Packages](#django-packages)
-    - [Frameworks - Libraries - Programs Used](#frameworks---libraries---programs-used)
-    - [Testing](#testing)
-  - [Creating the Django app](#creating-the-django-app)
-  - [Deployment of This Project](#deployment-of-this-project)
-  - [Final Deployment](#final-deployment)
-  - [Forking This Project](#forking-this-project)
-  - [Cloning This Project](#cloning-this-project)
-  - [Credits](#credits)
-    - [Content](#content)
-    - [Information Sources / Resources](#information-sources--resources)
-  - [Special Thanks](#special-thanks)
 
 ## User Experience - UX
 
@@ -182,31 +130,47 @@ uploaded by the admin panel.
 
 ## Features
 
-    - [Home Page - Hero Imagel](#home-page---hero-image)
-    - [Home Page -Plants Quality](#home-page---plants-quality)
-    - [Home Page -Repotting](#home-page--repotting)
-    - [Home Page -Delivery](#home-page--delivery)
-    - [Home Page - TestemoniesCarousel](#home-page---testemonies-carousel)
-    - [Products Page](#products-page)
-    - [Products Details](#products-details)
-    - [Products Details - Features](#products-details---features)
-    - [Products Details - Products on Sale](#products-details---products-on-sale)
-    - [Products Shopping Bag](#products-shopping-bag)
-    - [Products Shopping Bag - Products Coming Soon](#products-shopping-bag---products-coming-soon)
-    - [Products Checkout](#products-checkout)
-    - [Products Checkout - Success](#products-checkout---success)
-    - [Products Management](#products-management)
-    - [Profile Page](#profile-page)
-      - [Service Reviews Page](#service-reviews-page)
-      - [Add/Edit Service Review Page](#addedit-service-review-page)
-    - [Signup Page](#signup-page)
-    - [Signup Page - Verify Email](#signup-page---verify-email)
-    - [Signup Page - Confirm Email](#signup-page---confirm-email)
-    - [Login Page](#login-page)
-    - [Logout Page](#logout-page)
-    - [Reset Password Page](#reset-password-page)
-    - [Change Password Page](#change-password-page)
+## Home Page
 
+# Hero image
+# Plants Quality
+# Repotting
+# Delivery
+# Newsletter
+# Our Plants Page
+# Products Details
+# Add Product
+# Edit Product 
+# Delete Product 
+# Shopping Bag
+# Update Bag
+# Remove Product from Bag
+# Products Checkout
+# Products Checkout - Success
+# Purchase Success
+# Purchase Success - Confirmation Email
+# Profile Page
+# Service Reviews Page
+# Add/Edit Service Review Page
+# Update Review 
+# Delete Review
+
+# Signup Page
+# Login Page
+# Logout Page
+# Reset Password Page
+# Change Password Page
+
+
+
+# Page 404 - Page Not Found
+# Messages and Interaction with Users
+  
+    - [Profile Update](#profile-update)
+ 
+    
+    -
+-
 ### Navbar
   The navigation bar includes the same basic options for the user (logged in or not logged in). 
   If the user is logged in as an administrator the sub-menus look different.
@@ -232,61 +196,6 @@ When user is logged in the **my account** gets more available options, **my prof
 * **My Profile** - On the profile page the user can change delivery information and see the order history (and confirmations from earlier purchases)
 * **My Wishlist** - On the wishlist page the user can find their wishlist that is populated when the user adds items to the wishlist from the product detail area. From this view the user also can remove products from the wishlist.
 
-    - [Footer](#footer)
+### Footer
 
-On the website footer, users can see basic information about the Soilmate Plants. The information includes contact, social media, copyright, newsletter.<br>
-    - [Page 404 - Page Not Found](#page-404---page-not-found)
-  - [Messages and Interaction with Users](#messages-and-interaction-with-users)
-    - [Sign up 1](#sign-up-1)
-    - [Sign up 2](#sign-up-2)
-    - [Login](#login)
-    - [Logout](#logout)
-    - [Profile Update](#profile-update)
-    - [Service Review - Add Review](#service-review---add-review)
-    - [Service Review - Update Review 1](#service-review---update-review-1)
-    - [Service Review - Update Review 2](#service-review---update-review-2)
-    - [Service Review - Delete Review 1](#service-review---delete-review-1)
-    - [Service Review - Delete Review 2](#service-review---delete-review-2)
-    - [Service Review - Delete Review 3](#service-review---delete-review-3)
-    - [Add Product](#add-product)
-    - [Edit Product 1](#edit-product-1)
-    - [Edit Product 2](#edit-product-2)
-    - [Edit Product 3](#edit-product-3)
-    - [Delete Product 1](#delete-product-1)
-    - [Delete Product 2](#delete-product-2)
-    - [Delete Product 3](#delete-product-3)
-    - [Add Product to Bag](#add-product-to-bag)
-    - [Update Bag](#update-bag)
-    - [Remove Product from Bag](#remove-product-from-bag)
-    - [Purchase Success](#purchase-success)
-    - [Purchase Success - Confirmation Email](#purchase-success---confirmation-email)
-  - [Admin Panel / Superuser](#admin-panel--superuser)
-  - [Marketing and Social Media](#marketing-and-social-media)
-    - [Statista - Facebook Users](#statista---facebook-users)
-    - [Soilmate Plants - Facebook Page](#watches--clocks---facebook-page)
-  - [Privacy Policy](#privacy-policy)
-  - [Search Engine Optimization](#search-engine-optimization)
-    - [sitemap.xml](#sitemapxml)
-    - [robots.txt](#robotstxt)
-    - [Sitemap Google Registration](#sitemap-google-registration)
-  - [AWS Setup Process](#aws-setup-process)
-    - [AWS S3 Bucket](#aws-s3-bucket)
-    - [IAM Set Up](#iam-set-up)
-    - [Connecting AWS to the Project](#connecting-aws-to-the-project)
-  - [Stripe Payments](#stripe-payments)
-    - [Payments](#payments)
-    - [Webhooks](#webhooks)
-  - [Technologies Used](#technologies-used)
-    - [Languages Used](#languages-used)
-    - [Django Packages](#django-packages)
-    - [Frameworks - Libraries - Programs Used](#frameworks---libraries---programs-used)
-    - [Testing](#testing)
-  - [Creating the Django app](#creating-the-django-app)
-  - [Deployment of This Project](#deployment-of-this-project)
-  - [Final Deployment](#final-deployment)
-  - [Forking This Project](#forking-this-project)
-  - [Cloning This Project](#cloning-this-project)
-  - [Credits](#credits)
-    - [Content](#content)
-    - [Information Sources / Resources](#information-sources--resources)
-  - [Special Thanks](#special-thanks)
+On the website footer, users can see basic information about the Soilmate Plants. The information includes contact, social media, blog, copyright, newsletter.<br>
