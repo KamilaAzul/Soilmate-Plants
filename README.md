@@ -7,7 +7,7 @@ information on the website’s profile page. All the visitorsare welcome to drop
 and help the site admin to improve the service. The application has agood appearance with an easy,
 clear and concise site navigation.
 
-[Live Project Here](https://)
+[Live Project Here](https://soilmate-plants-a1626f09724b.herokuapp.com/)
 
 README Table Content
 
@@ -24,6 +24,7 @@ README Table Content
     - [Database Diagram](#database-diagram)
     - [Features](#features)
     - [Home Page](#home-page)
+    - [Our Plants Page](#our-plants-page)
     - [Products Details](#products-details)
     - [Add Product](#add-product)
     - [Edit/ Delete Product](#edit-delete-product)
@@ -36,9 +37,9 @@ README Table Content
     - [Add/Edit Service Review Page](#addedit-service-review-page)
     - [Delete Review](#delete-review)
     - [Profile Page](#profile-page)
-    - [Aboutus](#aboutus)
-    - [BlogPage](#blogpage)
-    - [ContactPage](#contactpage)
+    - [About us](#about-us)
+    - [Blog Page](#blog-page)
+    - [Contact Page](#contact-page)
     - [More](#more)
     - [Signup Page - Verify Email](#signup-page---verify-email)
     - [Signup Page - Confirm Email](#signup-page---confirm-email)
@@ -49,7 +50,9 @@ README Table Content
     - [Page 404 - Page Not Found](#page-404---page-not-found)
     - [Messages and Interaction with Users](#messages-and-interaction-with-users)
     - [Navbar](#navbar)
+      - [Navigation - User Not Logged In](#navigation---user-not-logged-in)
     - [Footer](#footer)
+  
 
 ## User Experience - UX
 
@@ -132,7 +135,8 @@ uploaded by the admin panel.
 * Repotting
 * Delivery
 * Newsletter
-* Our Plants Page
+
+### Our Plants Page
 
 - In this feature users, can see a selection of plants on sale. The sale items are chosen by the website admin. Adding a product to sale is completed through the admin panel or from the website front-end.<br>
 
@@ -187,7 +191,7 @@ to the secure checkout to finish the order. The user can also leave this page by
 
 - On this page a logged in user (with a valid registration account) can add or edit their own personal details and also check previous orders.<br>
 
-### Aboutus
+### About us
 
 - On this page user can find more information about the company. This website was created so that the user could get to know the company better, feel more confident and safer when purchasing products on this website.
 The user knows who he is talking to and who can help him if necessary.
@@ -204,12 +208,12 @@ The user knows who he is talking to and who can help him if necessary.
   
 - In this section, the user can see photos of employees at work, a photo of the store, and where all the plants come from.
 
-### BlogPage
+### Blog Page
 
 - On this page users can read all posts.
 They will be posted regularly and users can expand their knowledge about the plants they purchase and how to care for them.
 
-### ContactPage
+### Contact Page
 
 - From this page, the user can send a form with a specific inquiry. After sending the message, he will be redirected to the "ThankYou" page with a thank you message and information that someone will contact him as soon as possible.
 
@@ -249,7 +253,7 @@ registered and will have access to the Registered User website services.<br>
 ### Logout Page
 
 - On the Logout Page, users can confirm that they want to exit the website.<br>
-- 
+  
 ### Reset Password Page
 
 - Users can use this page to reset their login password. The user adds their email address in the input field and clicks on the button "Reset Password".<br>
@@ -266,32 +270,32 @@ registered and will have access to the Registered User website services.<br>
 ### Messages and Interaction with Users
 
 - Some interactive messages are added to the project to make the navigation on the website easier and to improve the user's experience.
-- 
+
 ### Navbar
-  The navigation bar includes the same basic options for the user (logged in or not logged in). 
+
+- The navigation bar includes the same basic options for the user (logged in or not logged in). 
   If the user is logged in as an administrator the sub-menus look different.
  
-**Navigation - User Not Logged In**
+#### Navigation - User Not Logged In
 
-* **Home**- Lets the user find information about: **Plants Quality**, **Repotting**, **Delivery**, **Newsletter**.
-* **Our Plants** - Lets the user sort/view the products by **All Plants**, **Potted trees**, **Potted plants**, **Hanging Plants**, **For Beginners**, **Exotic** and **By Rating**,
-* **Special Offers** -Lets the user sort/view the products by the tags **new arrivals** and **product of the month** and **Sales**
-* **About us** - Lets the user find information about the company.
-* **Blog** - Lets the user see the posts about different subjects related to plant care.
-* **Contact** - Allows the user to send a message to the company with a specific inquiry
-* **More** - Allows the user to see **Customer Reviews** and **Desing Services**. Superuser can add **Newsletter** to send it to subscribed users. 
-* **Search Box** - Lets the user search for products on the page.
-* **My Account** - Lets the user either **register an account** or **login**
-* **Cart** - Views the total cost of the cart when the user starts adding to it. When the user clicks on it the **bag** template opens up.
-* **Search Box** - Lets the user search for products on the page.
+**Home**- Lets the user find information about: **Plants Quality**, **Repotting**, **Delivery**, **Newsletter**.
+**Our Plants** - Lets the user sort/view the products by **All Plants**, **Potted trees**, **Potted plants**, **Hanging Plants**, **For Beginners**, **Exotic** and **By Rating**,
+**Special Offers** -Lets the user sort/view the products by the tags **new arrivals** and **product of the month** and **Sales**
+**About us** - Lets the user find information about the company.
+**Blog** - Lets the user see the posts about different subjects related to plant care.
+**Contact** - Allows the user to send a message to the company with a specific inquiry
+**More** - Allows the user to see **Customer Reviews** and **Desing Services**. Superuser can add **Newsletter** to send it to subscribed users. 
+**Search Box** - Lets the user search for products on the page.
+**My Account** - Lets the user either **register an account** or **login**
+**Cart** - Views the total cost of the cart when the user starts adding to it. When the user clicks on it the **bag** template opens up.
+**Search Box** - Lets the user search for products on the page.
 
 **Navigation - User Logged In**
 
 When user is logged in the **my account** gets more available options, **my profile**.
 
-* **My Profile** - On the profile page the user can change delivery information and see the order history (and confirmations from earlier purchases).
+**My Profile** - On the profile page the user can change delivery information and see the order history (and confirmations from earlier purchases).
 
 ### Footer
 
 On the website footer, users can see basic information about the Soilmate Plants. The information includes contact, social media, blog, copyright, newsletter.<br>
-
