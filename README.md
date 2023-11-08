@@ -16,42 +16,38 @@ README Table Content
     - [User Stories](#user-stories)
     - [Agile Methodology](#agile-methodology)
     - [The Scope](#the-scope)
-      - [Main Site Goals](#main-site-goals)
-  - [Design](#design)
+    - [Main Site Goals](#main-site-goals)
+    - [Design](#design)
       - [Colours](#colours)
-      - [Typography](#typography)
-      - [Imagery](#imagery)
-  - [Database Diagram](#database-diagram)
-  - [Features](#features)
-  - [Home Page](#home-page)
-- [Hero image](#hero-image)
-- [Plants Quality](#plants-quality)
-- [Repotting](#repotting)
-- [Delivery](#delivery)
-- [Newsletter](#newsletter)
-- [Our Plants Page](#our-plants-page)
-- [Products Details](#products-details)
-- [Add Product](#add-product)
-- [Edit Product](#edit-product)
-- [Delete Product](#delete-product)
-- [Shopping Bag](#shopping-bag)
-- [Update Bag](#update-bag)
-- [Products Checkout](#products-checkout)
-- [Products Checkout - Success](#products-checkout---success)
-  - [Service Reviews under the product](#service-reviews-under-the-product)
-- [Service Reviews Page](#service-reviews-page)
-- [Add/Edit Service Review Page](#addedit-service-review-page)
-- [Delete Review](#delete-review)
-- [Profile Page](#profile-page)
-- [Profile Update](#profile-update)
-- [About us](#about-us)
-- [Signup Page](#signup-page)
-- [Login Page](#login-page)
-- [Logout Page](#logout-page)
-- [Reset Password Page](#reset-password-page)
-- [Change Password Page](#change-password-page)
-- [Page 404 - Page Not Found](#page-404---page-not-found)
-- [Messages and Interaction with Users](#messages-and-interaction-with-users)
+    - [Typography](#typography)
+    - [Imagery](#imagery)
+    - [Database Diagram](#database-diagram)
+    - [Features](#features)
+    - [Home Page](#home-page)
+    - [Products Details](#products-details)
+    - [Add Product](#add-product)
+    - [Edit/ Delete Product](#edit-delete-product)
+    - [Shopping Bag](#shopping-bag)
+    - [Update Bag](#update-bag)
+    - [Products Checkout](#products-checkout)
+    - [Products Checkout - Success](#products-checkout---success)
+    - [Service Reviews under the product](#service-reviews-under-the-product)
+    - [Service Reviews Page](#service-reviews-page)
+    - [Add/Edit Service Review Page](#addedit-service-review-page)
+    - [Delete Review](#delete-review)
+    - [Profile Page](#profile-page)
+    - [Aboutus](#aboutus)
+    - [BlogPage](#blogpage)
+    - [ContactPage](#contactpage)
+    - [More](#more)
+    - [Signup Page - Verify Email](#signup-page---verify-email)
+    - [Signup Page - Confirm Email](#signup-page---confirm-email)
+    - [Login Page](#login-page)
+    - [Logout Page](#logout-page)
+    - [Reset Password Page](#reset-password-page)
+    - [Change Password Page](#change-password-page)
+    - [Page 404 - Page Not Found](#page-404---page-not-found)
+    - [Messages and Interaction with Users](#messages-and-interaction-with-users)
     - [Navbar](#navbar)
     - [Footer](#footer)
 
@@ -97,7 +93,7 @@ All functionality and development of this project were managed using GitHub whic
 
 ### The Scope
 
-#### Main Site Goals
+### Main Site Goals
 
 - To provide users with a good website experience with watches and clocks on display.
 - To provide users with a visually pleasing website that is intuitive and easy to navigate.
@@ -105,7 +101,7 @@ All functionality and development of this project were managed using GitHub whic
 - To provide tools that allow users to search for products.
 - To provide users with an easy and safe way to buy their products.
 
-## Design
+### Design
 
 #### Colours
 
@@ -113,90 +109,164 @@ All functionality and development of this project were managed using GitHub whic
 
 - Since the website is a shop that sells flowers, the colors refer to the theme. The colors are warm and inspired by nature, dominated mainly by various shades of green and white.The contrast is maintained so that the content is clearly visible and easy to find, and the website is pleasant to use.
 
-#### Typography
+### Typography
 
 - The Lato font is used as the main font for the whole project. The Kaushan font is used to
 display the website logo. Font-family: Josefin Slab was used to display product name on the product page.
 
-#### Imagery
+### Imagery
 
 - All the images were converted to webp format to improve the website performance. The product images are
 uploaded by the admin panel. 
 
-## Database Diagram
+### Database Diagram
 
 ![Database Diagrama]()<br>
 
-## Features
+### Features
 
-## Home Page
+### Home Page
 
-# Hero image
-# Plants Quality
-# Repotting
-# Delivery
-# Newsletter
-# Our Plants Page
+* Hero image
+* Plants Quality
+* Repotting
+* Delivery
+* Newsletter
+* Our Plants Page
 
 - In this feature users, can see a selection of plants on sale. The sale items are chosen by the website admin. Adding a product to sale is completed through the admin panel or from the website front-end.<br>
-  
-# Products Details
-# Add Product
-# Edit Product 
-# Delete Product 
-# Shopping Bag
+
+### Products Details
+
+- This feature is at the top of the Product Details Page. Here users can see the plants image and plants
+information such as price, category, care level, safty and rating. If the user is interested in the specific plant they can add the product to their shopping bag, and add product quantity. Also, the user can continue shoping by pressing the button "Keep Shopping".
+They can see the review under the product information; when they are loged in they can leave their own review.
+
+### Add Product
+
+- If the user is a superuser it is possible to add a new product after clicking on Product Management.
+The product can be added as well from the admin panel.
+
+### Edit/ Delete Product 
+
+- Both on the page with all products and on the page for each product, there are two buttons: edit and delete. superuser can edit or delete the product on the website or from the administration panel.
+
+### Shopping Bag
 
 - Here, users can add products and quantities. Check the total price, and delivery costs and go 
 to the secure checkout to finish the order. The user can also leave this page by pressing the button "Keep Shopping".<br>
 
-# Update Bag
+### Update Bag
 -The user can change the quantity od the products and remove unwanted products.
 
-# Products Checkout
+### Products Checkout
 
--- On the checkout page, users will have to fill out the form and add the credit/debit card details to finish the purchase.<br>
+- On the checkout page, users will have to fill out the form and add the credit/debit card details to finish the purchase.<br>
 
-# Products Checkout - Success
+### Products Checkout - Success
 
 - Once the user have successfully purchased products, a confirmation message will appear and a confirmation email will be sent.
 
-## Service Reviews under the product
+### Service Reviews under the product
 
-The user can leave a review under the purchased flower.
+-Uder the product, a user with a valid registration account and logged in can add or edit their own personal service reviews.<br>
 
-# Service Reviews Page
+### Service Reviews Page
 
-- On this feature, users can see all reviews left by website users. The page admin will first have to approve a review before it will appear on the website.<br>
+- On this page, users can see all reviews left by website users. The page admin will first have to approve a review before it will appear on the website. <br>
+ 
+### Add/Edit Service Review Page
+
+- A user with a valid registration account and logged in can add or edit their own personal service reviews. The edit and delete buttons will appear only for the user who created a particular review.
+
+### Delete Review
+
+- User can delete unwanted review.
+
+### Profile Page
+
+- On this page a logged in user (with a valid registration account) can add or edit their own personal details and also check previous orders.<br>
+
+### Aboutus
+
+- On this page user can find more information about the company. This website was created so that the user could get to know the company better, feel more confident and safer when purchasing products on this website.
+The user knows who he is talking to and who can help him if necessary.
+
+* Company
+  
+- Short story of the company accompanied by a photo of the founder.
+
+* OutTeam
+  
+- Three people working in the company are presented, a short description of each of them, a photo, and what tasks they deal with within the company.
+
+* Gallery
+  
+- In this section, the user can see photos of employees at work, a photo of the store, and where all the plants come from.
+
+### BlogPage
+
+- On this page users can read all posts.
+They will be posted regularly and users can expand their knowledge about the plants they purchase and how to care for them.
+
+### ContactPage
+
+- From this page, the user can send a form with a specific inquiry. After sending the message, he will be redirected to the "ThankYou" page with a thank you message and information that someone will contact him as soon as possible.
+
+### More
+
+* Customer Reviews
+  
+- On this page user can see all reviews written by users.
+the six newest comments are displayed, at the bottom of the page there is a "Next" button that will redirect to the next page where the user can see older comments.
+
+* Design Services
+  
+- On this page the user can find more information about the service the company offers.
+
+* Newsletter
+  
+- Every user can sign up to receive a newsletter with useful information about promotions, sales, etc.
+
+- On this page User must fill in the Signup form.<br>
+
+
+### Signup Page - Verify Email
+
+
+- After submitting the Signup form, the user will be redirected to this page, advising them to check the link sent to their email box.<br>
+
+### Signup Page - Confirm Email
+
+
+- Once the user clicks on the link sent to their email box, it will redirect the user to this page which confirms their email.<br>
+
+### Login Page
+
+- On the Login Page, users can log in to the website by inputting their username and password. The user is now
+registered and will have access to the Registered User website services.<br>
+
+### Logout Page
+
+- On the Logout Page, users can confirm that they want to exit the website.<br>
 - 
-# Add/Edit Service Review Page
+### Reset Password Page
 
- The edit and delete buttons will appear if the user created a particular review.
+- Users can use this page to reset their login password. The user adds their email address in the input field and clicks on the button "Reset Password".<br>
 
-# Delete Review
+### Change Password Page
 
-Usen can delete unwanted review.
+- Users will get a link to reset their password and after clicking on the link it will redirect the user to this page where they can set a new password.<br>
 
-# Profile Page
+### Page 404 - Page Not Found
 
-# Profile Update
-# About us
-Company
-Out Team
-Gallery
-Blog Page
-Contact Page
-More
-Customer Reviews
-Design Services
-Newsletter
-# Signup Page
-# Login Page
-# Logout Page
-# Reset Password Page
-# Change Password Page
-# Page 404 - Page Not Found
-# Messages and Interaction with Users
+- The user will see this feature when the page that the user is looking for, does not exist or for any typing URL error.<br>  
 
+
+### Messages and Interaction with Users
+
+- Some interactive messages are added to the project to make the navigation on the website easier and to improve the user's experience.
+- 
 ### Navbar
   The navigation bar includes the same basic options for the user (logged in or not logged in). 
   If the user is logged in as an administrator the sub-menus look different.
@@ -217,10 +287,9 @@ Newsletter
 
 **Navigation - User Logged In**
 
-When user is logged in the **my account** gets more available options, **my profile** and **my wishlist**.
+When user is logged in the **my account** gets more available options, **my profile**.
 
-* **My Profile** - On the profile page the user can change delivery information and see the order history (and confirmations from earlier purchases)
-* **My Wishlist** - On the wishlist page the user can find their wishlist that is populated when the user adds items to the wishlist from the product detail area. From this view the user also can remove products from the wishlist.
+* **My Profile** - On the profile page the user can change delivery information and see the order history (and confirmations from earlier purchases).
 
 ### Footer
 
