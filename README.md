@@ -52,7 +52,26 @@ README Table Content
     - [Navbar](#navbar)
       - [Navigation - User Not Logged In](#navigation---user-not-logged-in)
     - [Footer](#footer)
-  
+    - [Admin Panel / Superuser](#admin-panel--superuser)
+    - [Marketing and Social Media](#marketing-and-social-media)
+    - [Facebook Page](#facebook-page)
+    - [Meta Pixel](#meta-pixel)
+    - [Privacy Policy](#privacy-policy)
+    - [Search Engine Optimization](#search-engine-optimization)
+    - [AWS Setup Process](#aws-setup-process)
+    - [AWS S3 Bucket](#aws-s3-bucket)
+    - [Stripe Payments](#stripe-payments)
+    - [Technologies Used](#technologies-used)
+    - [Creating the Django app](#creating-the-django-app)
+    - [Deployment of This Project](#deployment-of-this-project)
+    - [Final Deployment](#final-deployment)
+    - [Forking This Project](#forking-this-project)
+    - [Cloning This Project](#cloning-this-project)
+    - [Credits](#credits)
+    - [Content](#content)
+    - [Information Sources / Resources](#information-sources--resources)
+    - [Special Thanks](#special-thanks)
+
 
 ## User Experience - UX
 
@@ -131,10 +150,24 @@ uploaded by the admin panel.
 ### Home Page
 
 * Hero image
+
+- The photo is a greeting for the user. It allows the user to go to shopping sites using the "Shop now" button.
+
 * Plants Quality
+
+- This part of the website tells where the plants are imported from and briefly explains why the plants are of the best quality
+
 * Repotting
-* Delivery
-* Newsletter
+
+- Informs the user that the replanting process is performed in the shop on-site and gives details of the process.
+
+*Delivery
+
+- Provides information about the delivery process, special packaging for flowers and what determines the speed of delivery.
+
+*Newsletter
+
+- The user has the option of subscribing to the newsletter to receive information about the latest promotions, sales, etc.
 
 ### Our Plants Page
 
@@ -299,3 +332,34 @@ When user is logged in the **my account** gets more available options, **my prof
 ### Footer
 
 On the website footer, users can see basic information about the Soilmate Plants. The information includes contact, social media, blog, copyright, newsletter.<br>
+ 
+### Admin Panel / Superuser
+### Marketing and Social Media
+### Facebook Page 
+### Meta Pixel 
+### Privacy Policy
+### Search Engine Optimization
+    - sitemap.xml
+    - robots.txt
+    - Sitemap Google Registration
+### AWS Setup Process
+### AWS S3 Bucket
+    - IAM Set Up
+    - Connecting AWS to the Project
+### Stripe Payments
+    - Payments
+    - Webhooks
+### Technologies Used
+    - Languages Used
+    - Django Packages
+    - Frameworks - Libraries - Programs Used
+    - Testing
+### Creating the Django app
+### Deployment of This Project
+### Final Deployment
+### Forking This Project
+### Cloning This Project
+### Credits
+### Content
+### Information Sources / Resources
+### Special Thanks
