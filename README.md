@@ -294,3 +294,4 @@ When user is logged in the **my account** gets more available options, **my prof
 ### Footer
 
 On the website footer, users can see basic information about the Soilmate Plants. The information includes contact, social media, blog, copyright, newsletter.<br>
+
