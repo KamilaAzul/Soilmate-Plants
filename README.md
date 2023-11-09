@@ -451,7 +451,11 @@ On the website footer, users can see basic information about the Soilmate Plants
 
 * Facebook Page 
 
+![Facebook Page ](media/README/Facebook.png)
+
 * Instagram
+
+![Instagram](media/README/Instagram.png)
 
 ### Privacy Policy
 
