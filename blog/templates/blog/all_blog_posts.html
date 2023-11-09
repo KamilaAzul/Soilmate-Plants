@@ -38,7 +38,7 @@
                             {% for categ in post.categories.all %}
                             <h4 style="text-decoration: none; color: rgb(53, 62, 43)">
                                 <i class="fa fa-leaf"></i>
-                                <a class="text-muted" href="{% url 'all_blog' %}?category={{ categ }}">{{ categ }}</a>
+                                <h6 class>{{ categ }}</h6>
                             </h4>
                             {% endfor %}
                                 <h6 class="my-3"> {{ post.content | slice:":50" | safe }}...</h6>

@@ -140,7 +140,7 @@ display the website logo. Font-family: Josefin Slab was used to display product 
 
 ### Imagery
 
-- All the images were converted to webp format to improve the website performance. The product images are
+- All the images on the website are . The product images are
 uploaded by the admin panel. 
 
 [Back to top](<#contents>)

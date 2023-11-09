@@ -73,6 +73,12 @@ def thankYou(request):
     """
     return render(request, "home/thankYou.html")
 
+def privacy(request):
+    """
+     A view that renders the pricany policy page
+    """
+    return render(request, "home/privacypolicy.html")
+
 
 
 
