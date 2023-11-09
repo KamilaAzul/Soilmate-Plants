@@ -18,7 +18,7 @@ README Table Content
     - [The Scope](#the-scope)
     - [Main Site Goals](#main-site-goals)
     - [Design](#design)
-      - [Colours](#colours)
+    - [Colours](#colours)
     - [Typography](#typography)
     - [Imagery](#imagery)
     - [Database Diagram](#database-diagram)
@@ -50,12 +50,12 @@ README Table Content
     - [Page 404 - Page Not Found](#page-404---page-not-found)
     - [Messages and Interaction with Users](#messages-and-interaction-with-users)
     - [Navbar](#navbar)
-      - [Navigation - User Not Logged In](#navigation---user-not-logged-in)
+    - [Navigation - User Not Logged In](#navigation---user-not-logged-in)
     - [Footer](#footer)
     - [Admin Panel / Superuser](#admin-panel--superuser)
     - [Marketing and Social Media](#marketing-and-social-media)
     - [Facebook Page](#facebook-page)
-    - [Meta Pixel](#meta-pixel)
+    - [Instagram](#instagram)
     - [Privacy Policy](#privacy-policy)
     - [Search Engine Optimization](#search-engine-optimization)
     - [AWS Setup Process](#aws-setup-process)
@@ -334,27 +334,312 @@ When user is logged in the **my account** gets more available options, **my prof
 On the website footer, users can see basic information about the Soilmate Plants. The information includes contact, social media, blog, copyright, newsletter.<br>
  
 ### Admin Panel / Superuser
+
+![Admin Panel / Superuser]
+
+- On the Admin Panel and as an admin/superuser I have full access to CRUD functionality. This means I can view, create, edit and
+  delete the following apps:
+
+1. Blog
+2. Checkout
+3. Products
+4. Profiles
+5. Reviews
+6. Subscribers
+
+- As admin/superuser I can also approve reviews.<br>
+
 ### Marketing and Social Media
-### Facebook Page 
-### Meta Pixel 
+
+- Social Media marketing is a great tool to promote the company. Soilamate Plants has a presence on social media through the platforms Facebook and Instagram. It helps Soilmate Plant to communicate with both existing customers but also potential new ones. Through social media, its created engagement, and interaction with a customer. The plant's sale is being made on the site that's why it is very important to use social media platforms to increase the traffic to the website. <br>
+
+* Marketing- emails
+
+- E-mail marketing One form of reaching out to customers in an effective way is through e-mail marketing.Soilmate Plants gives a customers a possibility to sign up for a newsletter on the company site. The newsletter it's a good way to let to know what is happening at Soilmate Plants. The content can include advertisment for new blog posts, product of the month, sales, and discount codes.
+
+* Facebook Page 
+
+* Instagram
+
 ### Privacy Policy
+
+- In order to add a page with the Soilmate Plants Privacy Policy I used the service [Privacy Policy Generator](https://www.privacypolicygenerator.info/) to ensure that the website is compliant with the European Privacy Policy Rules.<br> 
+
 ### Search Engine Optimization
-    - sitemap.xml
-    - robots.txt
-    - Sitemap Google Registration
+
+* sitemap.xml
+
+- A sitemap file with a list of important URLs was added to ensure that search engines are able to easily navigate through the site and understand its structure. This was made using XML-sitemaps.com by following the steps:
+
+1. Paste the URL of the deployed site into XML-sitemaps
+2. Download the XML sitemap file
+3. Add the file into the projects root folder, named as sitemap.xml<br>
+
+* robots.txt
+
+- A robots.txt file was created to tell search engines where not to go on the website and increase the quality of the site, ultimately improving the SEO rating.
+
+![Robots.txt]<br>
+
+* Sitemap Google Registration
+- To ensure that the Google engine will check the website sitemap file I have registered the Watches & Clocks URL on the Google Search Console.
+
+![Sitemap Google Registration]<br>
+
 ### AWS Setup Process
+
+The deployed site uses AWS S3 Buckets to store the webpages static and media files. More information on how you can set up an AWS S3 Bucket can be found below:
+
+1. Create an AWS account [here](https://portal.aws.amazon.com/).
+2. Login to your account and within the search bar type in "S3".
+3. Within the S3 page click on the button that says "Create Bucket".
+4. Name the bucket and select the region which is closest to you.
+5. Underneath "Object Ownership" select "ACLs enabled".
+6. Uncheck "Block Public Access" and acknowledge that the bucket will be made public, then click "Create Bucket".
+7. Inside the created bucket click on the "Properties" tab. Below "Static Website Hosting" click "Edit" and change the Static website hosting option to "Enabled". Copy the default values for the index and error documents and click "Save Changes".
+8. Click on the "Permissions" tab, below "Cross-origin Resource Sharing (CORS)", click "Edit" and then paste in the following code:
+
+  ```
+    [
+        {
+            "AllowedHeaders": [
+            "Authorization"
+            ],
+            "AllowedMethods": [
+            "GET"
+            ],
+            "AllowedOrigins": [
+            "*"
+            ],
+            "ExposeHeaders": []
+        }
+    ]
+  ```
+
+9. Within the "Bucket Policy" section. Click "Edit" and then "Policy Generator". Click the "Select Type of Policy" dropdown and select "S3 Bucket Policy" and within "Principle" allow all principals by typing "*".
+10. Within the "Actions" dropdown menu select "Get Object" and in the previous tab copy the "Bucket ARN number". Paste this within the policy generator within the field labelled "Amazon Resource Name (ARN)".
+11. Click "Add statement > Generate Policy" and copy the policy that's been generated and paste this into the "Bucket Policy Editor".
+12. Before saving, add /* at the end of your "Resource Key", this will allow access to all resources within the bucket.
+13. Once saved, scroll down to the "Access Control List (ACL)" and click "Edit".
+14. Next to "Everyone (public access)", check the "list" checkbox and save your changes.
+
 ### AWS S3 Bucket
-    - IAM Set Up
-    - Connecting AWS to the Project
+
+* IAM Set Up
+
+1. Search for IAM within the AWS navigation bar and select it.
+2. Click "User Groups" that can be seen in the side bar and then click "Create group" and name the group 'manage-your-project-name'.
+3. Click "Policies" and then "Create policy".
+4. Navigate to the JSON tab and click "Import Managed Policy", within here search "S3" and select "AmazonS3FullAccess" followed by "Import".
+5. Navigate back to the recently created S3 bucket and copy your "ARN Number". Go back to "This Policy" and update the "Resource Key" to include your ARN Number, and another line with your ARN followed by a "/*".
+   
+- Below is an example of what this should look like:
+
+```
+{
+    "Version": "2012-10-17",
+    "Statement": [
+        {
+            "Effect": "Allow",
+            "Action": [
+                "s3:*",
+                "s3-object-lambda:*"
+            ],
+            "Resource": [
+                "YOUR-ARN-NO-HERE",
+                "YOUR-ARN-NO-HERE/*"
+            ]
+        }
+    ]
+}
+
+```
+
+1. Ensure the policy has been given a name and a short description, then click "Create Policy".
+2. Click "User groups", and then the group you created earlier. Under permissions click "Add Permission" and from the dropdown click "Attach Policies".
+3. Select "Users" from the sidebar and click "Add User".
+4. Provide a username and check "Programmatic Access", then click 'Next: Permissions'.
+5. Ensure your policy is selected and navigate through until you click "Add User".
+6. Download the "CSV file", which contains the user's access key and secret access key.
+
+* Connecting AWS to the Project
+
+1. Within your terminal install the following packages by typing 
+
+```
+  pip3 install boto3
+  pip3 install django-storages 
+```  
+
+2. Freeze the requirements by typing:
+
+```
+pip3 freeze > requirements.txt
+```
+
+3. Add "storages" to your installed apps within your settings.py file.
+4. At the bottom of the settings.py file add the following code:
+
+```
+if 'USE_AWS' in os.environ:
+    AWS_STORAGE_BUCKET_NAME = 'insert-bucket-name-here'
+    AWS_S3_REGION_NAME = 'insert-your-region-here'
+    AWS_ACCESS_KEY_ID = os.environ.get('AWS_ACCESS_KEY_ID')
+    AWS_SECRET_ACCESS_KEY = os.environ.get('AWS_SECRET_ACCESS_KEY')
+```
+5. Add the following keys within Heroku: "AWS_ACCESS_KEY_ID" and "AWS_SECRET_ACCESS_KEY". These can be found in your CSV file.
+6. Add the key "USE_AWS", and set the value to True within Heroku.
+6. Remove the "DISABLE_COLLECTSTAIC" variable from Heroku.
+7. Within your settings.py file inside the code just written add: 
+
+```
+  AWS_S3_CUSTOM_DOMAIN = f"{AWS_STORAGE_BUCKET_NAME}.s3.amazonaws.com"
+```
+8. Inside the settings.py file inside the bucket config if statement add the following lines of code:
+
+```
+STATICFILES_STORAGE = 'custom_storages.StaticStorage'
+STATICFILES_LOCATION = 'static'
+DEFAULT_FILE_STORAGE = 'custom_storages.MediaStorage'
+MEDIAFILES_LOCATION = 'media'
+
+STATIC_URL = f'https://{AWS_S3_CUSTOM_DOMAIN}/{STATICFILES_LOCATION}/'
+MEDIA_URL = f'https://{AWS_S3_CUSTOM_DOMAIN}/{MEDIAFILES_LOCATION}/'
+
+AWS_S3_OBJECT_PARAMETERS = {
+    'Expires': 'Thu, 31 Dec 2099 20:00:00 GMT',
+    'CacheControl': 'max-age=94608000',
+}
+```
+
+9. In the root directory of your project create a file called "custom_storages.py". Import the following at the top of this file and add the classes below:
+
+```
+  from django.conf import settings
+  from storages.backends.s3boto3 import S3Boto3Storage
+
+  class StaticStorage(S3Boto3Storage):
+    location = settings.STATICFILES_LOCATION
+
+  class MediaStorage(S3Boto3Storage):
+    location = settings.MEDIAFILES_LOCATION
+```
+
+10. Navigate back to you AWS S3 Bucket and click on "Create Folder" name this folder "media", within the media file click "Upload > Add Files" and select the images for your site.
+11. Under "Permissions" select the option "Grant public-read access" and click "Upload".
+
 ### Stripe Payments
-    - Payments
-    - Webhooks
-### Technologies Used
-    - Languages Used
-    - Django Packages
-    - Frameworks - Libraries - Programs Used
+
+* Payments 
+- To set up stripe payments you can follow their guid [here](https://stripe.com/docs/payments/accept-a-payment#web-collect-card-details)
+
+* Webhooks
+
+1. To set up a webhook, sign into your stripe account and click 'Developers' located in the top right of the navbar.
+2. Then in the side-nav under the Developers title, click on "Webhooks", then "Add endpoint".
+3. On the next page you will need to input the link to your heroku app followed by /checkout/wh/. It should look something like this:
+   
+    ```
+    https://your-app-name.herokuapp.com/checkout/wh/
+    ```
+
+4. Then click "+ Select events" and check the "Select all events" checkbox at the top before clicking "Add events" at the bottom. Once this is done finish the form by clicking "Add endpoint".
+5. Your webhook is now created and you should see that it has generated a secret key. You will need this to add to your heroku config vars.
+6. Head over to your app in heroku and navigate to the config vars section under settings. You will need the secret key you just generated for your webhook, in addition to your Publishable key and secret key that you can find in the API keys section back in stripe.
+7. Add these values under these keys:
+   
+    ```
+    STRIPE_PUBLIC_KEY = 'insert your stripe publishable key'
+    STRIPE_SECRET_KEY = 'insert your secret key'
+    STRIPE_WH_SECRET = 'insert your webhooks secret key'
+
+    ```
+8. Finally, back in your settings.py file in django, insert the following near the bottom of the file:  
+    ```
+    STRIPE_PUBLIC_KEY = os.getenv('STRIPE_PUBLIC_KEY', '')
+    STRIPE_SECRET_KEY = os.getenv('STRIPE_SECRET_KEY', '')
+    STRIPE_WH_SECRET = os.getenv('STRIPE_WH_SECRET', '')
+    ```
+- Below is a screenshot of the Watches & Clocks - Stripe dashboard.
+
+![ Stripe Payments]<br>
+
+## Technologies Used
+
+
+### Languages Used
+
+- [HTML 5](https://en.wikipedia.org/wiki/HTML/)
+- [CSS 3](https://en.wikipedia.org/wiki/CSS)
+- [JavaScript](https://www.javascript.com/)
+- [Django](https://www.python.org/)
+- [Python](https://www.djangoproject.com/)<br>
+
+
+### Django Packages
+
+- [Gunicorn](https://gunicorn.org/) as the server for Heroku
+- [Dj_database_url](https://pypi.org/project/dj-database-url/) to parse the database URL from the environment variables in Heroku
+- [Psycopg2](https://pypi.org/project/psycopg2/) as an adaptor for Python and PostgreSQL databases
+- [Summernote](https://summernote.org/) as a text editor
+- [Allauth](https://django-allauth.readthedocs.io/en/latest/installation.html) for authentication, registration and account 
+   management
+- [Stripe](https://pypi.org/project/stripe/) for processing all online and credit card purchases on the website
+- [Crispy Forms](https://django-crispy-forms.readthedocs.io/en/latest/) to style the forms
+- [Pillow](https://pypi.org/project/Pillow/) to process and save all the images downloaded through the database<br>
+
+
+### Frameworks - Libraries - Programs Used
+
+- [Bootstrap](https://getbootstrap.com/)
+- Was used to style the website, add responsiveness and interactivity
+- [Jquery](https://jquery.com/)
+- All the scripts were written using jquery library
+- [Git](https://git-scm.com/)
+- Git was used for version control by utilizing the Gitpod terminal to commit to Git and push to GitHub
+- [GitHub](https://github.com/)
+- GitHub is used to store the project's code after being pushed from Git
+- [Heroku](https://id.heroku.com)
+- Heroku was used to deploy the live project
+- [PostgreSQL](https://www.postgresql.org/)
+- Database used through Heroku.
+- [codeanyapp.com](https://codeanyapp.com/)
+- Codeanyapp was used to create and edit the website
+- [AWS](https://aws.amazon.com/)
+- was used to host the static files and media<br>
+- [Lucidchart](https://lucid.app/)
+- Lucidchart was used to create the database diagram
+- [Pycodestyle](http://pep8online.com/)
+- Pycodestyle was used to validate all the Python code
+- [W3C - HTML](https://validator.w3.org/)
+- W3C- HTML was used to validate all the HTML code
+- [W3C - CSS](https://jigsaw.w3.org/css-validator/)
+- W3C - CSS was used to validate the CSS code
+- [Fontawesome](https://fontawesome.com/)
+- Was used to add icons to the website
+- [Google Chrome Dev Tools](https://developer.chrome.com/docs/devtools/)
+- To check App responsiveness and debugging
+- [Google Fonts](https://fonts.google.com/)
+- To add the 2 fonts that were used throughout the project
+- [CANVA](https://www.canva.com/)
+- To build the logos for the project
+
+
     - Testing
 ### Creating the Django app
+
+1. Go to the Code Institute Gitpod Full Template [Template](https://github.com/Code-Institute-Org/gitpod-full-template)
+2. Click on Use This Template
+3. Once the template is available in your repository click on Gitpod
+4. When the image for the template and the Gitpod are ready open a new terminal to start a new Django App
+5. Install Django and gunicorn: pip3 install django gunicorn
+6. Install supporting database libraries dj_database_url and psycopg2 library: pip3 install dj_database_url psycopg2
+7. Create file for requirements: in the terminal window type pip freeze --local > requirements.txt
+8. Create project: in the terminal window type django-admin startproject your_project_name
+9. Create app: in the terminal window type python3 manage.py startapp your_app_name
+10. Add app to the list of installed apps in settings.py file: you_app_name
+11. Migrate changes: in the terminal window type python3 manage.py migrate
+12. Run the server to test if the app is installed, in the terminal "The install worked successfully! Congratulations!"<br>
 ### Deployment of This Project
 ### Final Deployment
 ### Forking This Project
