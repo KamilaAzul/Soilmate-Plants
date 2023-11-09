@@ -1,4 +1,15 @@
-{% extends "base.html" %} {% load static %} {% block content %}
+{% extends "base.html" %} {% load static %} 
+
+{% block page_header %}
+<div class="container header-container">
+    <div class="row">
+        <div class="col"></div>
+    </div>
+</div>
+{% endblock %}
+
+
+{% block content %}
 
 <div class="container mt-4">
 
@@ -87,11 +98,12 @@
 <p>Our Privacy Policy was created with the help of the <a href="https://www.termsfeed.com/privacy-policy-generator/">Privacy Policy Generator</a>.</p>
 
 <p>Link to our Privacy:</p>
-<p><https://www.privacypolicygenerator.info/live.php?token=NLL1t8bvsKnUlSnHmGjEc2cxdcQ3cGxk</p>
-
-<h2>Contact Us</h2>
+<p><a href="https://www.privacypolicygenerator.info/live.php?token=NLL1t8bvsKnUlSnHmGjEc2cxdcQ3cGxk"></a></p>
 
 <p>If you have any questions or suggestions about our Privacy Policy, do not hesitate to contact us.</p>
+
+<h6 class="text-uppercase fw-bold mb-4"> <a href="{% url 'contact_view' %}" class="text-reset">Contact us</a></h6>
+<br>
 
 </div>
 

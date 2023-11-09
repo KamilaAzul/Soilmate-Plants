@@ -30,7 +30,7 @@ SECRET_KEY = os.environ.get('SECRET_KEY', '')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['soilmate-plants-a1626f09724b.herokuapp.com', 'localhost', '8000-kamilaazul-soilmate-plan-fs2xpzgkxn.us2.codeanyapp.com']
+ALLOWED_HOSTS = ['soilmate-plants-a1626f09724b.herokuapp.com', 'localhost', '8000-kamilaazul-soilmateplan-7clz3updxcr.ws-eu106.gitpod.io']
 
 
 # Application definition
