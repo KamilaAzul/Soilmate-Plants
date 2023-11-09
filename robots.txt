@@ -1,0 +1,4 @@
+User-agent: *
+Disallow: /accounts/
+Disallow: /bag/
+Sitemap:https://soilmate-plants-a1626f09724b.herokuapp.com/sitemap.xml

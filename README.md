@@ -3,9 +3,11 @@
 Project milestone 5 for Code Institute Full-stack development program: Django Framework.<br>
 Soilamate Plants is an E-commerce shop where users can find and buy plants and search for
 products by filtering different categories. They can also register by filling in their personal
-information on the website’s profile page. All the visitorsare welcome to drop a service review
-and help the site admin to improve the service. The application has agood appearance with an easy,
+information on the website’s profile page. All the visitors are welcome to drop a service review
+and help the site admin to improve the service. The application has a good appearance with an easy,
 clear and concise site navigation.
+
+![Soilmate Plants](media/README/Responsive.png)
 
 [Live Project Here](https://soilmate-plants-a1626f09724b.herokuapp.com/)
 
@@ -45,7 +47,6 @@ clear and concise site navigation.
     - [Signup Page - Confirm Email](#signup-page---confirm-email)
     - [Login Page](#login-page)
     - [Logout Page](#logout-page)
-    - [Reset Password Page](#reset-password-page)
     - [Change Password Page](#change-password-page)
     - [Page 404 - Page Not Found](#page-404---page-not-found)
     - [Messages and Interaction with Users](#messages-and-interaction-with-users)
@@ -129,7 +130,7 @@ All functionality and development of this project were managed using GitHub whic
 
 #### Colours
 
-![Colours Palete](./assets/readme/extras/watches_clocks_color_palete.png)<br>
+![Colours Palete](media/README/Colors.png)<br>
 
 - Since the website is a shop that sells flowers, the colors refer to the theme. The colors are warm and inspired by nature, dominated mainly by various shades of green and white.The contrast is maintained so that the content is clearly visible and easy to find, and the website is pleasant to use.
 
@@ -140,8 +141,7 @@ display the website logo. Font-family: Josefin Slab was used to display product 
 
 ### Imagery
 
-- All the images on the website are . The product images are
-uploaded by the admin panel. 
+- Photos for the project were taken from [Freepik](https://www.freepik.com/),[Pixabay](https://pixabay.com/),[Pexels](https://www.pexels.com//). Besides photos of products, there are a lot of images related to the subject, like photos of the team, the store, and the greenhouse from where the plans are taken etc. The aim is to get to know the store, its services and its employees better, and to create a safe space where the user can feel more trust in the company.
 
 [Back to top](<#contents>)
 
@@ -157,25 +157,47 @@ uploaded by the admin panel.
 
 - The photo is a greeting for the user. It allows the user to go to shopping sites using the "Shop now" button.
 
+![Hero Image](media/README/HeroImg.png)
+
+* Ikons
+
+-Small section to help better navigate on the home page, as well as additional decoration to the webpage.
+
+![Logos1](media/README/LogosHomePage.png)
+
 * Plants Quality
 
 - This part of the website tells where the plants are imported from and briefly explains why the plants are of the best quality
+
+![Plants Quality](media/README/PlansQuality.png)
 
 * Repotting
 
 - Informs the user that the replanting process is performed in the shop on-site and gives details of the process.
 
-*Delivery
+![Repotting](media/README/RepottingProces.png)
+
+* Delivery
 
 - Provides information about the delivery process, special packaging for flowers and what determines the speed of delivery.
 
-*Newsletter
+![Delivery](media/README/Delivery.png)
+
+* Ikons2
+
+- Reinforced information about the great quality of plants, the easy process of purchase, and the availability to contact the company.  
+
+![Logo2](media/README/LogoBottomHomePage.png)
+
+* Newsletter
 
 - The user has the option of subscribing to the newsletter to receive information about the latest promotions, sales, etc.
 
 ### Our Plants Page
 
 - In this feature users, can see a selection of plants on sale. The sale items are chosen by the website admin. Adding a product to sale is completed through the admin panel or from the website front-end.<br>
+
+![Our Plants Page](media/README/OurPlants.png)
 
 [Back to top](<#contents>)
 
@@ -184,6 +206,11 @@ uploaded by the admin panel.
 - This feature is at the top of the Product Details Page. Here users can see the plants image and plants
 information such as price, category, care level, safty and rating. If the user is interested in the specific plant they can add the product to their shopping bag, and add product quantity. Also, the user can continue shoping by pressing the button "Keep Shopping".
 They can see the review under the product information; when they are loged in they can leave their own review.
+
+![PlantDetailTop](media/README/PlantDetailTop.png)
+<br>
+
+![PlantDetailBootom.](media/README/PlantDetailBootom.png)
 
 ### Add Product
 
@@ -201,6 +228,8 @@ The product can be added as well from the admin panel.
 - Here, users can add products and quantities. Check the total price, and delivery costs and go 
 to the secure checkout to finish the order. The user can also leave this page by pressing the button "Keep Shopping".<br>
 
+![CheckOut](media/README/CheckOut.png)
+
 ### Update Bag
 -The user can change the quantity od the products and remove unwanted products.
 
@@ -212,17 +241,25 @@ to the secure checkout to finish the order. The user can also leave this page by
 
 - Once the user have successfully purchased products, a confirmation message will appear and a confirmation email will be sent.
 
+![Products Checkout](media/README/SuccessBuy.png)
+
 ### Service Reviews under the product
 
 -Uder the product, a user with a valid registration account and logged in can add or edit their own personal service reviews.<br>
 
+![Service Reviews](media/README/PlantDetailReview.png)
+
 ### Service Reviews Page
 
 - On this page, users can see all reviews left by website users. The page admin will first have to approve a review before it will appear on the website. <br>
- 
+
+ ![Service Reviews Page](media/README/AllReviews.png)
+
 ### Add/Edit Service Review Page
 
 - A user with a valid registration account and logged in can add or edit their own personal service reviews. The edit and delete buttons will appear only for the user who created a particular review.
+
+![Edit ](media/README/EditReview.png)
 
 ### Delete Review
 
@@ -234,6 +271,8 @@ to the secure checkout to finish the order. The user can also leave this page by
 
 - On this page a logged in user (with a valid registration account) can add or edit their own personal details and also check previous orders.<br>
 
+![Profile Page](media/README/profilePage.png)
+
 ### About us
 
 - On this page user can find more information about the company. This website was created so that the user could get to know the company better, feel more confident and safer when purchasing products on this website.
@@ -243,22 +282,31 @@ The user knows who he is talking to and who can help him if necessary.
   
 - Short story of the company accompanied by a photo of the founder.
 
+![Company](media/README/AboutUsOurCompany.png)
+
 * OutTeam
   
 - Three people working in the company are presented, a short description of each of them, a photo, and what tasks they deal with within the company.
+
+![OutTeamt](media/README/OurTeam.png)
 
 * Gallery
   
 - In this section, the user can see photos of employees at work, a photo of the store, and where all the plants come from.
 
+![Gallery](media/README/Gallery.png)
+
 ### Blog Page
 
-- On this page users can read all posts.
-They will be posted regularly and users can expand their knowledge about the plants they purchase and how to care for them.
+- On this page users can read all posts. They will be posted regularly and users can expand their knowledge about the plants they purchase and how to care for them.
+
+![Blog Page](media/README/Blog.png)
 
 ### Contact Page
 
 - From this page, the user can send a form with a specific inquiry. After sending the message, he will be redirected to the "ThankYou" page with a thank you message and information that someone will contact him as soon as possible.
+
+![Contact Page](media/README/contactUs.png)
 
 ### More
 
@@ -267,19 +315,27 @@ They will be posted regularly and users can expand their knowledge about the pla
 - On this page user can see all reviews written by users.
 the six newest comments are displayed, at the bottom of the page there is a "Next" button that will redirect to the next page where the user can see older comments.
 
+![Customer Reviews](media/README/AllReviews.png)
+
 * Design Services
   
 - On this page the user can find more information about the service the company offers.
+
+![Design Services](media/README/DesignServices.png)
 
 * Newsletter
   
 - Every user can sign up to receive a newsletter with useful information about promotions, sales, etc.
 
-- On this page User must fill in the Signup form.<br>
+- On this section User must fill in the Signup form.<br>
 
+![Newsletter](media/README/Newsletter.png)
+
+<br>
+
+![Newsletter write](media/README/NewsletterWrite.png)
 
 ### Signup Page - Verify Email
-
 
 - After submitting the Signup form, the user will be redirected to this page, advising them to check the link sent to their email box.<br>
 
@@ -289,18 +345,32 @@ the six newest comments are displayed, at the bottom of the page there is a "Nex
 
 - Once the user clicks on the link sent to their email box, it will redirect the user to this page which confirms their email.<br>
 
+![SignUp](media/README/SignUp.png)
+
+<br>
+
+![VerifyEmail](media/README/VerifyEmail.png)
+
+<br>
+
+![VerifyEmail2](media/README/VerifyEmail2.png)
+
+<br>
+
+![ConfirmEmail](media/README/ConfirmEmail.png)
+<br>
+
+
 ### Login Page
 
 - On the Login Page, users can log in to the website by inputting their username and password. The user is now
 registered and will have access to the Registered User website services.<br>
 
+  ![Login](media/README/LoginPage.png)
+
 ### Logout Page
 
 - On the Logout Page, users can confirm that they want to exit the website.<br>
-  
-### Reset Password Page
-
-- Users can use this page to reset their login password. The user adds their email address in the input field and clicks on the button "Reset Password".<br>
 
 ### Change Password Page
 
@@ -316,11 +386,15 @@ registered and will have access to the Registered User website services.<br>
 
 - Some interactive messages are added to the project to make the navigation on the website easier and to improve the user's experience.
 
+![Messages ](media/README/Massages.png)
+
 ### Navbar
 
 - The navigation bar includes the same basic options for the user (logged in or not logged in). 
   If the user is logged in as an administrator the sub-menus look different.
- 
+
+ ![Navbar](media/README/Navbar.png)
+
 #### Navigation - User Not Logged In
 
 **Home**- Lets the user find information about: **Plants Quality**, **Repotting**, **Delivery**, **Newsletter**.
@@ -346,7 +420,9 @@ When user is logged in the **my account** gets more available options, **my prof
 ### Footer
 
 On the website footer, users can see basic information about the Soilmate Plants. The information includes contact, social media, blog, copyright, newsletter.<br>
- 
+
+![Footer](media/README/Footer.png) 
+
 ### Admin Panel / Superuser
 
 ![Admin Panel / Superuser]
@@ -362,6 +438,8 @@ On the website footer, users can see basic information about the Soilmate Plants
 6. Subscribers
 
 - As admin/superuser I can also approve reviews.<br>
+
+![Admin](media/README/AdminPage.png)
 
 ### Marketing and Social Media
 
@@ -389,6 +467,11 @@ On the website footer, users can see basic information about the Soilmate Plants
 2. Download the XML sitemap file
 3. Add the file into the projects root folder, named as sitemap.xml<br>
 
+![sitemap.xml](media/README/sitemaps1.png)
+<br>
+
+![sitemap.xml1](media/README/sitemaps.png)
+
 * robots.txt
 
 - A robots.txt file was created to tell search engines where not to go on the website and increase the quality of the site, ultimately improving the SEO rating.
@@ -396,7 +479,7 @@ On the website footer, users can see basic information about the Soilmate Plants
 ![Robots.txt]<br>
 
 * Sitemap Google Registration
-- To ensure that the Google engine will check the website sitemap file I have registered the Watches & Clocks URL on the Google Search Console.
+- To ensure that the Google engine will check the website sitemap file I have registered the Soilmate Plants URL on the Google Search Console.
 
 ![Sitemap Google Registration]<br>
 
