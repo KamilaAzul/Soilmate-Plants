@@ -9,7 +9,7 @@ clear and concise site navigation.
 
 [Live Project Here](https://soilmate-plants-a1626f09724b.herokuapp.com/)
 
-README Table Content
+## Table Content
 
 - [Soilmate Plants - Introduction](#soilmate-plants---introduction)
   - [User Experience - UX](#user-experience---ux)
@@ -70,7 +70,7 @@ README Table Content
     - [Credits](#credits)
     - [Content](#content)
     - [Information Sources / Resources](#information-sources--resources)
-    - [Special Thanks](#special-thanks)
+    - [Acknowledgements](#acknowledgements)
 
 
 ## User Experience - UX
@@ -111,7 +111,9 @@ README Table Content
 ### Agile Methodology
 
 All functionality and development of this project were managed using GitHub which Projects can be found
-[here](https://github.com/PedroCristo/portfolio_project_5/issues)
+[here](https://https://github.com/KamilaAzul/Soilmate-Plants/issues)
+
+[Back to top](<#contents>)
 
 ### The Scope
 
@@ -140,6 +142,8 @@ display the website logo. Font-family: Josefin Slab was used to display product 
 
 - All the images were converted to webp format to improve the website performance. The product images are
 uploaded by the admin panel. 
+
+[Back to top](<#contents>)
 
 ### Database Diagram
 
@@ -173,6 +177,8 @@ uploaded by the admin panel.
 
 - In this feature users, can see a selection of plants on sale. The sale items are chosen by the website admin. Adding a product to sale is completed through the admin panel or from the website front-end.<br>
 
+[Back to top](<#contents>)
+
 ### Products Details
 
 - This feature is at the top of the Product Details Page. Here users can see the plants image and plants
@@ -187,6 +193,8 @@ The product can be added as well from the admin panel.
 ### Edit/ Delete Product 
 
 - Both on the page with all products and on the page for each product, there are two buttons: edit and delete. superuser can edit or delete the product on the website or from the administration panel.
+
+[Back to top](<#contents>)
 
 ### Shopping Bag
 
@@ -219,6 +227,8 @@ to the secure checkout to finish the order. The user can also leave this page by
 ### Delete Review
 
 - User can delete unwanted review.
+
+[Back to top](<#contents>)
 
 ### Profile Page
 
@@ -273,8 +283,9 @@ the six newest comments are displayed, at the bottom of the page there is a "Nex
 
 - After submitting the Signup form, the user will be redirected to this page, advising them to check the link sent to their email box.<br>
 
-### Signup Page - Confirm Email
+[Back to top](<#contents>)
 
+### Signup Page - Confirm Email
 
 - Once the user clicks on the link sent to their email box, it will redirect the user to this page which confirms their email.<br>
 
@@ -299,6 +310,7 @@ registered and will have access to the Registered User website services.<br>
 
 - The user will see this feature when the page that the user is looking for, does not exist or for any typing URL error.<br>  
 
+[Back to top](<#contents>)
 
 ### Messages and Interaction with Users
 
@@ -328,6 +340,8 @@ registered and will have access to the Registered User website services.<br>
 When user is logged in the **my account** gets more available options, **my profile**.
 
 **My Profile** - On the profile page the user can change delivery information and see the order history (and confirmations from earlier purchases).
+
+[Back to top](<#contents>)
 
 ### Footer
 
@@ -385,6 +399,8 @@ On the website footer, users can see basic information about the Soilmate Plants
 - To ensure that the Google engine will check the website sitemap file I have registered the Watches & Clocks URL on the Google Search Console.
 
 ![Sitemap Google Registration]<br>
+
+[Back to top](<#contents>)
 
 ### AWS Setup Process
 
@@ -563,9 +579,8 @@ AWS_S3_OBJECT_PARAMETERS = {
 - Below is a screenshot of the Watches & Clocks - Stripe dashboard.
 
 ![ Stripe Payments]<br>
-
+[Back to top](<#contents>)
 ## Technologies Used
-
 
 ### Languages Used
 
@@ -588,6 +603,7 @@ AWS_S3_OBJECT_PARAMETERS = {
 - [Crispy Forms](https://django-crispy-forms.readthedocs.io/en/latest/) to style the forms
 - [Pillow](https://pypi.org/project/Pillow/) to process and save all the images downloaded through the database<br>
 
+[Back to top](<#contents>)
 
 ### Frameworks - Libraries - Programs Used
 
@@ -624,8 +640,12 @@ AWS_S3_OBJECT_PARAMETERS = {
 - [CANVA](https://www.canva.com/)
 - To build the logos for the project
 
+### Testing
 
-    - Testing
+Testing results [here](TESTING.md)
+
+[Back to top](<#contents>)
+
 ### Creating the Django app
 
 1. Go to the Code Institute Gitpod Full Template [Template](https://github.com/Code-Institute-Org/gitpod-full-template)
@@ -640,11 +660,89 @@ AWS_S3_OBJECT_PARAMETERS = {
 10. Add app to the list of installed apps in settings.py file: you_app_name
 11. Migrate changes: in the terminal window type python3 manage.py migrate
 12. Run the server to test if the app is installed, in the terminal "The install worked successfully! Congratulations!"<br>
+
 ### Deployment of This Project
-### Final Deployment
+
+- This site was deployed by completing the following steps:
+
+1. Log in to [Heroku](https://id.heroku.com) or create an account
+2. On the main page click the button labelled New in the top right corner and from the drop-down menu select Create New
+   App
+3. You must enter a unique app name
+4. Next select your region
+5. Click on the Create App button
+6. Click in resources and select Heroku Postgres database
+7. Click Reveal Config Vars and add:
+ * A new record with SECRET_KEY
+ * A new record with the AWS_ACCESS_KEY_ID
+ * A new record with the AWS_SECRET_ACCESS_KEY
+ * A new record with the EMAIL_HOST_PASS
+ * A new record with the EMAIL_HOST_USER 
+ * A new record with the STRIPE_PUBLIC_KEY
+ * A new record with the STRIPE_SECRET_KEY
+ * A new record with the STRIPE_WH_SECRET
+ * A new record with the DISABLE_COLLECTSTATIC = 1
+8.  The next page is the project’s Deploy Tab. Click on the Settings Tab and scroll down to Config Vars
+9.  Next, scroll down to the Buildpack section click Add Buildpack select python and click Save Changes
+10. Scroll to the top of the page and choose the Deploy tab
+11. Select Github as the deployment method
+15. Confirm you want to connect to GitHub
+16. Search for the repository name and click the connect button
+17. Scroll to the bottom of the deploy page and select the preferred deployment type
+18. Click Enable Automatic Deploys for automatic deployment when you push updates to Github<br>
+
+## Final Deployment
+
+1. Create a runtime.txt "python-3.9.13"
+2. Create a Procfile "web: gunicorn your_project_name.wsgi"
+3. When development is complete change the debug setting to: DEBUG = False in settings.py
+4. In this project the summernote editor was used so for this to work in Heroku add: X_FRAME_OPTIONS = 'SAMEORIGIN' to
+   settings.py.
+5. In Heroku settings config vars delete the record for DISABLE_COLLECTSTATIC
+6. In Heroku settings config vars set the record for USE_AWS to True<br>
+
 ### Forking This Project
+
+To make an independent copy of a repository on Github you can fork the GitHub account. You can then be viewed and it is also possible to do changes in the copy without affecting the original repository. To fork the repository, take these steps:
+
+1. After logging in to GitHub, locate the repository. On the top right side of the page there is a 'Fork' button. Click on the button to create a copy of the original repository.
+
+<details><summary><b>Github Fork</b></summary>
+
+[Back to top](<#contents>)
+
 ### Cloning This Project
-### Credits
+
+To clone and set up this project you need to follow the steps below.
+
+1. When you are in the repository, find the code tab and click it.
+2. To the left of the green GitPod button, press the 'code' menu. There you will find a link to the repository. Click on the clipboard icon to copy the URL.
+3. Use an IDE and open Git Bash. Change directory to the location where you want the cloned directory to be made.
+4. Type 'git clone', and then paste the URL that you copied from GitHub. Press enter and a local clone will be created.
+
+<details><summary><b>Github Create Local Clone</b></summary>
+
+## Credits
+
 ### Content
+
+- The images were taken from [Freepik](https://www.freepik.com/),
+  [Pixabay](https://pixabay.com/),[Pexels](https://www.pexels.com//) 
+- The Soilmate Plants logos and favicon are my own designed and build in [CANVA](https://www.canva.com/)
+* [Code Institute - Boutique Ado Project](https://github.com/Code-Institute-Solutions/boutique_ado_v1)
+
 ### Information Sources / Resources
-### Special Thanks
+
+- [W3Schools - Python](https://www.w3schools.com/python/)
+- [Stack Overflow](https://stackoverflow.com/)
+- [Scrimba - Pyhton](https://scrimba.com/learn/python)
+- [Mdbootstrap](https://mdbootstrap.com/freebies/)
+- [Startbootstrap](https://startbootstrap.com/)
+- [Code Institute - Slack Community](https://slack.com/)
+
+[Back to top](<#contents>)
+
+### Acknowledgements
+
+The website was completed as a Portfolio Project 5 made for the Full Stack Software Developer (e-Commerce) Diploma at the [Code Institute](https://codeinstitute.net/).
+I would like to thank my mentor Precious_Mentor for guiding me, and all at the Code Institute for their help and support.
