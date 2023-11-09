@@ -53,7 +53,7 @@
     <div class="dropdown-menu border-0" aria-labelledby="more-info">
         <a href="{% url 'reviews' %}" class="dropdown-item">Customer Reviews</a>
         <a href="{% url 'design' %}" class="dropdown-item">Design services</a>
-        <a href="{% url 'privacy' %}" class="dropdown-item">Customer Reviews</a>
+        <a href="{% url 'privacy' %}" class="dropdown-item">Privacy Policy</a>
         {% if user.is_superuser %}
         <a href="{% url 'newsletter' %}" class="dropdown-item">Newsletter</a>
         {% endif %}
