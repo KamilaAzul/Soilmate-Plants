@@ -1,19 +1,19 @@
-from django.shortcuts import render, redirect, reverse, get_object_or_404, HttpResponseRedirect
+from django.shortcuts import render, redirect, reverse, get_object_or_404
 from django.contrib import messages
-from django.views import generic, View
+from django.views import View
 from django.db.models import Q
 from django.utils.text import slugify
 from django.contrib.auth.decorators import login_required
-from django.views.generic.edit import UpdateView
-
 
 from .forms import PostForm
 from .models import Category, Post
+
 
 class AllBlogPost(View):
     """
     Renders the all post Page
     """
+
     def get(self, request):
         category = request.GET.get('category')
         posts = Post.objects.filter(status=1).order_by("-created_on")
@@ -34,6 +34,7 @@ class AllBlogPost(View):
 
         return render(request, 'blog/all_blog_posts.html', context)
 
+
 class PostDetail(View):
     """
     Renders the post detail Page
@@ -42,44 +43,45 @@ class PostDetail(View):
     def get(self, request, slug):
         queryset = Post.objects.filter(status=1)
         post = get_object_or_404(Post, slug=slug)
-    
+
         return render(request, 'blog/blog_post_detail.html', {'post': post})
 
+
 def edit_blog_post(request, slug):
-        """ This view makes it possible to edit a blog post on the website.
-        """
+    """ This view makes it possible to edit a blog post on the website.
+    """
 
-        posts = Post.objects.all()
-        query = None
+    posts = Post.objects.all()
+    query = None
 
-        if not request.user.is_superuser:
-            messages.error(request, 'You do not have access to this page!')
-            return redirect(reverse('home'))
+    if not request.user.is_superuser:
+        messages.error(request, 'You do not have access to this page!')
+        return redirect(reverse('home'))
 
-        blog_post = get_object_or_404(Post, slug=slug)
-        if request.method == 'POST':
-            form = PostForm(
-                request.POST, request.FILES, instance=blog_post)
-            if form.is_valid():
-                form.instance.author = request.user
-                form.instance.slug = slugify(form.instance.title)
-                form.save()
-                messages.success(request, 'This post was updated successfully!')
-                return redirect(reverse('blog_post_detail', args=[blog_post.slug]))
-            else:
-                messages.error(request, 'Failed to update blog post. '
-                            'Please ensure the form is valid.')
+    blog_post = get_object_or_404(Post, slug=slug)
+    if request.method == 'POST':
+        form = PostForm(request.POST, request.FILES, instance=blog_post)
+        if form.is_valid():
+            form.instance.author = request.user
+            form.instance.slug = slugify(form.instance.title)
+            form.save()
+            messages.success(request, 'This post was updated successfully!')
+            return redirect(reverse('blog_post_detail', args=[blog_post.slug]))
         else:
-            form = PostForm(instance=blog_post)
-            messages.info(request, f'You are editing the post"{blog_post.title}".')
+            messages.error(request, 'Failed to update blog post. '
+                                    'Please ensure the form is valid.')
+    else:
+        form = PostForm(instance=blog_post)
+        messages.info(request, f'You are editing the post "{blog_post.title}".')
 
-        template = 'blog/edit_blog_post.html'
-        context = {
-            'form': form,
-            'blog_post': blog_post,
-            'posts': posts,
-        }
-        return render(request, template, context)
+    template = 'blog/edit_blog_post.html'
+    context = {
+        'form': form,
+        'blog_post': blog_post,
+        'posts': posts,
+    }
+    return render(request, template, context)
+
 
 @login_required
 def create_post(request):
@@ -132,18 +134,16 @@ def delete_blog_post(request, pk):
     """ This view deletes a blog post from the site """
 
     if not request.user.is_superuser:
-            messages.error(request, 'You do not have access to this page!')
-            return redirect(reverse('home'))
-            
+        messages.error(request, 'You do not have access to this page!')
+        return redirect(reverse('home'))
+
     if request.method == "POST":
         post = Post.objects.get(pk=pk)
         post.delete()
         messages.success(request, "The post was deleted successfully")
         return redirect('all_blog')
 
-    return render(request,'blog/delete_blog_post.html')
-
-
+    return render(request, 'blog/delete_blog_post.html')
 
 
     

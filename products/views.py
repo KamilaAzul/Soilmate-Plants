@@ -15,7 +15,7 @@ from .forms import ProductForm
 # Create your views here.
 
 def all_products(request):
-    """ A view to show all products, including sorting and search queries """
+    """A view to show all products, including sorting and search queries"""
 
     products = Product.objects.all()
     query = None
@@ -37,7 +37,6 @@ def all_products(request):
                 if direction == 'desc':
                     sortkey = f'-{sortkey}'
             products = products.order_by(sortkey)
-            
         if 'category' in request.GET:
             categories = request.GET['category'].split(',')
             products = products.filter(category__name__in=categories)
@@ -48,7 +47,6 @@ def all_products(request):
             if not query:
                 messages.error(request, "You didn't enter any search criteria!")
                 return redirect(reverse('products'))
-            
             queries = Q(name__icontains=query) | Q(description__icontains=query)
             products = products.filter(queries)
 
@@ -63,17 +61,17 @@ def all_products(request):
 
     return render(request, 'products/products.html', context)
 
+
 class ProductDetail(View):
+    """A view to show product detail"""
     template_name = 'products/product_detail.html'
 
     def get(self, request, product_id):
         product = get_object_or_404(Product, id=product_id)
         reviews = Review.objects.filter(product=product, approved=True)
         form = ReviewForm()
-        
         product_rating = calculate_product_rating(product)
-        
-        
+
         context = {
             'product': product,
             'reviews': reviews,
@@ -85,7 +83,7 @@ class ProductDetail(View):
 
 @login_required
 def add_product(request):
-    """ Add a product to the store """
+    """Add a product to the store"""
     if not request.user.is_superuser:
         messages.error(request, 'Sorry, only store owners can do that.')
         return redirect(reverse('home'))
@@ -100,7 +98,7 @@ def add_product(request):
             messages.error(request, 'Failed to add product. Please ensure the form is valid.')
     else:
         form = ProductForm()
-        
+
     template = 'products/add_product.html'
     context = {
         'form': form,
@@ -111,7 +109,7 @@ def add_product(request):
 
 @login_required
 def edit_product(request, product_id):
-    """ Edit a product in the store """
+    """Edit a product in the store"""
     if not request.user.is_superuser:
         messages.error(request, 'Sorry, only store owners can do that.')
         return redirect(reverse('home'))
@@ -140,7 +138,7 @@ def edit_product(request, product_id):
 
 @login_required
 def delete_product(request, product_id):
-    """ Delete a product from the store """
+    """Delete a product from the store"""
     if not request.user.is_superuser:
         messages.error(request, 'Sorry, only store owners can do that.')
         return redirect(reverse('home'))
@@ -149,4 +147,3 @@ def delete_product(request, product_id):
     product.delete()
     messages.success(request, 'Product deleted!')
     return redirect(reverse('products'))
-

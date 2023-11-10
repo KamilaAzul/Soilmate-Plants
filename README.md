@@ -23,7 +23,6 @@ clear and concise site navigation.
     - [Colours](#colours)
     - [Typography](#typography)
     - [Imagery](#imagery)
-    - [Database Diagram](#database-diagram)
     - [Features](#features)
     - [Home Page](#home-page)
     - [Our Plants Page](#our-plants-page)
@@ -120,7 +119,7 @@ All functionality and development of this project were managed using GitHub whic
 
 ### Main Site Goals
 
-- To provide users with a good website experience with watches and clocks on display.
+- To provide users with a good website experience on display.
 - To provide users with a visually pleasing website that is intuitive and easy to navigate.
 - To provide a website with a clear purpose.
 - To provide tools that allow users to search for products.
@@ -145,9 +144,6 @@ display the website logo. Font-family: Josefin Slab was used to display product 
 
 [Back to top](<#contents>)
 
-### Database Diagram
-
-![Database Diagrama]()<br>
 
 ### Features
 
@@ -663,9 +659,7 @@ AWS_S3_OBJECT_PARAMETERS = {
     STRIPE_SECRET_KEY = os.getenv('STRIPE_SECRET_KEY', '')
     STRIPE_WH_SECRET = os.getenv('STRIPE_WH_SECRET', '')
     ```
-- Below is a screenshot of the Watches & Clocks - Stripe dashboard.
 
-![ Stripe Payments]<br>
 [Back to top](<#contents>)
 ## Technologies Used
 
