@@ -30,7 +30,8 @@ urlpatterns = [
     path('blog/', include('blog.urls')),
     path('newsletter/', include('newsletter.urls')),
     path('reviews/', include('reviews.urls')),
-    path('tinymce/', include('tinymce.urls'))
+    path('tinymce/', include('tinymce.urls')),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 
 handler404 = 'soilmate_plants.views.handler404'
+

@@ -4,36 +4,58 @@ Back to the [README](README.md)
 
 ## Testing User Stories
 
-- As a website user, I can:
+#### As a website user, I can:
 
 1. Navigate around the website and easily find the desired content.
+- Navigating the website is easy and intuitive.
 2. See a list of products and choose a desired product.
+- On the "Our plants" page, the user can see all the plants and select a specific product.
 3. Search products and be able to find a specific product.
+- There is a search engine in the navbar, which makes finding a specific product much faster and easier.
 4. Click on a product to find more details about it.
+- After clicking on the selected product, the user will be taken to the product page where he can see more information about it.
 5. Register for an account to be able to use the services offered to members.
+- The user can register, thanks to which he has access to a wider range of services.
 6. View product comments so that I can read other users' opinions.
+- The user can see (if the product already has a comment) the comments of other users who have previously purchased a given flower.
 7. Buy a product by using the website checkout system.
+- The user can purchase the product using the website checkout system.
 8. I can find more information about products on a website blog.
+- The user can read posted posts about plants.
 
-- As a logged in website user, I can:
+#### As a logged in website user, I can:
 
 1. Leave my review on the website about the purchased product.
+- After logging in, the user can leave a comment about the purchased product.
 2. Delete my previous reviews.
+- The user can delete his comments.
 3. Edit my previous reviews.
+- The user can edit his comments.
 4. Save my data under my personal profile.
+- The user can save his personal data and purchase history on his profile on the website.
 5. Update my profile details.
+- The user can update his/her personal data on the profile.
 6. Log out of the website.
+- The user can log out at any time.
 7. Buy a product using my personal profile, through the website checkout system.
+- The user can make purchases after logging in in the secure checkout process and the purchase will be added to the shopping list and the user can see this list on their profile at any time.
 
-- As a website Superuser, I can:
+#### As a website Superuser, I can:
 
 1. Create and publish a new product.
+- As a website Superuser, I can add new products.
 2. Create a draft of a new product so it can be finalized later.
-3. Create a new user, products, and categories.
+- As a website Superuser, I can create a draft of a new product.
+3. Create a new categories, edit products.
+- As a website Superuser, I can add new categories and edit existing products.
 4. Delete users, products, categories, and reviews.
+- As a website Superuser, I can delete products, categories, comments/
 5. Approve user's reviews.
-6. Change a user’s permissions on the website.
+- As a website Superuser, I can accept comments.
+6. Change a user's permissions on the website.
+- As website Superuser, I can change user's permissions on the website.
 7. Create and upload new posts to be shown on the website.
+- As a website Superuser, I can create new posts, edit them and delete them.
 
 [Back to top](<#table-of-content>)
 
