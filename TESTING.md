@@ -209,13 +209,17 @@ All functions work as they should.No errors were detected by me.
 ### Lighthouse
 Google Lighthouse in Chrome Developer Tools was used to test the site within the areas of *Performance*, *Accessibility*, *Best Practices* and *SEO*. I tested the *home page*, *view all blog posts page*, *view all products page*, *product management page* and *blog management page*. The testing showed the following:
 
-* Home Page - Performance: 70, Accessibility: 100, Best Practises: 100, SEO: 92
-* View All Blog Posts Page - Performance: 68, Accessibility: 100, Best Practises: 100, SEO: 92
-* View All Products Page - Performance: 64, Accessibility: 99, Best Practises: 100, SEO: 92
-* Product Management - Performance: 75, Accessibility: 100, Best Practises: 100, SEO: 100
-* Blog Management - Performance: 75, Accessibility: 100, Best Practises: 100, SEO: 100
+* Home Page 
+![Home Page ](media/README/HomePageLighthouse.png)
 
-From a general point of view these are quite good results. On all pages the performance is a little bit to low and it is mainly connected to the image sizes. I did some compressing on all the images(approx -50% in size) but still the performance result landed around 70-80. The decrease in the SEO results are mainly connected to the 'read more' links that is not a optimal description from a SEO point of view. In the view all products page the SEO result is affected by the heading elements not being in sequentially-descending order, but this is an active design choice and not a big issue (but I thought it would be proper to highlight it here so that it's clear I'm aware of it).
+* View Reviews Page 
+
+![Reviews Page](media/README/ReviewsLighthouse.png)
+
+* View All Products Page 
+
+
+![All Products Page ](media/README/AllproductsLighthouse.png)
 
 
 
