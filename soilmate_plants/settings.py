@@ -31,7 +31,8 @@ SECRET_KEY = os.environ.get('SECRET_KEY', '')
 DEBUG = True
 
 ALLOWED_HOSTS = ['soilmate-plants-a1626f09724b.herokuapp.com', 'localhost',
-                 '8000-kamilaazul-soilmate-plan-iakv8u70kr.us2.codeanyapp.com']
+                 '8000-kamilaazul-soilmateplan-7clz3updxcr.ws-eu106.gitpod.io',
+                 '8000-kamilaazul-soilmate-plan-iakv8u70kr.us2.codeanyapp.com',]
 
 
 # Application definition
