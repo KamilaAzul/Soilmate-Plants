@@ -28,9 +28,10 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = os.environ.get('SECRET_KEY', '')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
-ALLOWED_HOSTS = ['soilmate-plants-a1626f09724b.herokuapp.com', 'localhost', '8000-kamilaazul-soilmateplan-7clz3updxcr.ws-eu106.gitpod.io']
+ALLOWED_HOSTS = ['soilmate-plants-a1626f09724b.herokuapp.com', 'localhost',
+                 '8000-kamilaazul-soilmate-plan-iakv8u70kr.us2.codeanyapp.com']
 
 
 # Application definition
@@ -70,6 +71,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'allauth.account.middleware.AccountMiddleware',
 ]
 
 ROOT_URLCONF = 'soilmate_plants.urls'
@@ -188,7 +190,7 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
 
 if 'USE_AWS' in os.environ:
-     # Cache control
+    # Cache control
     AWS_S3_OBJECT_PARAMETERS = {
         'Expires': 'Thu, 31 Dec 2099 20:00:00 GMT',
         'CacheControl': 'max-age=94608000',
@@ -210,7 +212,7 @@ if 'USE_AWS' in os.environ:
     # Override static and media URLs in production
     STATIC_URL = f'https://{AWS_S3_CUSTOM_DOMAIN}/{STATICFILES_LOCATION}/'
     MEDIA_URL = f'https://{AWS_S3_CUSTOM_DOMAIN}/{MEDIAFILES_LOCATION}/'
-    
+
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
