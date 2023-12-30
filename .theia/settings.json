@@ -1,4 +1,7 @@
 {
     "editor.folding": true,
-    "editor.defaultFormatter": ""
+    "editor.defaultFormatter": "",
+    "[markdown]": {
+        "editor.defaultFormatter": "davidanson.vscode-markdownlint"
+    }
 }
