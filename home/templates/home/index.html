@@ -1,124 +1,211 @@
 {% extends "base.html" %} {% load static %} {% block content %}
-   
-      <header class="masthead" style="background-image: url('{{ MEDIA_URL }}1home.jpg'); background-size: cover;">
-            <div class="container" >
-                <div class="mastheadS text-black">Welcome To Our Studio!</div>
-                <h1 class="masthead text-black">Life is better surrounded by plants</h1>
-                <a href="{% url 'products' %}" class="shop-now-button btn btn-lg rounded-0 text-uppercase py-3" style="background-color: #628B25">Shop Now</a>
-            </div>
-        </header>
+
+<header
+  class="masthead"
+  style="background-image: url('{{ MEDIA_URL }}1home.jpg'); background-size: cover;"
+>
+  <div class="container">
+    <div class="mastheadS text-black">Welcome To Our Studio!</div>
+    <h1 class="masthead text-black">Life is better surrounded by plants</h1>
+    <a
+      href="{% url 'products' %}"
+      class="shop-now-button btn btn-lg rounded-0 text-uppercase py-3"
+      style="background-color: #628b25"
+      >Shop Now</a
+    >
+  </div>
+</header>
 <div id="delivery-banner" class="row text-center">
-    <div class="col bg-black text-white">
-        <h5 class="logo-font my-1">Free delivery on orders over ${{ free_delivery_threshold }}!</h5>                
-    </div>            
+  <div class="col bg-black text-white">
+    <h5 class="logo-font my-1">
+      Free delivery on orders over ${{ free_delivery_threshold }}!
+    </h5>
+  </div>
 </div>
-<div class="Services" data-mdb-zoom-effect="true" data-mdb-auto-height="true" id="Services1">
-    <div class="row py-3 shadow-5">
-        <div class="col-3 mt-1">
-            <a href="#PlantQuality"><img src="{{ MEDIA_URL }}qual.png" alt="quality" class="w-100"/></a>
-            <h2 class="text-center my-3 ">Plant Quality</h2>
-          </div>
-          <div class="col-3 mt-1">
-            <a href="#Repotting"><img src="{{ MEDIA_URL }}repotting1.png" alt="repotting" class="w-100"/></a>
-            <h2 class="text-center my-3 ">Repotting</h2>
-          </div>
-      <div class="col-3 mt-1">
-        <a href="#Delivery"><img src="{{ MEDIA_URL }}Delivery1.png" alt="delivery" class="w-100"/></a>
-            <h2 class="text-center my-3 ">Delivery</h2>
-      </div>
-      <div class="col-3 mt-1">
-        <a href="{% url 'products' %}"><img src="{{ MEDIA_URL }}Search.png" alt="quality" class="w-100"/></a>
-            <h2 class="text-center my-3 ">Plant search</h2>
-      </div>
+<div
+  class="Services"
+  data-mdb-zoom-effect="true"
+  data-mdb-auto-height="true"
+  id="Services1"
+>
+  <div class="row py-3 shadow-5">
+    <div class="col-3 mt-1">
+      <a href="#PlantQuality"
+        ><img src="{{ MEDIA_URL }}qual.png" alt="quality" class="w-100"
+      /></a>
+      <h2 class="text-center my-3">Plant Quality</h2>
     </div>
-<!-- welcome message-->
-<section class="page-section" id="services" style="background-color: #f9f5ec">
+    <div class="col-3 mt-1">
+      <a href="#Repotting"
+        ><img src="{{ MEDIA_URL }}repotting1.png" alt="repotting" class="w-100"
+      /></a>
+      <h2 class="text-center my-3">Repotting</h2>
+    </div>
+    <div class="col-3 mt-1">
+      <a href="#Delivery"
+        ><img src="{{ MEDIA_URL }}Delivery1.png" alt="delivery" class="w-100"
+      /></a>
+      <h2 class="text-center my-3">Delivery</h2>
+    </div>
+    <div class="col-3 mt-1">
+      <a href="{% url 'products' %}"
+        ><img src="{{ MEDIA_URL }}Search.png" alt="quality" class="w-100"
+      /></a>
+      <h2 class="text-center my-3">Plant search</h2>
+    </div>
+  </div>
+  <!-- welcome message-->
+  <section class="page-section" id="services" style="background-color: #f9f5ec">
     <div class="row">
+      <div class="col-lg-8 mx-auto text-center">
+        <h2>
+          Welcome to the world of Soilmate Plants - a place full of passion, joy
+          and the beauty of nature. Here you will find hundreds of plants to
+          choose from, tips on their care, and inspiration for interior design
+          with plants.
+        </h2>
         <div class="col-lg-8 mx-auto text-center">
-            <h2>Welcome to the world of Soilmate Plants - a place full of passion, joy and the beauty of nature. Here you will find hundreds of plants to choose from, tips on their care, and inspiration for interior design with plants.
-            </h2>
-        <div class="col-lg-8 mx-auto text-center">
-          <br/>
-          <p class="large text-muted">If you have no experience with plants, don't worry, we will help you start your plant adventure with the first specimens.
-                  For those who already have a small jungle in their home, we will be happy to help you expand your exotic collections.
-                  We are convinced that thanks to our Soilmate Plants, your home will become an even cozier place where you will feel wonderful relief.   
+          <br />
+          <p class="large text-muted">
+            If you have no experience with plants, don't worry, we will help you
+            start your plant adventure with the first specimens. For those who
+            already have a small jungle in their home, we will be happy to help
+            you expand your exotic collections. We are convinced that thanks to
+            our Soilmate Plants, your home will become an even cozier place
+            where you will feel wonderful relief.
           </p>
         </div>
       </div>
     </div>
-</section>
-    
-<!--Home page services section one-->
-<section class="Ourservices py-3" id="PlantQuality">
+  </section>
+
+  <!--Home page services section one-->
+  <section class="Ourservices py-3" id="PlantQuality">
     <div class="container px-5 my-5">
-        <div class="row gx-5 align-items-center">
-            <div class="col-lg-6"><img class="img-fluid rounded mb-5 mb-lg-0" src="{{ MEDIA_URL }}FromWhere.jpg" alt="PlantsQuality" /></div>
-            <div class="col-lg-6">
-                <div id="PlantQuality"><h2>Plants quality</h2></div>
-        <p class="lead fw-normal text-muted mb-0">We want healthy plants to reach you safely, even to the remotest corners of the country.We cooperate with the best greenhouses in the country.</p>
-                <p class="lead fw-normal text-muted mb-0">In our Soilmate Plants store, we have many species of plants that are most often purchased by our customers. The more exotic ones are brought from the greenhouse only after we know that they will go to a new home. The journey of plants from the greenhouse to our Transplanting Point takes one day. Then they spend another day there under our care, when we transplant them to appropriate soil and larger pots, wash and prepare them. If you are from Berlin, the plants will usually arrive to you on the 3rd day after leaving the greenhouse, if you order the plants with courier delivery, they will be at your door on the 6th-7th. day after leaving the greenhouse - always in perfect shape. The time it takes for the plant to reach your home is 3-7 days.
-                </p>
-            </div>
+      <div class="row gx-5 align-items-center">
+        <div class="col-lg-6">
+          <img
+            class="img-fluid rounded mb-5 mb-lg-0"
+            src="{{ MEDIA_URL }}FromWhere.jpg"
+            alt="PlantsQuality"
+          />
         </div>
+        <div class="col-lg-6">
+          <div id="PlantQuality"><h2>Plants quality</h2></div>
+          <p class="lead fw-normal text-muted mb-0">
+            We want healthy plants to reach you safely, even to the remotest
+            corners of the country.We cooperate with the best greenhouses in the
+            country.
+          </p>
+          <p class="lead fw-normal text-muted mb-0">
+            In our Soilmate Plants store, we have many species of plants that
+            are most often purchased by our customers. The more exotic ones are
+            brought from the greenhouse only after we know that they will go to
+            a new home. The journey of plants from the greenhouse to our
+            Transplanting Point takes one day. Then they spend another day there
+            under our care, when we transplant them to appropriate soil and
+            larger pots, wash and prepare them. If you are from Berlin, the
+            plants will usually arrive to you on the 3rd day after leaving the
+            greenhouse, if you order the plants with courier delivery, they will
+            be at your door on the 6th-7th. day after leaving the greenhouse -
+            always in perfect shape. The time it takes for the plant to reach
+            your home is 3-7 days.
+          </p>
+        </div>
+      </div>
     </div>
-</section>
-<!-- Home page services section two-->
-<section class="Ourservices py-3" id="Repotting">
+  </section>
+  <!-- Home page services section two-->
+  <section class="Ourservices py-3" id="Repotting">
     <div class="container px-5 my-5">
-        <div class="row gx-5 align-items-center">
-            <div class="col-lg-6 order-first order-lg-last"><img class="img-fluid rounded mb-5 mb-lg-0" src="{{ MEDIA_URL }}repotting.jpg" alt="The repotting process" /></div>
-            <div class="col-lg-6">
-                <div id="Repotting"><h2>The repotting process</h2></div>
-                <br>
-                <p class="lead fw-normal text-muted mb-0"> We carefully check the plants that come to us from the greenhouse to ensure that they reach you in perfect condition and health.
-                    If the plant is to be replanted, we select the appropriate pot size and appropriate substrate.
-                    We always pour a layer of expanded clay at the bottom. This is drainage that gives the roots room to breathe and prevents water from standing in the pot. Expanded clay is resistant to mold and fungi, so it prevents root rot.
-                    When replanting, we also look at the roots - it is important that they are healthy. We are careful not to damage the roots, so we transplant the plants with the greatest care.
-                </p>
-            </div>
+      <div class="row gx-5 align-items-center">
+        <div class="col-lg-6 order-first order-lg-last">
+          <img
+            class="img-fluid rounded mb-5 mb-lg-0"
+            src="{{ MEDIA_URL }}repotting.jpg"
+            alt="The repotting process"
+          />
         </div>
+        <div class="col-lg-6">
+          <div id="Repotting"><h2>The repotting process</h2></div>
+          <br />
+          <p class="lead fw-normal text-muted mb-0">
+            We carefully check the plants that come to us from the greenhouse to
+            ensure that they reach you in perfect condition and health. If the
+            plant is to be replanted, we select the appropriate pot size and
+            appropriate substrate. We always pour a layer of expanded clay at
+            the bottom. This is drainage that gives the roots room to breathe
+            and prevents water from standing in the pot. Expanded clay is
+            resistant to mold and fungi, so it prevents root rot. When
+            replanting, we also look at the roots - it is important that they
+            are healthy. We are careful not to damage the roots, so we
+            transplant the plants with the greatest care.
+          </p>
+        </div>
+      </div>
     </div>
-</section>
-<!--Home page services section three-->
-<section class=" Ourservices py-3" id="Delivery">
+  </section>
+  <!--Home page services section three-->
+  <section class="Ourservices py-3" id="Delivery">
     <div class="container px-5 my-5">
-        <div class="row gx-5 align-items-center">
-            <div class="col-lg-6"><img class="img-fluid rounded mb-5 mb-lg-0" src="{{ MEDIA_URL }}shipping.jpg" alt="Deliveryy" /></div>
-            <div class="col-lg-6">
-                <div id="Delivery"><h2>Delivery</h2></div>
-                  <br>
-                <p class="lead fw-normal text-muted mb-0"> The plants are delivered to your homes in Berlin the next day! To the rest of Germany just after the weekend - we ship on Mondays, Tuesdays and Wednesdays. The pots are stable and the entire transport is safe.
-                    The pot is placed in a thick cardboard insert: inside there is an ecological filler that protects the pot during shocks, and around it there is cardboard that prevents breakage.
-                    On colder days, we additionally dress the plants in agrotextile clothes so that they reach you safe and sound.
-                    Instructions and advice
-                    We attach a care manual to each plant, where you will find all the necessary information and advice. We are always happy to answer questions and help.
-                </p>
-            </div>
+      <div class="row gx-5 align-items-center">
+        <div class="col-lg-6">
+          <img
+            class="img-fluid rounded mb-5 mb-lg-0"
+            src="{{ MEDIA_URL }}shipping.jpg"
+            alt="Deliveryy"
+          />
         </div>
+        <div class="col-lg-6">
+          <div id="Delivery"><h2>Delivery</h2></div>
+          <br />
+          <p class="lead fw-normal text-muted mb-0">
+            The plants are delivered to your homes in Berlin the next day! To
+            the rest of Germany just after the weekend - we ship on Mondays,
+            Tuesdays and Wednesdays. The pots are stable and the entire
+            transport is safe. The pot is placed in a thick cardboard insert:
+            inside there is an ecological filler that protects the pot during
+            shocks, and around it there is cardboard that prevents breakage. On
+            colder days, we additionally dress the plants in agrotextile clothes
+            so that they reach you safe and sound. Instructions and advice We
+            attach a care manual to each plant, where you will find all the
+            necessary information and advice. We are always happy to answer
+            questions and help.
+          </p>
+        </div>
+      </div>
     </div>
-</section>
-<!--Ikons Grid section-->
-<div class="container" id="ikonsGrid">
-    <div class="text-center">
-    </div>
+  </section>
+  <!--Ikons Grid section-->
+  <div class="container" id="ikonsGrid">
+    <div class="text-center"></div>
     <div class="row">
       <div class="col-lg-4">
         <div class="icons_services">
-          <img src="{{ MEDIA_URL }}2i.png" alt="quality"/>
+          <img src="{{ MEDIA_URL }}2i.png" alt="quality" />
           <h4>We say no to the bad quality</h4>
           <p class="text-muted">You know what you order</p>
         </div>
       </div>
       <div class="col-lg-4">
         <div class="icons_services">
-          <img class="mx-auto rounded-circle" src="{{ MEDIA_URL }}1i.png" alt="repotting"/>
+          <img
+            class="mx-auto rounded-circle"
+            src="{{ MEDIA_URL }}1i.png"
+            alt="repotting"
+          />
           <h4>Don't worry aboyt replanting</h4>
           <p class="text-muted">Safe delivery of you new plant</p>
         </div>
       </div>
       <div class="col-lg-4">
-        <div class="icons_services"><a href="{% url 'about' %}" class="item ">
-          <img class="mx-auto rounded-circle" src="{{ MEDIA_URL }}3i.png" alt="contact"/></a>
+        <div class="icons_services">
+          <a href="{% url 'about' %}" class="item">
+            <img
+              class="mx-auto rounded-circle"
+              src="{{ MEDIA_URL }}3i.png"
+              alt="contact"
+          /></a>
           <h4>Contact us</h4>
           <p class="text-muted">Contact us anytime you need a help or advise</p>
         </div>
@@ -126,48 +213,68 @@
     </div>
   </div>
 
-<!--End of Ikons Grid-->
+  <!--End of Ikons Grid-->
 
-<!-- Newsletter section (from: https: //bootsnipp.com/snippets/eoXRa, https://pylessons.com/django-subscribe)-->
+  <!-- Newsletter section (from: https: //bootsnipp.com/snippets/eoXRa, https://pylessons.com/django-subscribe)-->
 
-<section class="home-newsletter">
-    <div class="row d-flex justify-content-center align-items-center rows"
-        style="background-image: url('{{ MEDIA_URL }}contact(2).jpg'); background-size: cover;" id="newsletter">
-    <div class="container">
+  <section class="home-newsletter">
+    <div
+      class="row d-flex justify-content-center align-items-center rows"
+      style="background-image: url('{{ MEDIA_URL }}contact(2).jpg'); background-size: cover;"
+      id="newsletter"
+    >
+      <div class="container">
         <div class="row">
-            <div class="col-sm-12">
-                <div class="single">
-                    <div class="text-center">
-                        <h1 class="text-white">Want to receive a free first delivery?</h1>
-                    
-                        <h5 class="subscribe d-block mt-3 text-white">Subscribe to our newsletter in order not to miss new arrivals <br />
-                            promotions and discounts of our store</h5>
-                    <br>
-                    <form action="{% url 'subscribe' %}" method="post">
-                        <div class="row d-flex justify-content-center">
-                        {% csrf_token %}
-                        <div class="col-auto">
-                            <input id="name" name="name" class="form-control rounded" placeholder="Your Name"/>
-                        </div>
+          <div class="col-sm-12">
+            <div class="single">
+              <div class="text-center">
+                <h1 class="text-white">
+                  Want to receive a free first delivery?
+                </h1>
 
-                        <div class="col-auto">
-                            <input id="email" name="email" type="email" class="form-control rounded" placeholder="Email address"/>
-                        </div>
-
-                        <div class="col-auto">
-                            <button type="submit" class="btn btncolor">
-                                <i class="fa fa-arrow-circle-right fa-lg"></i>
-                            </button>
-                        </div>
-                        </div>
-                    </form>
-                    <div id="newsletter-message"></div>
-                   </div>
+                <h5 class="subscribe d-block mt-3 text-white">
+                  Subscribe to our newsletter in order not to miss new arrivals
+                  <br />
+                  promotions and discounts of our store
+                </h5>
+                <br />
+                <form action="{% url 'subscribe' %}" method="post">
+                  <div class="row d-flex justify-content-center">
+                    {% csrf_token %}
+                    <div class="col-auto">
+                      <input
+                        id="name"
+                        name="name"
+                        class="form-control rounded"
+                        placeholder="Your Name"
+                      />
                     </div>
-                </div>
+
+                    <div class="col-auto">
+                      <input
+                        id="email"
+                        name="email"
+                        type="email"
+                        class="form-control rounded"
+                        placeholder="Email address"
+                      />
+                    </div>
+
+                    <div class="col-auto">
+                      <button type="submit" class="btn btncolor">
+                        <i class="fa fa-arrow-circle-right fa-lg"></i>
+                      </button>
+                    </div>
+                  </div>
+                </form>
+                <div id="newsletter-message"></div>
+              </div>
             </div>
+          </div>
         </div>
+      </div>
     </div>
-</section>
-<!-- End of newsletter section-->
-{% endblock %}
+  </section>
+  <!-- End of newsletter section-->
+  {% endblock %}
+</div>
