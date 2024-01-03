@@ -120,6 +120,7 @@ CI Python Linter [Code Institute Linter](https://pep8ci.herokuapp.com/) was used
 
 **App Bag**
 No major errors reported, some E501 line too long
+
 - admin.py -  No errors reported
 - apps.py -  No errors or warnings reported
 - contexts.py -  No errors or warnings reported
@@ -129,6 +130,7 @@ No major errors reported, some E501 line too long
 
 **App Blog**
 No major errors reported, some E501 line too long
+
 - admin.py - No errors reported
 - apps.py - No errors reported
 - forms.py - No errors reported
@@ -138,6 +140,7 @@ No major errors reported, some E501 line too long
 
 **App Checkout**
 No major errors reported, some E501 line too long
+
 - **init**.py - No errors reported
 - admin.py - 34: W293 blank line contains whitespace, 35: W391 blank line at end of file
 - apps.py - No errors reported
@@ -174,6 +177,7 @@ No major errors reported, some E501 line too long
 
 **App Products**
 No major errors reported, some E501 line too long
+
 - admin.py
 - apps.py
 - forms.py
@@ -183,6 +187,7 @@ No major errors reported, some E501 line too long
 
 **App Profiles**
 No major errors reported, some E501 line too long
+
 - apps.py
 - forms.py
 - models.py
@@ -190,6 +195,7 @@ No major errors reported, some E501 line too long
 - views.py
 
 **Soilamate Plants**
+
 - urls.py - No errors reported
 - views.py - No errors reported
 
@@ -262,7 +268,6 @@ All functions work as they should.No errors were detected by me.
 | **Blog** | After pressing "Blog" the user will be redirected to the blog page. | Working correctly |
 | **Contact us** | The user will be redirected to the "contact us" page where there is a contact form.| Working correctly |
 | **More** |When you press "More", the window will unfold, offering a user a variety of options such as: "Customer reviews", "Design services", "Privacy policy" and only for the superuser "Newletter" . | Working correctly |
-
 
 [Back to top](<#table-of-content>)
 
