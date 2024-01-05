@@ -4,22 +4,18 @@
     <li class="nav-item dropdown">
       <a
         class="main logo-font font-weight-bold nav-link text-white mr-5"
-        href="{% url 'home' %}"
+        href="/"
         id="konowlage-link"
         data-toggle="dropdown"
         aria-haspopup="true"
         aria-expanded="false"
         >Home</a
       >
-      <div class="dropdown-menu border-0" aria-labelledby="info-links">
-        <a href="{% url 'home' %}#PlantQuality" class="dropdown-item"
-          >Plants Quality</a
-        >
-        <a href="{% url 'home' %}#Repotting" class="dropdown-item">Repotting</a>
-        <a href="{% url 'home' %}#Delivery" class="dropdown-item">Delivery</a>
-        <a href="{% url 'home' %}#Newsletter" class="dropdown-item"
-          >Newsletter</a
-        >
+      <div class="dropdown-menu border-0" aria-labelledby="konowlage-link">
+        <a href="/#PlantQuality" class="dropdown-item">Plants Quality</a>
+        <a href="/#Repotting" class="dropdown-item">Repotting</a>
+        <a href="/#Delivery" class="dropdown-item">Delivery</a>
+        <a href="/#Newsletter" class="dropdown-item">Newsletter</a>
       </div>
     </li>
 
@@ -34,38 +30,26 @@
         aria-expanded="false"
         >Our Plants</a
       >
-      <div class="dropdown-menu border-0" aria-labelledby="plants-link">
+      <div class="dropdown-menu border-0" aria-labelledby="clothing-link">
         <a
-          href="{% url 'products' %}?category=Exotic,Beginners%20friendly,Potted%20plants,Monsters,Potted%20trees,Hanging%20Plants"
+          href="/products/?category=Exotic,Beginners%20friendly,Potted%20plants,Monsters,Potted%20trees,Hanging%20Plants"
           class="dropdown-item"
           >All Plants</a
         >
-        <a
-          href="{% url 'products' %}?category=Potted%20trees"
-          class="dropdown-item"
+        <a href="/products/?category=Potted%20trees" class="dropdown-item"
           >Potted trees</a
         >
-        <a
-          href="{% url 'products' %}?category=Potted%20plants"
-          class="dropdown-item"
+        <a href="/products/?category=Potted%20plants" class="dropdown-item"
           >Potted plants</a
         >
-        <a
-          href="{% url 'products' %}?category=Hanging%20Plants"
-          class="dropdown-item"
+        <a href="/products/?category=Hanging%20Plants" class="dropdown-item"
           >Hanging Plants</a
         >
-        <a
-          href="{% url 'products' %}?category=Beginners%20friendly"
-          class="dropdown-item"
+        <a href="/products/?category=Beginners%20friendly" class="dropdown-item"
           >For Beginners</a
         >
-        <a href="{% url 'products' %}?category=Exotic" class="dropdown-item"
-          >Exotic</a
-        >
-        <a
-          href="{% url 'products' %}?sort=rating&direction=desc"
-          class="dropdown-item"
+        <a href="/products/?category=Exotic" class="dropdown-item">Exotic</a>
+        <a href="/products/?sort=rating&direction=desc" class="dropdown-item"
           >By Rating</a
         >
       </div>
@@ -75,17 +59,17 @@
     <li class="nav-item dropdown">
       <a
         class="main logo-font font-weight-bold nav-link text-white mr-5"
-        href="{% url 'about' %}"
+        href="/about"
         id="about-link"
         data-toggle="dropdown"
         aria-haspopup="true"
         aria-expanded="false"
         >About us</a
       >
-      <div class="dropdown-menu border-0" aria-labelledby="about-company">
-        <a href="{% url 'about' %}#Company" class="dropdown-item">Company</a>
-        <a href="{% url 'about' %}#team" class="dropdown-item">Our Team</a>
-        <a href="{% url 'about' %}#gallery" class="dropdown-item">Gallery</a>
+      <div class="dropdown-menu border-0" aria-labelledby="about-link">
+        <a href="/about#Company" class="dropdown-item">Company</a>
+        <a href="/about#team" class="dropdown-item">Our Team</a>
+        <a href="/about#gallery" class="dropdown-item">Gallery</a>
       </div>
     </li>
 
@@ -94,7 +78,7 @@
       <a
         class="nav-link active main logo-font font-weight-bold nav-link text-white mr-5"
         aria-current="page"
-        href="{% url 'all_blog' %}"
+        href="/blog/blog/"
         id="blog-link"
         >Blog</a
       >
@@ -105,7 +89,7 @@
       <a
         class="nav-link active main logo-font font-weight-bold nav-link text-white mr-5"
         aria-current="page"
-        href="{% url 'contact_view' %}"
+        href="/contact_view/"
         id="contact-link"
         >Contact</a
       >
@@ -115,20 +99,17 @@
     <li class="nav-item dropdown">
       <a
         class="main logo-font font-weight-bold nav-link text-white mr-5"
-        href="{% url 'about' %}"
+        href="/about"
         id="more-link"
         data-toggle="dropdown"
         aria-haspopup="true"
         aria-expanded="false"
         >More</a
       >
-      <div class="dropdown-menu border-0" aria-labelledby="more-info">
-        <a href="{% url 'reviews' %}" class="dropdown-item">Customer Reviews</a>
-        <a href="{% url 'design' %}" class="dropdown-item">Design services</a>
-        <a href="{% url 'privacy' %}" class="dropdown-item">Privacy Policy</a>
-        {% if user.is_superuser %}
-        <a href="{% url 'newsletter' %}" class="dropdown-item">Newsletter</a>
-        {% endif %}
+      <div class="dropdown-menu border-0" aria-labelledby="more-link">
+        <a href="/reviews/reviews/" class="dropdown-item">Customer Reviews</a>
+        <a href="/design" class="dropdown-item">Design services</a>
+        <a href="/privacy/" class="dropdown-item">Privacy Policy</a>
       </div>
     </li>
   </ul>
