@@ -10,9 +10,8 @@
                 <div class="col-md-10 col-xl-8 text-center">
                     <h2 class="fw-bold mb-4">Welcome to the Soilmate Plants Blog</h2>
                     <p class="mb-4 pb-2 mb-md-5 pb-md-0">
-                        Check the most useful information about plant care, and all the tips and tricks.
-                        We hope you will like it and learn a lot together with us.
-                    </p>
+    Check out the most useful information about plant care, along with all the tips and tricks. We hope you enjoy it and learn a lot with us.
+</p>
                 </div>
             </div>
             <div class="text-center">
@@ -26,7 +25,7 @@
                 <div class="col-md-4 mb-4 mb-md-0">
                     <div class="card mb-4 border-0 shadow rounded bg-white">
                         <div class="card-body py-4 mt-2">
-                            <div class="d-flex justify-content-center mb-4" id="Blog_post">
+                            <div class="d-flex justify-content-center mb-4 Blog_post">
                                 <a href="{% url 'blog_post_detail' post.slug %}" class="post-link">
                                     {% if "placeholder" in post.featured_image.url %}
                                     <img class="shadow-1-strong" width="200" height="200" src="{{ MEDIA_URL }}NoIMG.jpg"
@@ -37,9 +36,9 @@
                                     {% endif %}
                                 </a>
                             </div>
-                            <p class="mb-2">
-                            <h2 class="font-monospace my-3">{{ post.title | slice:":20" | safe}}</h2>
-                            </p>
+                            <div class="mb-2">
+    <h2 class="font-monospace my-3">{{ post.title | slice:":20" | safe}}</h2>
+</div>
                             {% for categ in post.categories.all %}
                             <h4 style="text-decoration: none; color: rgb(53, 62, 43)">
                                 <i class="fa fa-leaf"></i>

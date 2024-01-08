@@ -878,19 +878,16 @@ label {
 }
 
 
-#Blog_post {
-
+.Blog_post {
     overflow: hidden;
     margin: 0 auto;
 }
 
-#Blog_post img {
-
+.Blog_post img {
     transition: 0.5s all ease-in-out;
 }
 
-
-#Blog_post:hover img {
+.Blog_post:hover img {
     transform: scale(1.1);
 }
 
