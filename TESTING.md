@@ -106,7 +106,15 @@ The code on the Soilmate Plants site has been tested through W3C Markup Validati
 
 ### Markup Validation
 
-Validator showed many small errors in html. Unfortunately, I didn't have time to fix them before I finished the project.
+Validator showed many small errors in html, most of them were corrected.
+
+## Home Page
+[Home Page](media/Testing/HomePageTesting.jpg)
+## Product page
+## All blog page
+## Contact page
+## About page
+## 
 
 [Back to top](<#table-of-content>)
 
