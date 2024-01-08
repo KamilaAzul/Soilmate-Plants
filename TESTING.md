@@ -106,18 +106,32 @@ The code on the Soilmate Plants site has been tested through W3C Markup Validati
 
 ### Markup Validation
 
-Validator showed many small errors in html, most of them were corrected.
+The HTML validator detected several minor errors, most of which have been addressed and corrected.
+![Reviews Page](media/Testing/ReviewsPageTesting.jpg)
 
 ## Home Page
-[Home Page](media/Testing/HomePageTesting.jpg)
-## Product page
+No error found
+## Products page, product_detail page
+![Product Page](media/Testing/AllProductPageTesting.png)
+
+On the "products.html" page, numerous errors were identified, including one specific issue highlighted by the validator. The error pertains to the presence of a space in the category name within a link's href attribute, resulting in an illegal character in the query. For instance:
+<a class="text-muted" href="/products/?category=Potted trees">
+Despite this error, the URL functions correctly, and it was discussed with tutors. Due to the inherent nature of spaces in category names causing this issue, there is limited action that can be taken. The browser automatically converts %20 into a space, but this conversion does not manifest in the source code. As advised, a comment has been added to acknowledge this error.
+
 ## All blog page
 No errors found 
 ## Contact page
 No errors found
 ## About page
+No errors found
+## Reviews Page
+No errors found
+## My profile
+No errors found
+## Product management
+No errors found
 
-## 
+
 
 [Back to top](<#table-of-content>)
 
