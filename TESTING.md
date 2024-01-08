@@ -112,8 +112,11 @@ Validator showed many small errors in html, most of them were corrected.
 [Home Page](media/Testing/HomePageTesting.jpg)
 ## Product page
 ## All blog page
+No errors found 
 ## Contact page
+No errors found
 ## About page
+
 ## 
 
 [Back to top](<#table-of-content>)
