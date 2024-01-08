@@ -39,7 +39,6 @@ h2 {
 #topnav h2:hover {
     font-size: 37px;
     transition: all 200ms;
-    font-size-adjust: 20px;
 }
 
 /*.....................................Hero section(from:https://startbootstrap.com/theme/agency)*/
@@ -159,7 +158,6 @@ header.masthead .masthead {
     width: 400px;
     height: 200px;
     display: block;
-    padding-bottom: -30px;
     margin-top: -30px;
     background-color: #8DB74E;
 }
@@ -746,7 +744,6 @@ label {
 .mastheadAbout {
     margin-top: 50px;
     margin-bottom: auto;
-    padding-bottom: auto;
     height: 650px;
 }
 

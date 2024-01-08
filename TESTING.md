@@ -119,21 +119,21 @@ On the "products.html" page, numerous errors were identified, including one spec
 Despite this error, the URL functions correctly, and it was discussed with tutors. Due to the inherent nature of spaces in category names causing this issue, there is limited action that can be taken. The browser automatically converts %20 into a space, but this conversion does not manifest in the source code. As advised, a comment has been added to acknowledge this error.
 
 ## All blog page
-No errors found 
+- No errors found 
 ## Contact page
-No errors found
+- No errors found
 ## About page
-No errors found
+- No errors found
 ## Reviews Page
-No errors found
+- No errors found
 ## My profile
-No errors found
+- No errors found
 ## Product management
-No errors found
+- No errors found
+## Shopping bag
+- No errors found
 ## Design services
-No errors found
-
-
+- No errors found
 
 [Back to top](<#table-of-content>)
 
