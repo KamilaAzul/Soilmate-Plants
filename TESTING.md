@@ -296,6 +296,33 @@ All functions work as they should.No errors were detected by me.
 | **Blog** | After pressing "Blog" the user will be redirected to the blog page. | Working correctly |
 | **Contact us** | The user will be redirected to the "contact us" page where there is a contact form.| Working correctly |
 | **More** |When you press "More", the window will unfold, offering a user a variety of options such as: "Customer reviews", "Design services", "Privacy policy" and only for the superuser "Newletter" . | Working correctly |
+| **Button Shop Now**                    | Redirects the user to the "All Products" page.                    | Working correctly     |
+| **Icons**                              |                                                |                       |
+| - Repotting                            | Takes the user to the Repotting section.                         | Working correctly     |
+| - Plants Quality                       | Takes the user to the Plants Quality section.                    | Working correctly     |
+| - Delivery                             | Takes the user to the Delivery section.                          | Working correctly     |
+| - Plants Search                        | Takes the user to the Product Page.                              | Working correctly     |
+| - Icon Contact Us                      | Transfers the user to the Contact Us page.                       | Working correctly     |
+| **Footer Section Social Media Links**  | Links for Facebook and Instagram work correctly.                  | Working correctly     |
+| **Our Plants Page**                    |                                                |                       |
+| - Buttons with Categories              | Potted Trees, Potted Plants, Hanging Plants, Exotic - Work correctly. | Working correctly |
+| - Search Bar                           | Works correctly.                                                  | Working correctly     |
+| - Product Image                        | After clicking, the user will be transferred to the "Product Detail Page". | Working correctly     |
+| **Product Detail Page**                |                                                |                       |
+| - Quantity Button                      | Allows adding or subtracting the quantity of the chosen product. | Working correctly     |
+| - Add Review Button                    | Takes the user to a separate page where they can add a review, add an image, and submit. | Working correctly |
+| - Edit Button                          | Takes the user to the edit page.                                   | Working correctly     |
+| - Delete Button                        | Takes the user to a separate page to confirm the deletion of the review. | Working correctly |
+| **Shopping Bag**                       |                                                |                       |
+| - Keep Shopping Button                 | Takes the user to the "All Products" page.                        | Working correctly     |
+| - Add to Bag                           | Adds the chosen product to the shopping bag.                      | Working correctly     |
+| - Quantity Button                      | Allows adding or subtracting the quantity.                       | Working correctly     |
+| **Blog Page**                          |                                                |                       |
+| - Add Post Button                      | Takes the logged-in user to a separate page to write a post.     | Working correctly     |
+| - Post Image                           | After clicking, the user will be transferred to the Post page.   | Working correctly     |
+| - Back to Blog Page Button             | Returns the user to the Blog Page.                               | Working correctly     |
+| - Edit Button                          | Takes the creator of the post to a separate page where the post can be edited. | Working correctly |
+| - Delete Button                        | Takes the user to a separate page to confirm the deletion of the post. | Working correctly |
 
 [Back to top](<#table-of-content>)
 
