@@ -108,6 +108,7 @@ The code on the Soilmate Plants site has been tested through W3C Markup Validati
 
 The HTML validator detected several minor errors, most of which have been addressed and corrected.
 ![Reviews Page](media/Testing/ReviewsPageTesting.jpg)
+This is the only message that appears on all pages:"Warning: The type attribute is unnecessary for JavaScript resources."
 
 ## Home Page
 No error found
