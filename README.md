@@ -19,7 +19,7 @@ clear and concise site navigation.
     - [Agile Methodology](#agile-methodology)
     - [The Scope](#the-scope)
     - [Main Site Goals](#main-site-goals)
-    - [Design](#design)
+    - [Database Diagram](#database-diagram)
     - [Colours](#colours)
     - [Typography](#typography)
     - [Imagery](#imagery)
@@ -125,11 +125,15 @@ All functionality and development of this project were managed using GitHub whic
 - To provide tools that allow users to search for products.
 - To provide users with an easy and safe way to buy their products.
 
-### Design
+### Database Diagram
+
+![Colours Palete](media/README/Product.png)<br>
+
+
 
 #### Colours
 
-![Colours Palete](media/README/Colors.png)<br>
+![Diagram](media/README/Colors.png)
 
 - Since the website is a shop that sells flowers, the colors refer to the theme. The colors are warm and inspired by nature, dominated mainly by various shades of green and white.The contrast is maintained so that the content is clearly visible and easy to find, and the website is pleasant to use.
 

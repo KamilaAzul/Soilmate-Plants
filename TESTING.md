@@ -115,7 +115,8 @@ No error found
 ## Products page, product_detail page
 ![Product Page](media/Testing/AllProductPageTesting.png)
 
-On the "products.html" page, numerous errors were identified, including one specific issue highlighted by the validator. The error pertains to the presence of a space in the category name within a link's href attribute, resulting in an illegal character in the query. For instance:
+On the "products.html" page, numerous errors were identified, including one specific issue highlighted by the validator. The error pertains to the presence of a space in the category name within a link's href attribute, resulting in an illegal character in the query.
+For instance:
 <a class="text-muted" href="/products/?category=Potted trees">
 Despite this error, the URL functions correctly, and it was discussed with tutors. Due to the inherent nature of spaces in category names causing this issue, there is limited action that can be taken. The browser automatically converts %20 into a space, but this conversion does not manifest in the source code. As advised, a comment has been added to acknowledge this error.
 
@@ -139,6 +140,11 @@ Despite this error, the URL functions correctly, and it was discussed with tutor
 [Back to top](<#table-of-content>)
 
 ### CSS Validation
+
+There were a few CSS errors that I managed to fix. I still have many warnings, but they do not affect the functionality of the website
+![CSS with error](/media/Testing/CssTesting.png)
+<br>
+![CSS no error](media/Testing/CssTesting1.png)
 
 [Back to top](<#table-of-content>)
 
