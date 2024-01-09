@@ -323,7 +323,12 @@ All functions work as they should.No errors were detected by me.
 | - Back to Blog Page Button             | Returns the user to the Blog Page.                               | Working correctly     |
 | - Edit Button                          | Takes the creator of the post to a separate page where the post can be edited. | Working correctly |
 | - Delete Button                        | Takes the user to a separate page to confirm the deletion of the post. | Working correctly |
-
+| **Review Page**                          |                                                |                       |
+| - Edit Button      | The user who created the review will see an edit button.                   | Working correctly |
+| - Delete Button   | The user who created the review will see a delete button.                | Working correctly |
+| - Edit Button Functionality      | Clicking the edit button will take the user to the review edit page.      | Working correctly |
+| - Delete Button Functionality   | Clicking the delete button will take the user to a confirmation page.     | Working correctly |
+| - Review Deletion Confirmation   | On the confirmation page, the user needs to confirm the deletion of the review. | Working correctly |
 [Back to top](<#table-of-content>)
 
 ### Lighthouse
