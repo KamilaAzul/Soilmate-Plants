@@ -32,7 +32,8 @@ DEBUG = True
 
 ALLOWED_HOSTS = ['soilmate-plants-a1626f09724b.herokuapp.com', 'localhost',
                  '8000-kamilaazul-soilmateplan-l41d0r6mrv4.ws-eu107.gitpod.io',
-                 '8000-kamilaazul-soilmate-plan-iakv8u70kr.us2.codeanyapp.com',]
+                 '8000-kamilaazul-soilmate-plan-iakv8u70kr.us2.codeanyapp.com',
+                 ]
 
 
 # Application definition

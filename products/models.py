@@ -27,7 +27,6 @@ class Product(models.Model):
     safty = models.ForeignKey(
         "Safety", null=True, blank=True, on_delete=models.SET_NULL
     )
-    
     description = models.TextField()
     price = models.DecimalField(max_digits=6, decimal_places=2)
     rating = models.DecimalField(

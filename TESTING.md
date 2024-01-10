@@ -116,11 +116,11 @@ No error found
 ![Product Page](media/Testing/AllProductPageTesting.png)
 
 On the "products.html" page, numerous errors were identified, including one specific issue highlighted by the validator. The error pertains to the presence of a space in the category name within a link's href attribute, resulting in an illegal character in the query.
-For instance:
-<a class="text-muted" href="/products/?category=Potted trees">
+For instance: a class="text-muted" href="/products/?category=Potted trees">
+
 Despite this error, the URL functions correctly, and it was discussed with tutors. Due to the inherent nature of spaces in category names causing this issue, there is limited action that can be taken. The browser automatically converts %20 into a space, but this conversion does not manifest in the source code. As advised, a comment has been added to acknowledge this error.
 
-## All blog page
+## All blog page 
 - No errors found 
 ## Contact page
 - No errors found
@@ -158,19 +158,29 @@ No major errors reported, some E501 line too long
 - admin.py -  No errors reported
 - apps.py -  No errors or warnings reported
 - contexts.py -  No errors or warnings reported
-- urls.py -  No errors or warnings reported
-- views.py -  No errors or warnings reported
-- bag_tools.py - No errors or warnings reported
+- urls.py -  W292 no newline at end of file
+- models.py -  No errors reported
+- views.py -  1: E501 line too long (87 > 79 characters)
+30: E501 line too long (138 > 79 characters)
+33: E501 line too long (98 > 79 characters)
+36: E501 line too long (94 > 79 characters)
+40: E501 line too long (91 > 79 characters)
+62: E501 line too long (134 > 79 characters)
+67: E501 line too long (98 > 79 characters)
+71: E501 line too long (91 > 79 characters)
+94: E501 line too long (98 > 79 characters)
+104: W292 no newline at end of file
 
 **App Blog**
 No major errors reported, some E501 line too long
 
-- admin.py - No errors reported
+- admin.py - 21: W292 no newline at end of file
+- context.py-  No errors reported
 - apps.py - No errors reported
 - forms.py - No errors reported
-- models.py - No errors reported
-- urls.py - No errors reported
-- views.py - No errors reported
+- models.py - 42: W293 blank line contains whitespace
+- urls.py - 9: W292 no newline at end of file
+- views.py - 75: E501 line too long (80 > 79 characters)
 
 **App Checkout**
 No major errors reported, some E501 line too long
@@ -212,26 +222,53 @@ No major errors reported, some E501 line too long
 **App Products**
 No major errors reported, some E501 line too long
 
-- admin.py
-- apps.py
-- forms.py
-- models.py
-- urls.py
-- views.py
+- admin.py- All clear, no errors found
+- apps.py- All clear, no errors found
+- forms.py- 33: E501 line too long (102 > 79 characters)
+- models.py - 103: W293 blank line contains whitespace
+149: W391 blank line at end of file
+- urls.py- 6: E501 line too long (84 > 79 characters)
+9: E501 line too long (82 > 79 characters)
+10: W292 no newline at end of file
+- views.py-48: E501 line too long (80 > 79 characters)
+50: E501 line too long (80 > 79 characters)
+98: E501 line too long (94 > 79 characters)
+125: E501 line too long (97 > 79 characters)
+- tests.py- All clear, no errors found
+- widgets.py-9: E501 line too long (87 > 79 characters)
+9: W292 no newline at end of file
 
 **App Profiles**
 No major errors reported, some E501 line too long
 
-- apps.py
-- forms.py
-- models.py
-- urls.py
-- views.py
+- admin.py- All clear, no errors found
+- apps.py-All clear, no errors found
+- forms.py- 33: E501 line too long (98 > 79 characters)
+34: W292 no newline at end of file
+- models.py-15: E501 line too long (81 > 79 characters)
+16: E501 line too long (84 > 79 characters)
+17: E501 line too long (84 > 79 characters)
+18: E501 line too long (81 > 79 characters)
+21: E501 line too long (80 > 79 characters)
+35: W292 no newline at end of file
+- urls.py-6: E501 line too long (84 > 79 characters)
+7: W292 no newline at end of file
+- views.py-21: E501 line too long (86 > 79 characters)
+50: W292 no newline at end of file
 
 **Soilamate Plants**
 
-- urls.py - No errors reported
-- views.py - No errors reported
+- urls.py - All clear, no errors found
+- views.py - All clear, no errors found
+- wsgi.py - All clear, no errors found
+- asgi.py - All clear, no errors found
+- setting.py -93: E501 line too long (84 > 79 characters)
+154: E501 line too long (91 > 79 characters)
+157: E501 line too long (81 > 79 characters)
+160: E501 line too long (82 > 79 characters)
+163: E501 line too long (83 > 79 characters)
+247: E501 line too long (94 > 79 characters)
+248: E501 line too long (88 > 79 characters)
 
 [Back to top](<#table-of-content>)
 
@@ -342,12 +379,17 @@ All functions work as they should.No errors were detected by me.
 Google Lighthouse in Chrome Developer Tools was used to test the site within the areas of *Performance*, *Accessibility*, *Best Practices* and *SEO*. I tested the *home page*, *view all blog posts page*, *view all products page*, *product management page* and *blog management page*. The testing showed the following:
 
 - Home Page
-![Home Page ](media/README/HomePageLighthouse.png)
+<br>
+![Home Page ](media/Testing/HomePageLightHouseNew.png)
 
 - View Reviews Page
-
+<br>
 ![Reviews Page](media/README/ReviewsLighthouse.png)
 
 - View All Products Page
+<br>
+![All Products Page ](media/Testing/AllProductPageLightHouseNew.png)
 
-![All Products Page ](media/README/AllproductsLighthouse.png)
+- Blog Page
+<br>
+![Blog Page ](media/Testing/BlogPageLightHouseNew.png)
