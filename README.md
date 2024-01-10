@@ -243,6 +243,13 @@ to the secure checkout to finish the order. The user can also leave this page by
 
 ![Products Checkout](media/README/SuccessBuy.png)
 
+- The user after buying the product will receive an email confirmation.
+
+![EmailConfirmation](media/README/EmailConfirmationBuy.png)
+<br>
+
+[Back to top](<#contents>)
+
 ### Service Reviews under the product
 
 -Uder the product, a user with a valid registration account and logged in can add or edit their own personal service reviews.<br>
@@ -326,14 +333,22 @@ the six newest comments are displayed, at the bottom of the page there is a "Nex
 * Newsletter
   
 - Every user can sign up to receive a newsletter with useful information about promotions, sales, etc.
+After subscribing to the newsletter, the user will see a message in the upper right corner of the page indicating that they have been added to the list of subscribers
 
-- On this section User must fill in the Signup form.<br>
+- On this section User must fill in the Signup form.
+<br>
 
 ![Newsletter](media/README/Newsletter.png)
 
 <br>
 
 ![Newsletter write](media/README/NewsletterWrite.png)
+<br>
+
+In the admin space, we can see all subscribers.
+<br>
+
+![NewsletterSubscriberList](media/README/NewsletterSubscribers.png)
 
 ### Signup Page - Verify Email
 
